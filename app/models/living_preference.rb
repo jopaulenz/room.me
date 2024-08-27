@@ -3,7 +3,7 @@ class LivingPreference < ApplicationRecord
 
   enum cleanliness: { messy: 0, moderate: 1, neat: 2 }
   enum gender: { male: 0, female: 1, other: 2 }
-  enum smoking: { non_smoker: 0, smoker: 1 }
+  enum smoking: { non_smoker: 0, smoker: 1, social_smoker: 2 }
   enum partying: { never: 0, sometimes: 1, often: 2 }
 
   validates :cleanliness, :gender, :smoking, :partying, presence: true
