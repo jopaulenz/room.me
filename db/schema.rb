@@ -58,6 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_27_132243) do
     t.integer "gender", null: false
     t.integer "smoking", null: false
     t.integer "partying", null: false
+    t.integer "age", null: false
     t.string "aboutme"
     t.string "interest"
     t.datetime "created_at", null: false

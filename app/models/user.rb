@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :hosts, dependent: :destroy
   has_many :messages, dependent: :destroy
 
-  enum role: { guest: 0, host: 1 }
+  enum role: { flatmate: 0, host: 1 }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
