@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :flatmates, dependent: :destroy
-  has_many :hosts, dependent: :destroy
+  has_one :flatmate, dependent: :destroy
+  has_one :host, dependent: :destroy
   has_many :messages, dependent: :destroy
 
   enum role: { guest: 0, host: 1 }
