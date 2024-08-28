@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :hosts, only: [:new, :create]
   resources :flatmates, only: [:new, :create]
+  resources :living_preferences, only: [:new, :create, :edit, :update]
 
   # Defines the root path route ("/")
   # root "posts#index"
