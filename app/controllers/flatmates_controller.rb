@@ -10,6 +10,7 @@ class FlatmatesController < ApplicationController
 
   def create
     @flatmate = Flatmate.new(step1_params)
+    @flatmate.user = current_user
     @flatmate.save
     redirect_to edit2_path(@flatmate)
 
@@ -43,7 +44,7 @@ class FlatmatesController < ApplicationController
   end
 
   def step1_params
-    params.require(:flatmate).permit(:first_name, :last_name, :birthday, :gender, :pronouns, :email, :phone_number)
+    params.require(:flatmate).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number)
   end
 
   def step2_params

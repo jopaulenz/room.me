@@ -37,9 +37,9 @@
 
   <div class="form-group">
     <%= form.label :registration, "Registration Requirement" %><br>
-    <%= form.radio_button :registration, "I need it", id: "need_registration" %>
+    <%= form.check_box :registration, "I need it", id: "need_registration" %>
     <%= form.label :registration, "I need it", for: "need_registration" %><br>
-    <%= form.radio_button :registration, "I don't need it", id: "no_registration" %>
+    <%= form.check_box :registration, "I don't need it", id: "no_registration" %>
     <%= form.label :registration, "I don't need it", for: "no_registration" %>
   </div>
 
