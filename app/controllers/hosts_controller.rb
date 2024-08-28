@@ -46,4 +46,4 @@ class HostsController < ApplicationController
     params.require(:host).permit(:name, :description, :city, :district, :user_id)
   end
 end
-end
+
