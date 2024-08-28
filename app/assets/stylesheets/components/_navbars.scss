@@ -1,0 +1,43 @@
+.navbar {
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    #FFCE4F,
+    #FFCE4F 50%,
+    rgba(0,0,0,0) 50%,
+    rgba(0,0,0,0) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #023145;
+  padding: 0 24px;
+}
+
+
+.container {
+  width: 100%;
+
+}
+
+ .home {
+  margin-left: -62px;
+  margin-right: -62px;
+ }
+ .icon {
+  margin-bottom: 24px;
+ }
+ .icon-container {
+  position: relative;
+}
+.badge_message,
+.badge_match {
+background-color: rgb(245, 64, 18);
+color: white;
+border-radius: 50%;
+padding: 7px 7px;
+font-size: 16px;
+position: absolute;
+right: -8px;
+/* display: none; */
+}
