@@ -7,6 +7,12 @@ class CreateLivingPreferences < ActiveRecord::Migration[7.1]
       t.integer :smoking, null: false
       t.integer :partying, null: false
       t.integer :age, null: false
+      t.integer :furnished, null: false
+      t.integer :dishwasher, null: false
+      t.integer :washingmaschine, null: false
+      t.integer :balcony, null: false
+      t.integer :kitchen, null: false
+      t.integer :bathtub, null: false
       t.string :aboutme
       t.string :interest
       t.timestamps
