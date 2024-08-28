@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
   resources :hosts, only: [:new, :create]
   resources :flatmates, only: [:new, :create]
+<<<<<<< HEAD
   get 'flatmates/:id/step2', to: 'flatmates#edit2', as: :edit2
   patch 'flatmates/:id/step2', to: 'flatmates#update2'
+=======
+  resources :living_preferences, only: [:new, :create, :edit, :update]
+>>>>>>> feature/add-controller-action
 
 end
