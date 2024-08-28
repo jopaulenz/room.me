@@ -1,22 +1,60 @@
-puts "Destroying all the contacts"
-Contact.destroy_all
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-puts "creating contacts"
-20.times do
-  Contact.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    phone: Faker::PhoneNumber.phone_number,
-    email: Faker::Internet.email,
-    address: Faker::Location.address
-  )
-end
-puts "created #{Contact.count} contacts"
+# Destroying all existing records:
+User.destroy_all
+Host.destroy_all
+Flatmate.destroy_all
+Like.destroy_all
+Match.destroy_all
+
+# Phase 1 Seeds: In order to streamlinethe process of creating likes, matches, messages
+puts "Creating Phase-1 Seeds 🌱"
+# Create 12 new instances of the User
+# HOSTS:
+josephine = User.create!(email: "josephine@roomme.com", password: "123456",role: 1 )
+josephine_host = Host.create!(user: josephine, city: "Berlin")
+
+mustapha = User.create!(email: "mustapha@roomme.com", password: "123456",role: 1 )
+Host.create!(user: mustapha, city: "Berlin")
+
+sascha = User.create!(email: "sascha@roomme.com", password: "123456",role: 1 )
+Host.create!(user: sascha, city: "Berlin")
+
+justus = User.create!(email: "justus@roomme.com", password: "123456",role: 1 )
+Host.create!(user: justus, city: "Berlin")
+
+#FLATMATES:
+gavin = User.create!(email: "gavin@example.com", password: "123456", role: 0)
+Flatmate.create!(user: gavin, city: "Berlin")
+
+frida = User.create!(email: "frida@example.com", password: "123456", role: 0)
+frida_flatmate = Flatmate.create!(user: frida, city: "Berlin")
+
+lounis = User.create!(email: "lounis@example.com", password: "123456", role: 0)
+Flatmate.create!(user: lounis, city: "Berlin")
+
+florian = User.create!(email: "florian@example.com", password: "123456", role: 0)
+Flatmate.create!(user: florian, city: "Berlin")
+
+sree = User.create!(email: "sree@example.com", password: "123456", role: 0)
+Flatmate.create!(user: sree, city: "Berlin")
+
+julia = User.create!(email: "julia@example.com", password: "123456", role: 0)
+Flatmate.create!(user: julia, city: "Berlin" )
+
+navid = User.create!(email: "navid@example.com", password: "123456", role: 0)
+Flatmate.create!(user: navid, city: "Berlin")
+
+gustavo = User.create!(email: "gustavo@example.com", password: "123456", role: 0)
+Flatmate.create!(user: gustavo, city: "Berlin")
+#host profile
+
+# SAMPLE 5 LIKES FOR DEVELOPMENT
+
+Like.create!(liker: josephine, liked: frida)
+Like.create!(liker: mustapha, liked: navid)
+Like.create!(liker: justus, liked: gustavo)
+Like.create!(liker: frida, liked: josephine)
+Like.create!(liker: gustavo, liked: sascha)
+
+# Create one sample match
+Match.create!(flatmate: frida_flatmate, host: josephine_host)
+puts "#{User.count} users (#{Host.count} hosts, #{Flatmate.count} flatmates), #{Like.count} likes, and #{Match.count} matches created."
