@@ -14,7 +14,7 @@
 
   <div class="form-group">
     <%= form.label :birthday %>
-    <%= form.date_field :birthday, class: "form-control", placeholder: "Select your birthday" %>
+    <%= form.date_field :date_of_birth, class: "form-control", placeholder: "Select your birthday" %>
   </div>
 
   <div class="form-group">
@@ -29,7 +29,7 @@
 
   <div class="form-group">
     <%= form.label :email %>
-    <%= form.email_field :email, class: "form-control", placeholder: "Enter your email address" %>
+    <%= form.email_field :email_address, class: "form-control", placeholder: "Enter your email address" %>
   </div>
 
   <div class="form-group">
@@ -41,4 +41,3 @@
     <%= form.submit "CONTINUE", class: "btn btn-warning" %>
   </div>
 <% end %>
-
