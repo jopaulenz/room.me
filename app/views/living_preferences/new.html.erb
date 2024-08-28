@@ -1,0 +1,54 @@
+<h1>Create Your Preferences - Step <%= @step %></h1>
+
+<%= form_with(model: @living_preference, local: true, url: step_path(@step)) do |form| %>
+  <% if @step == 1 %>
+    <!-- STEP 1: Felder für Cleanliness, Gender, Smoking -->
+    <%= form.label :cleanliness, "Cleanliness" %>
+    <%= form.collection_radio_buttons :cleanliness, LivingPreference.cleanlinesses.keys, :to_s, :humanize %>
+
+    <%= form.label :gender, "Gender" %>
+    <%= form.collection_radio_buttons :gender, LivingPreference.genders.keys, :to_s, :humanize %>
+
+    <%= form.label :smoking, "Smoking" %>
+    <%= form.collection_radio_buttons :smoking, LivingPreference.smokings.keys, :to_s, :humanize %>
+
+  <% elsif @step == 2 %>
+    <!-- STEP 2: Felder für Partying, Age, Furnished -->
+    <%= form.label :partying, "Partying" %>
+    <%= form.collection_radio_buttons :partying, LivingPreference.partyings.keys, :to_s, :humanize %>
+
+    <%= form.label :age, "Age Preference" %>
+    <%= form.collection_radio_buttons :age, LivingPreference.ages.keys, :to_s, :humanize %>
+
+    <%= form.label :furnished, "Furnished" %>
+    <%= form.collection_radio_buttons :furnished, LivingPreference.furnisheds.keys, :to_s, :humanize %>
+
+  <% elsif @step == 3 %>
+    <!-- STEP 3: Restliche Felder und Textfelder -->
+    <%= form.label :dishwasher, "Dishwasher" %>
+    <%= form.collection_radio_buttons :dishwasher, LivingPreference.dishwashers.keys, :to_s, :humanize %>
+
+    <%= form.label :washingmaschine, "Washing Machine" %>
+    <%= form.collection_radio_buttons :washingmaschine, LivingPreference.washingmaschinen.keys, :to_s, :humanize %>
+
+    <%= form.label :balcony, "Balcony" %>
+    <%= form.collection_radio_buttons :balcony, LivingPreference.balconys.keys, :to_s, :humanize %>
+
+    <%= form.label :kitchen, "Kitchen" %>
+    <%= form.collection_radio_buttons :kitchen, LivingPreference.kitchens.keys, :to_s, :humanize %>
+
+    <%= form.label :bathtub, "Bathtub" %>
+    <%= form.collection_radio_buttons :bathtub, LivingPreference.bathtubs.keys, :to_s, :humanize %>
+
+    <%= form.label :aboutme, "About Me" %>
+    <%= form.text_area :aboutme, placeholder: "Tell us a little about yourself" %>
+
+    <%= form.label :interest, "Interests" %>
+    <%= form.text_area :interest, placeholder: "What are your interests?" %>
+
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit "Continue", class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>
