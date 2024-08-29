@@ -16,8 +16,13 @@ Rails.application.routes.draw do
 
   get 'flatmates/:id/step2', to: 'flatmates#edit2', as: :edit2
   patch 'flatmates/:id/step2', to: 'flatmates#update2'
-  
+
+  get 'hosts/:id/step3', to: 'hostss#edit2', as: :edit3
+  patch 'hosts/:id/step3', to: 'hosts#update2'
+
+
   resources :living_preferences, only: [:new, :create, :edit, :update]
+
 
 
 end
