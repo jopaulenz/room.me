@@ -32,6 +32,10 @@ class FlatmatesController < ApplicationController
     @flatmate = Flatmate.find(params[:id])
   end
 
+  def show
+    @flatmate = Flatmate.find(params[:id])
+  end
+
 
 #   def edit
 #     @flatmate = Flatmate.find(params[:id])
