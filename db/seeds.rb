@@ -49,11 +49,11 @@ Flatmate.create!(user: gustavo, city: "Berlin")
 
 # SAMPLE 5 LIKES FOR DEVELOPMENT
 
-Like.create!(liker: josephine, liked: frida)
-Like.create!(liker: mustapha, liked: navid)
-Like.create!(liker: justus, liked: gustavo)
 Like.create!(liker: frida, liked: josephine)
-Like.create!(liker: gustavo, liked: sascha)
+Like.create!(liker: navid, liked: mustapha)
+Like.create!(liker: gustavo, liked: justus)
+Like.create!(liker: frida, liked: sascha)
+Like.create!(liker: gavin, liked: justus)
 
 # Create one sample match
 Match.create!(flatmate: frida_flatmate, host: josephine_host)
