@@ -67,6 +67,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_28_182547) do
     t.integer "registration"
     t.integer "room_size"
     t.integer "furnished"
+    t.string "city"
     t.index ["user_id"], name: "index_hosts_on_user_id"
   end
 

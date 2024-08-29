@@ -11,9 +11,10 @@
   </head>
 
   <body>
-    <% unless controller_name == "living_preferences" && (action_name == "new" || action_name == "edit") %>
-      <%= render "shared/navbar" %>
-    <% end %>
+    <%# Render specific navbar only on relevant pages %>
+    <%# <% unless controller_name == "living_preferences" && (action_name == "new" || action_name == "edit") %>
+      <%#= render "shared/navbar" %>
+    <%# end %>
 
     <%= yield %>
 
