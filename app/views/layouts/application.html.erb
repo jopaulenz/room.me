@@ -11,8 +11,12 @@
   </head>
 
   <body>
-    <%# <%= render "shared/navbars" %> 
+    <% unless controller_name == "living_preferences" && (action_name == "new" || action_name == "edit") %>
+      <%= render "shared/navbar" %>
+    <% end %>
+
     <%= yield %>
-     <%= render "shared/flashes" %>
+
+    <%= render "shared/flashes" %>
   </body>
 </html>
