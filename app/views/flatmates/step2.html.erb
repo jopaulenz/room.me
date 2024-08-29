@@ -1,0 +1,49 @@
+<%# How do you want to live? Step 2 %>
+<h1>How do you want to live?</h1>
+
+<%= form_with(model: @flatmate, url: flatmate_path(@flatmate), method: :patch, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :city %>
+    <%= form.text_field :city, class: "form-control", placeholder: "Enter the city" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :district %>
+    <%= form.text_field :district, class: "form-control", placeholder: "Enter the district" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rent_min, "Minimum Rent" %>
+    <%= form.number_field :rent_min, class: "form-control", placeholder: "Enter the minimum rent" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rent_max, "Maximum Rent" %>
+    <%= form.number_field :rent_max, class: "form-control", placeholder: "Enter the maximum rent" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :entry_date, "Preferred Entry Date" %>
+    <%= form.date_field :entry_date, class: "form-control", placeholder: "Select the preferred entry date" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :duration, "Duration of Stay" %><br>
+    <%= form.radio_button :duration, "longterm", id: "longterm" %>
+    <%= form.label :duration, "Long-term", for: "longterm" %><br>
+    <%= form.radio_button :duration, "shortterm", id: "shortterm" %>
+    <%= form.label :duration, "Short-term", for: "shortterm" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :registration, "Registration Requirement" %><br>
+    <%= form.check_box :registration, "I need it", id: "need_registration" %>
+    <%= form.label :registration, "I need it", for: "need_registration" %><br>
+    <%= form.check_box :registration, "I don't need it", id: "no_registration" %>
+    <%= form.label :registration, "I don't need it", for: "no_registration" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "CONTINUE", class: "btn btn-warning" %>
+  </div>
+<% end %>

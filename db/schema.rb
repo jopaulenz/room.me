@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_27_132243) do
+
+ActiveRecord::Schema[7.1].define(version: 2024_08_28_150004) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +32,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_27_132243) do
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.date "date_of_birth"
+    t.integer "gender"
+    t.string "pronouns"
+    t.string "email_address"
+    t.string "phone_number"
+    t.string "district"
+    t.integer "rent_range_min"
+    t.integer "rent_range_max"
+    t.integer "duration"
+    t.date "entry_date"
+    t.integer "registration"
+    t.integer "room_size_min"
+    t.integer "room_size_max"
+    t.integer "furnished"
     t.index ["user_id"], name: "index_flatmates_on_user_id"
   end
 
@@ -37,6 +55,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_27_132243) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city"
     t.index ["user_id"], name: "index_hosts_on_user_id"
   end
 
@@ -58,13 +77,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_27_132243) do
     t.integer "gender", null: false
     t.integer "smoking", null: false
     t.integer "partying", null: false
-    t.integer "age", null: false
-    t.integer "furnished", null: false
-    t.integer "dishwasher", null: false
-    t.integer "washingmaschine", null: false
-    t.integer "balcony", null: false
-    t.integer "kitchen", null: false
-    t.integer "bathtub", null: false
     t.string "aboutme"
     t.string "interest"
     t.datetime "created_at", null: false

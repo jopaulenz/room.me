@@ -11,8 +11,13 @@ Rails.application.routes.draw do
 
   resources :hosts, only: [:new, :create]
   resources :flatmates, only: [:new, :create]
+
   get "choose_role", to: 'users#choose_role'
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  get 'flatmates/:id/step2', to: 'flatmates#edit2', as: :edit2
+  patch 'flatmates/:id/step2', to: 'flatmates#update2'
+  
+  resources :living_preferences, only: [:new, :create, :edit, :update]
+
+
 end
