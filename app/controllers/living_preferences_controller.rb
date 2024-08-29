@@ -12,7 +12,7 @@ class LivingPreferencesController < ApplicationController
     @living_preference.preferable = current_user.flatmate || current_user.host   # Setze das `preferable` auf den aktuellen Benutzer oder ein anderes Objekt
 
     @living_preference.instance_variable_set(:@current_step, params[:step].to_i)
-    raise
+
     if @living_preference.save
       redirect_to edit_living_preference_path(@living_preference, step: 2), notice: 'Living preferences were successfully created.'
     else
