@@ -1,0 +1,14 @@
+<h1>Select Your Role</h1>
+
+<%= simple_form_for current_user, url: user_registration_path, method: :patch, html: { class: 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= button_tag type: 'submit', name: 'user[role]', value: 'host', class: 'btn btn-primary' do %>
+        I am a Host
+      <% end %>
+      <%= button_tag type: 'submit', name: 'user[role]', value: 'flatmate', class: 'btn btn-secondary' do %>
+        I am Looking for a Flatmate
+      <% end %>
+    </div>
+  </div>
+<% end %>
