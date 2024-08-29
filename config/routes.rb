@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :flatmates, only: [:new, :create, :update]
 
   get "choose_role", to: 'users#choose_role'
+  patch "role", to: 'users#role'
 
   get 'flatmates/:id/step2', to: 'flatmates#edit2', as: :flatmate_edit2
   get 'flatmates/:id/step3', to: 'flatmates#edit3', as: :flatmate_edit3
