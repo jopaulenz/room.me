@@ -82,6 +82,7 @@ gustavo = User.find_or_create_by!(email: "gustavo@example.com") do |user|
 end
 Flatmate.find_or_create_by!(user: gustavo, city: "Berlin", profile_picture_url: "https://avatars.githubusercontent.com/u/46820695?v=4")
 
+<<<<<<< HEAD
 # Create LivingPreferences for Hosts and Flatmates
 puts "Creating Living Preferences..."
 LivingPreference.create!(
@@ -100,6 +101,13 @@ LivingPreference.create!(
   aboutme: "I love to keep my home tidy and enjoy quiet evenings.",
   interest: "I enjoy reading, cooking, and hiking."
 )
+=======
+Like.create!(liker: frida, liked: josephine)
+Like.create!(liker: navid, liked: mustapha)
+Like.create!(liker: gustavo, liked: justus)
+Like.create!(liker: frida, liked: sascha)
+Like.create!(liker: gavin, liked: justus)
+>>>>>>> 8229ef693c55cb1eff504bbd7ed8ec05893d41c0
 
 LivingPreference.create!(
   preferable: mustapha_host,
