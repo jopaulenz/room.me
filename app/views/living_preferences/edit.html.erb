@@ -1,6 +1,7 @@
-<h1>Create Your Preferences - Step <%= @step %></h1>
+<h1>Edit your Preferences - Step <%= @step %></h1>
 
-<%= form_with(model: @living_preference, local: true, url: step_path(@step)) do |form| %>
+<%= form_with(model: @living_preference, local: true, url: @living_preference.new_record? ? living_preferences_path(step: @step) : living_preference_path(@living_preference, step: @step)) do |form| %>
+
   <% if @step == 1 %>
     <!-- STEP 1: Felder für Cleanliness, Gender, Smoking -->
     <%= form.label :cleanliness, "Cleanliness" %>
@@ -23,11 +24,11 @@
     <%= form.label :furnished, "Furnished" %>
     <%= form.collection_radio_buttons :furnished, LivingPreference.furnisheds.keys, :to_s, :humanize %>
 
-  <% elsif @step == 3 %>
-    <!-- STEP 3: Restliche Felder und Textfelder -->
     <%= form.label :dishwasher, "Dishwasher" %>
     <%= form.collection_radio_buttons :dishwasher, LivingPreference.dishwashers.keys, :to_s, :humanize %>
 
+  <% elsif @step == 3 %>
+    <!-- STEP 3: Restliche Felder und Textfelder -->
     <%= form.label :washingmaschine, "Washing Machine" %>
     <%= form.collection_radio_buttons :washingmaschine, LivingPreference.washingmaschinen.keys, :to_s, :humanize %>
 
@@ -40,6 +41,8 @@
     <%= form.label :bathtub, "Bathtub" %>
     <%= form.collection_radio_buttons :bathtub, LivingPreference.bathtubs.keys, :to_s, :humanize %>
 
+  <% elsif @step == 4 %>
+    <!-- STEP 4: Textfelder -->
     <%= form.label :aboutme, "About Me" %>
     <%= form.text_area :aboutme, placeholder: "Tell us a little about yourself" %>
 
