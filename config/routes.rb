@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy], module: :hosts
     resources :dislikes, only: [:create, :destroy], module: :hosts
   end
+  resources :hosts, only: [:new, :create, :update, :show]
+  resources :flatmates, only: [:new, :create, :update, :show]
 
   resources :flatmates, only: [:new, :create] do
     resources :likes, only: [:create, :destroy], module: :flatmates
@@ -20,13 +22,16 @@ Rails.application.routes.draw do
 
   # User role selection
   get "choose_role", to: 'users#choose_role'
+  patch "role", to: 'users#role'
 
-  # Steps for flatmates and hosts
-  get 'flatmates/:id/step2', to: 'flatmates#edit2', as: :edit2
-  patch 'flatmates/:id/step2', to: 'flatmates#update2'
+  get 'flatmates/:id/step2', to: 'flatmates#edit2', as: :flatmate_edit2
+  get 'flatmates/:id/step3', to: 'flatmates#edit3', as: :flatmate_edit3
 
-  get 'hosts/:id/step3', to: 'hosts#edit3', as: :edit3
-  patch 'hosts/:id/step3', to: 'hosts#update3'
+  get 'hosts/:id/step2', to: 'hosts#edit2', as: :host_edit2
+  get 'hosts/:id/step3', to: 'hosts#edit3', as: :host_edit3
+
+  get 'tutorial', to: 'pages#tutorial', as: :tutorial
+
 
   # Living preferences
   resources :living_preferences, only: [:new, :create, :edit, :update]
