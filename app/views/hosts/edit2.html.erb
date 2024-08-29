@@ -1,7 +1,7 @@
 <%# How do you want to live? Step 2 %>
 <h1>What do you offer?</h1>
 
-<%= form_with(model: @flatmate, url: flatmate_path(@flatmate), method: :patch, local: true) do |form| %>
+<%= form_with(model: @host, url: host_path(@host), method: :patch, local: true) do |form| %>
 <%= hidden_field_tag 'step', '2'%>
   <div class="form-group">
     <%= form.label :city %>
@@ -15,7 +15,7 @@
 
   <div class="form-group">
     <%= form.label :rent, " Rent" %>
-    <%= form.number_field :rent_range_min, class: "form-control", placeholder: "Enter the rent" %>
+    <%= form.number_field :rent, class: "form-control", placeholder: "Enter the rent" %>
   </div>
 
   <div class="form-group">
@@ -24,21 +24,7 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :duration, "Duration of Stay" %><br>
-    <%= form.radio_button :duration, "longterm", id: "longterm" %>
-    <%= form.label :duration, "Long-term", for: "longterm" %><br>
-    <%= form.radio_button :duration, "shortterm", id: "shortterm" %>
-    <%= form.label :duration, "Short-term", for: "shortterm" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :registration, "Registration " %><br>
-    <%= form.check_box :registration, "Is possible", id: "need_registration" %>
-    <%= form.check_box :registration, "I don't need it", id: "no_registration" %>
-    <%= form.label :registration, "I don't need it", for: "no_registration" %>
-  </div>
-
-  <div class="form-group">
     <%= form.submit "CONTINUE", class: "btn btn-warning" %>
   </div>
 <% end %>
+<%= console %>
