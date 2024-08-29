@@ -1,7 +1,8 @@
 <%# How do you want to live? Step 3 %>
-<h1>How do you want to live?</h1>
+<h1>What do you offer?<</h1>
 
 <%= form_with model: @flatmate, url: flatmates_path, method: :post do |f| %>
+<%= hidden_field_tag 'step', '3'%>
   <div>
     <%= f.label :room_size_min, "Room size (m²) - Min" %>
     <%= f.number_field :room_size_min, min: 0 %>
