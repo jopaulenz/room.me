@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   resources :flatmates, only: [:new, :create]
   get 'flatmates/:id/step2', to: 'flatmates#edit2', as: :edit2
   patch 'flatmates/:id/step2', to: 'flatmates#update2'
+  get 'flatmates/:id/step3', to: 'flatmates#edit2', as: :edit3
+  patch 'flatmates/:id/step3', to: 'flatmates#update2'
 
 end
