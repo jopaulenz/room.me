@@ -1,4 +1,6 @@
-<h4>Welcome to</h4>
+<body data-user-role="<%= current_user.role %>"> 
+  h4>Welcome to</h4>
 <h1>ROOM.ME</h1>
-<h4><%= @flatmate.first_name %></h4>
-
+<h4><%= @current_user.role.first_name %></h4>
+  <%= javascript_pack_tag 'redirect_pages' %>
+</body>
