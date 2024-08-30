@@ -22,20 +22,20 @@ class HostsController < ApplicationController
 
   def update
     @host = Host.find(params[:id])
-    if  @host.update!(host_params)
+    if @host.update!(host_params)
       redirect_to params[:step] == "3" ? tutorial_path : host_edit3_path(@host)
     else
       render params[:step] == "2" ? :edit2 : :edit3
     end
   end
 
-    def edit3
-      @host = Host.find(params[:id])
-    end
+  def edit3
+    @host = Host.find(params[:id])
+  end
 
-    def show
-      @host = Host.find(params[:id])
-    end
+  def show
+    @host = Host.find(params[:id])
+  end
 
   #   if @host.update(host_params)
   #     redirect_to @host, notice: 'Your host profile was successfully updated.'
@@ -56,5 +56,4 @@ class HostsController < ApplicationController
     params.require(:host).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number,
     :city, :district, :rent, :entry_date, :duration, :registration, :room_size, :furnished, :street, :postcode, :country)
   end
-
 end

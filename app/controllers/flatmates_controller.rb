@@ -23,11 +23,11 @@ class FlatmatesController < ApplicationController
 
   def update
     @flatmate = Flatmate.find(params[:id])
-   if  @flatmate.update!(flatmate_params)
-    redirect_to params[:step] == "3" ? tutorial_path : flatmate_edit3_path(@flatmate)
-   else
-    render params[:step] == "2" ? :edit2 : :edit3
-   end
+    if @flatmate.update!(flatmate_params)
+      redirect_to params[:step] == "3" ? tutorial_path : flatmate_edit3_path(@flatmate)
+    else
+      render params[:step] == "2" ? :edit2 : :edit3
+    end
   end
 
   def edit3
@@ -37,7 +37,6 @@ class FlatmatesController < ApplicationController
   def show
     @flatmate = Flatmate.find(params[:id])
   end
-
 
 #   def edit
 #     @flatmate = Flatmate.find(params[:id])
@@ -57,7 +56,7 @@ class FlatmatesController < ApplicationController
 #     @flatmate = Flatmate.find(params[:id])
 #     @flatmate.destroy
 #     redirect_to flatmates_path, notice: 'Your flatmate profile was successfully deleted.'
-#   end
+#    end
 
   private
 
