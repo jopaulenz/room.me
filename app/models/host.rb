@@ -4,8 +4,8 @@ class Host < ApplicationRecord
   has_many :matches, dependent: :destroy
   has_many_attached :photos
 
-  validates :profile_picture_url, presence: true
-  validates :apartment_picture_urls, presence: true, length: { maximum: 3 }
+  # validates :profile_picture_url, presence: true
+  # validates :apartment_picture_urls, presence: true, length: { maximum: 3 }
 
   # Ensure that apartment_picture_urls is an array
   #serialize :apartment_picture_urls, Array

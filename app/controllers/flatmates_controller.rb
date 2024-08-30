@@ -3,8 +3,10 @@ class FlatmatesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @flatmates = Flatmate.joins(:likes).where(likes: { liked: current_user.host })
+    # @flatmates = Flatmate.joins(:likes).where(likes: { liked: current_user.host })
+    @flatmates = Flatmate.all
   end
+
 
   def new
     @flatmate = Flatmate.new
@@ -82,4 +84,3 @@ class FlatmatesController < ApplicationController
     :city, :district, :rent_min, :rent_max, :entry_date, :duration, :registration, :room_size_min, :room_size_max, :furnished, :photo)
   end
 end
-P
