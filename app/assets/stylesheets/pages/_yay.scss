@@ -1,0 +1,35 @@
+body {
+  background-color: #FFCE4F;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h4 {
+  text-align: center;
+  color: #023145;
+  font-family: "Helvetica Neue";
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.success {
+  text-align: center;
+}
+.loader {
+  margin: 40px auto;
+  width: 160px;
+  aspect-ratio: 4;
+  --c: #023145 90%, #0000;
+  background:
+    radial-gradient(circle closest-side at left 6px top 50%, var(--c)),
+    radial-gradient(circle closest-side, var(--c)),
+    radial-gradient(circle closest-side at right 6px top 50%, var(--c));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  animation: l4 1s infinite alternate;
+}
+
+@keyframes l4 {
+  to { width: 50px; aspect-ratio: 1 }
+}
