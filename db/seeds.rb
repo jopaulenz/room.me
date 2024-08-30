@@ -13,6 +13,7 @@ josephine = User.find_or_create_by!(email: "josephine@roomme.com") do |user|
   user.password = "123456"
   user.role = 1
 end
+
 josephine_host = Host.find_or_create_by!(user: josephine, city: "Berlin") do |host|
   host.profile_picture_url = "https://d26jy9fbi4q9wx.cloudfront.net/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM1VnQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4331202c7b265b96eb4053dbe8a3118bb11e83ce/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJU2xCSEJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2hwQWNocEFjaDdCam9KWTNKdmNEb09ZWFIwWlc1MGFXOXUiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--35a77baed05205a7e10c3ee76e90ab712819a68d/944FA694-B114-4469-AC57-37F12ACEA7F4.JPG"
   host.apartment_picture_urls = [
@@ -20,13 +21,17 @@ josephine_host = Host.find_or_create_by!(user: josephine, city: "Berlin") do |ho
     "https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmxhdCUyMGludGVyaW9yJTIwbmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D",
     "https://images.unsplash.com/photo-1532952626554-d0cace1cd3fc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZsYXQlMjBpbnRlcmlvciUyMG5ldyUyMHlvcmt8ZW58MHx8MHx8fDA%3D"
   ]
-  host.address = "Alexanderplatz, Berlin, Germany"
+  host.street = "Alexanderplatz"
+  host.postcode = "10178"
+  host.city = "Berlin"
+  host.country = "Germany"
 end
 
 mustapha = User.find_or_create_by!(email: "mustapha@roomme.com") do |user|
   user.password = "123456"
   user.role = 1
 end
+
 Host.find_or_create_by!(user: mustapha, city: "Berlin") do |host|
   host.profile_picture_url = "https://avatars.githubusercontent.com/u/174129535?v=4"
   host.apartment_picture_urls = [
@@ -34,13 +39,17 @@ Host.find_or_create_by!(user: mustapha, city: "Berlin") do |host|
     "https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGludGVyaW9yJTIwZGVzaWduJTIwc2FuJTIwZnJhbmNpc2NvfGVufDB8fDB8fHww",
     "https://plus.unsplash.com/premium_photo-1720647024032-01a5e9740c96?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGludGVyaW9yJTIwZGVzaWduJTIwc2FuJTIwZnJhbmNpc2NvfGVufDB8fDB8fHww"
   ]
-  host.address = "Potsdamer Platz, Berlin, Germany"
+  host.street = "Potsdamer Platz"
+  host.postcode = "10785"
+  host.city = "Berlin"
+  host.country = "Germany"
 end
 
 sascha = User.find_or_create_by!(email: "sascha@roomme.com") do |user|
   user.password = "123456"
   user.role = 1
 end
+
 Host.find_or_create_by!(user: sascha, city: "Berlin") do |host|
   host.profile_picture_url = "https://avatars.githubusercontent.com/u/174243686?v=4"
   host.apartment_picture_urls = [
@@ -48,13 +57,17 @@ Host.find_or_create_by!(user: sascha, city: "Berlin") do |host|
     "https://images.unsplash.com/photo-1505409628601-edc9af17fda6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW50ZXJpb3IlMjBkZXNpZ24lMjBwYXJpc3xlbnwwfHwwfHx8MA%3D%3D",
     "https://images.unsplash.com/photo-1505409859467-3a796fd5798e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ24lMjBwYXJpc3xlbnwwfHwwfHx8MA%3D%3D"
   ]
-  host.address = "Friedrichstraße, Berlin, Germany"
+  host.street = "Kurfürstendamm"
+  host.postcode = "10707"
+  host.city = "Berlin"
+  host.country = "Germany"
 end
 
 justus = User.find_or_create_by!(email: "justus@roomme.com") do |user|
   user.password = "123456"
   user.role = 1
 end
+
 Host.find_or_create_by!(user: justus, city: "Berlin") do |host|
   host.profile_picture_url = "https://avatars.githubusercontent.com/u/174940439?v=4"
   host.apartment_picture_urls = [
@@ -62,7 +75,10 @@ Host.find_or_create_by!(user: justus, city: "Berlin") do |host|
     "https://images.unsplash.com/photo-1595846519845-68e298c2edd8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGludGVyaW9yJTIwZGVzaWduJTIwTG9uZG9ufGVufDB8fDB8fHww",
     "https://plus.unsplash.com/premium_photo-1670076515866-73822a3d610d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGludGVyaW9yJTIwZGVzaWduJTIwTG9uZG9ufGVufDB8fDB8fHww"
   ]
-  host.address = "Kurfürstendamm, Berlin, Germany"
+  host.street = "Friedrichstraße"
+  host.postcode = "10117"
+  host.city = "Berlin"
+  host.country = "Germany"
 end
 
 # Create Flatmates
