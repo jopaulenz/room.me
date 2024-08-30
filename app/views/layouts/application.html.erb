@@ -12,12 +12,15 @@
   </head>
 
   <body>
+  <div class="page_container">
+    <div class="content-container"><%= yield %>
+    </div>
+    <div class="navbar-container"><%= render "shared/navbar_home" %>
+    </div>
+  </div>
     <%# Render specific navbar only on relevant pages %>
     <%# <% unless controller_name == "living_preferences" && (action_name == "new" || action_name == "edit") %>
-      <%#= render "shared/navbar" %>
     <%# end %>
-
-    <%= yield %>
 
     <%= render "shared/flashes" %>
   </body>

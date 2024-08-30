@@ -1,3 +1,4 @@
+
 .navbar {
   width: 100%;
   background: linear-gradient(
@@ -14,9 +15,11 @@
   padding: 0 24px;
 }
 
-
-.container {
-  width: 100%;
+.page_container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  width: 100vw;
 
 }
 
