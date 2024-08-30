@@ -7,7 +7,7 @@ class Host < ApplicationRecord
   validates :apartment_picture_urls, presence: true, length: { maximum: 3 }
 
   # Ensure that apartment_picture_urls is an array
-  serialize :apartment_picture_urls, Array
+  #serialize :apartment_picture_urls, Array
 
   validates :city, presence: true
 end
