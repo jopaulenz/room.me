@@ -53,7 +53,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_30_104210) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "city"
     t.string "first_name"
     t.string "last_name"
     t.date "date_of_birth"
@@ -68,6 +67,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_30_104210) do
     t.integer "registration"
     t.integer "room_size"
     t.integer "furnished"
+    t.string "city"
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_hosts_on_user_id"
@@ -91,13 +91,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_30_104210) do
     t.integer "gender", null: false
     t.integer "smoking", null: false
     t.integer "partying", null: false
-    t.integer "age", null: false
-    t.integer "furnished", null: false
-    t.integer "dishwasher", null: false
-    t.integer "washingmaschine", null: false
-    t.integer "balcony", null: false
-    t.integer "kitchen", null: false
-    t.integer "bathtub", null: false
     t.string "aboutme"
     t.string "interest"
     t.datetime "created_at", null: false

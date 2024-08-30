@@ -13,13 +13,14 @@
   align-items: flex-end;
   color: #023145;
   padding: 0 24px;
+  width: 100vw;
 }
 
 .page_container {
   display: grid;
   min-height: 100vh;
-  grid-template-rows: auto 1fr auto;
-  width: 100vw;
+  grid-template-rows: 1fr auto;
+
 
 }
 
