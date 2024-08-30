@@ -3,15 +3,24 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Health check
   get "up" => "rails/health#show", as: :rails_health_check
 
+  # Host and Flatmate routes
+  resources :hosts, only: [:new, :create] do
+    resources :likes, only: [:create, :destroy], module: :hosts
+    resources :dislikes, only: [:create, :destroy], module: :hosts
+  end
   resources :hosts, only: [:new, :create, :update, :show]
   resources :flatmates, only: [:new, :create, :update, :show]
 
+  resources :flatmates, only: [:new, :create] do
+    resources :likes, only: [:create, :destroy], module: :flatmates
+    resources :dislikes, only: [:create, :destroy], module: :flatmates
+  end
+
+  # User role selection
   get "choose_role", to: 'users#choose_role'
   patch "role", to: 'users#role'
 
@@ -22,10 +31,12 @@ Rails.application.routes.draw do
   get 'hosts/:id/step3', to: 'hosts#edit3', as: :host_edit3
 
   get 'tutorial', to: 'pages#tutorial', as: :tutorial
+  get 'welcome/:id', to: 'pages#welcome', as: :welcome
+  get 'success', to: 'pages#success', as: :success
 
-
+  # Living preferences
   resources :living_preferences, only: [:new, :create, :edit, :update]
 
-
-
+  # Matches index
+  resources :matches, only: [:index]
 end

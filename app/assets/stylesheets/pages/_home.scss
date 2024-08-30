@@ -1,1 +1,72 @@
 // Specific CSS for your home-page
+body {
+  background-color: #FFCE4F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the body takes up the full viewport height */
+  margin: 0;
+}
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: fadeIn 1s ease 2s forwards;
+  margin-top: -100px; /* Move 100px up */
+}
+.header h1 {
+  font-family: "Fredoka", sans-serif;
+  color: #f6f6f6;
+  font-size: 60px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.ball {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #023145;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  animation: growBall 0.5s ease 2s forwards, fadeIn 0.5s ease 2s forwards; /* Faster growBall and fadeIn */
+}
+.logo {
+  height: 60px;
+  width: 60px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 2s forwards;
+}
+.slogan {
+  margin-top: 70px;
+  color: #023145;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 2s forwards;
+
+}
+p {
+  text-align: center;
+}
+@keyframes growBall {
+  0% {
+    transform: scale(1); /* Start from 0 scale for invisibility */
+  }
+  100% {
+    transform: scale(2.5); /* Final scale (250px) */
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    opacity: 1; /* Fade in to fully visible */
+  }
+}
