@@ -1,6 +1,10 @@
 class HostsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @hosts = Host.includes(:living_preference).all
+  end
+
   def new
     @host = Host.new
   end

@@ -1,0 +1,25 @@
+<!-- app/views/hosts/index.html.erb -->
+<h1>Available Hosts</h1>
+
+<% @hosts.each do |host| %>
+  <div class="host-profile">
+    <h2><%= host.user.email %> - <%= host.city %></h2>
+    <p><strong>About the Host:</strong> <%= host.living_preference.aboutme %></p>
+    <p><strong>Interests:</strong> <%= host.living_preference.interest %></p>
+    <p><strong>Cleanliness:</strong> <%= host.living_preference.cleanliness.humanize %></p>
+    <p><strong>Smoking Preference:</strong> <%= host.living_preference.smoking.humanize %></p>
+    <%= image_tag host.profile_picture_url if host.profile_picture_url.present? %>
+
+    <h3>Apartment Pictures:</h3>
+    <% host.apartment_picture_urls.each do |url| %>
+      <%= image_tag url, class: 'apartment-image' %>
+    <% end %>
+
+    <%= link_to 'View Profile', host_path(host), class: 'btn btn-primary' %>
+    <%= link_to 'Like', host_likes_path(host), method: :post, class: 'btn btn-success' %>
+    <%= link_to 'Dislike', host_dislikes_path(host), method: :post, class: 'btn btn-danger' %>
+  </div>
+<% end %>
+
+<%= link_to 'LIKE', like_path, class: "btn btn-warning" %>
+<%= link_to 'DISLIKE', dislike_path, class: "btn btn-warning" %>
