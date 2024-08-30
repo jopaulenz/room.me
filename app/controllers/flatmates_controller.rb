@@ -15,7 +15,6 @@ class FlatmatesController < ApplicationController
     @flatmate.user = current_user
     @flatmate.save
     redirect_to flatmate_edit2_path(@flatmate)
-
   end
 
   def edit2

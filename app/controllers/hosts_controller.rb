@@ -24,10 +24,10 @@ class HostsController < ApplicationController
     @host = Host.find(params[:id])
     if  @host.update!(host_params)
       redirect_to params[:step] == "3" ? tutorial_path : host_edit3_path(@host)
-     else
+    else
       render params[:step] == "2" ? :edit2 : :edit3
-     end
     end
+  end
 
     def edit3
       @host = Host.find(params[:id])
