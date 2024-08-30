@@ -22,8 +22,12 @@ class HostsController < ApplicationController
 
   def update
     @host = Host.find(params[:id])
-    if  @host.update!(host_params)
-      redirect_to params[:step] == "3" ? tutorial_path : host_edit3_path(@host)
+    if @host.update(host_params)
+      if params[:step] == "3"
+        redirect_to flatmates_path, notice: 'Profile successfully updated. Now, explore available flatmates.'
+      else
+        redirect_to host_edit3_path(@host)
+      end
     else
       render params[:step] == "2" ? :edit2 : :edit3
     end

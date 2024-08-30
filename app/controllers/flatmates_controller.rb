@@ -23,11 +23,15 @@ class FlatmatesController < ApplicationController
 
   def update
     @flatmate = Flatmate.find(params[:id])
-   if  @flatmate.update!(flatmate_params)
-    redirect_to params[:step] == "3" ? tutorial_path : flatmate_edit3_path(@flatmate)
-   else
-    render params[:step] == "2" ? :edit2 : :edit3
-   end
+    if @flatmate.update(flatmate_params)
+      if params[:step] == "3"
+        redirect_to hosts_path, notice: 'Profile successfully updated. Now, explore available hosts.'
+      else
+        redirect_to flatmate_edit3_path(@flatmate)
+      end
+    else
+      render params[:step] == "2" ? :edit2 : :edit3
+    end
   end
 
   def edit3
