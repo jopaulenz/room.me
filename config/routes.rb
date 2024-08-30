@@ -31,7 +31,8 @@ Rails.application.routes.draw do
   get 'hosts/:id/step3', to: 'hosts#edit3', as: :host_edit3
 
   get 'tutorial', to: 'pages#tutorial', as: :tutorial
-
+  get 'welcome/:id', to: 'pages#welcome', as: :welcome
+  get 'success', to: 'pages#success', as: :success
 
   # Living preferences
   resources :living_preferences, only: [:new, :create, :edit, :update]
