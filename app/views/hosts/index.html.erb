@@ -1,23 +1,22 @@
-<!-- app/views/hosts/index.html.erb -->
 <h1>Available Hosts</h1>
 
 <% @hosts.each do |host| %>
   <div class="host-profile">
     <h2><%= host.user.email %> - <%= host.city %></h2>
-    <p><strong>City:</strong> <%= @host.city %></p>
-    <p><strong>Address:</strong> <%= @host.full_street_address %></p>
-    <p><strong>About the Host:</strong> <%= @host.living_preference.aboutme %></p>
-    <p><strong>Interests:</strong> <%= @host.living_preference.interest %></p>
-    <p><strong>Cleanliness:</strong> <%= @host.living_preference.cleanliness.humanize %></p>
-    <p><strong>Smoking:</strong> <%= @host.living_preference.smoking.humanize %></p>
-    <p><strong>Partying:</strong> <%= @host.living_preference.partying.humanize %></p>
-    <p><strong>Age Preference:</strong> <%= @host.living_preference.age.humanize %></p>
-    <p><strong>Furnished:</strong> <%= @host.living_preference.furnished.humanize %></p>
-    <p><strong>Dishwasher:</strong> <%= @host.living_preference.dishwasher.humanize %></p>
-    <p><strong>Washing Machine:</strong> <%= @host.living_preference.washingmaschine.humanize %></p>
-    <p><strong>Balcony:</strong> <%= @host.living_preference.balcony.humanize %></p>
-    <p><strong>Kitchen:</strong> <%= @host.living_preference.kitchen.humanize %></p>
-    <p><strong>Bathtub:</strong> <%= @host.living_preference.bathtub.humanize %></p>
+    <p><strong>City:</strong> <%= host.city %></p>
+    <p><strong>Address:</strong> <%= host.full_street_address %></p>
+    <p><strong>About the Host:</strong> <%= host.living_preference.aboutme %></p>
+    <p><strong>Interests:</strong> <%= host.living_preference.interest %></p>
+    <p><strong>Cleanliness:</strong> <%= host.living_preference.cleanliness.humanize %></p>
+    <p><strong>Smoking:</strong> <%= host.living_preference.smoking.humanize %></p>
+    <p><strong>Partying:</strong> <%= host.living_preference.partying.humanize %></p>
+    <p><strong>Age Preference:</strong> <%= host.living_preference.age.humanize %></p>
+    <p><strong>Furnished:</strong> <%= host.living_preference.furnished.humanize %></p>
+    <p><strong>Dishwasher:</strong> <%= host.living_preference.dishwasher.humanize %></p>
+    <p><strong>Washing Machine:</strong> <%= host.living_preference.washingmaschine.humanize %></p>
+    <p><strong>Balcony:</strong> <%= host.living_preference.balcony.humanize %></p>
+    <p><strong>Kitchen:</strong> <%= host.living_preference.kitchen.humanize %></p>
+    <p><strong>Bathtub:</strong> <%= host.living_preference.bathtub.humanize %></p>
 
     <%= image_tag host.profile_picture_url if host.profile_picture_url.present? %>
 
@@ -50,7 +49,7 @@
 
     <script>
       mapboxgl.accessToken = 'pk.eyJ1IjoiZWJldHVyayIsImEiOiJjbHo5bXN4eTMwY3g0MnFwamFpMHg2OWJ3In0.Ydo4NwfJpB2HimOC98ckCg';
-      const map = new mapboxgl.Map({
+      const map<%= host.id %> = new mapboxgl.Map({
         container: 'map-<%= host.id %>',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [<%= host.longitude %>, <%= host.latitude %>],
@@ -59,7 +58,7 @@
 
       new mapboxgl.Marker()
         .setLngLat([<%= host.longitude %>, <%= host.latitude %>])
-        .addTo(map);
+        .addTo(map<%= host.id %>);
     </script>
 
     <%= link_to 'View Profile', host_path(host), class: 'btn btn-primary' %>
