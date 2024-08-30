@@ -8,17 +8,16 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Host and Flatmate routes
-  resources :hosts, only: [:new, :create] do
+  resources :hosts, only: [:new, :create, :update, :index, :show] do
     resources :likes, only: [:create, :destroy], module: :hosts
     resources :dislikes, only: [:create, :destroy], module: :hosts
   end
-  resources :hosts, only: [:new, :create, :update, :show]
-  resources :flatmates, only: [:new, :create, :update, :show]
 
-  resources :flatmates, only: [:new, :create] do
+  resources :flatmates, only: [:new, :create, :update, :index, :show] do
     resources :likes, only: [:create, :destroy], module: :flatmates
     resources :dislikes, only: [:create, :destroy], module: :flatmates
   end
+
 
   # User role selection
   get "choose_role", to: 'users#choose_role'

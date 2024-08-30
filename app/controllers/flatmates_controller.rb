@@ -2,10 +2,13 @@ class FlatmatesController < ApplicationController
   # before_action :set_flatmate, only: [:edit, :update]
   before_action :authenticate_user!
 
+  def index
+    @flatmates = Flatmate.joins(:likes).where(likes: { liked: current_user.host })
+  end
+
   def new
     @flatmate = Flatmate.new
   end
-
 
   def create
     @flatmate = Flatmate.new(step1_params)
