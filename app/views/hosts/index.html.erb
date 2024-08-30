@@ -4,16 +4,46 @@
 <% @hosts.each do |host| %>
   <div class="host-profile">
     <h2><%= host.user.email %> - <%= host.city %></h2>
-    <p><strong>About the Host:</strong> <%= host.living_preference.aboutme %></p>
-    <p><strong>Interests:</strong> <%= host.living_preference.interest %></p>
-    <p><strong>Cleanliness:</strong> <%= host.living_preference.cleanliness.humanize %></p>
-    <p><strong>Smoking Preference:</strong> <%= host.living_preference.smoking.humanize %></p>
+    <p><strong>City:</strong> <%= @host.city %></p>
+    <p><strong>Address:</strong> <%= @host.full_street_address %></p>
+    <p><strong>About the host:</strong> <%= @host.living_preference.aboutme %></p>
+    <p><strong>Interests:</strong> <%= @host.living_preference.interest %></p>
+    <p><strong>Cleanliness:</strong> <%= @host.living_preference.cleanliness.humanize %></p>
+    <p><strong>Smoking:</strong> <%= @host.living_preference.smoking.humanize %></p>
+    <p><strong>Partying:</strong> <%= @host.living_preference.partying.humanize %></p>
+    <p><strong>Age Preference:</strong> <%= @host.living_preference.age.humanize %></p>
+    <p><strong>Furnished:</strong> <%= @host.living_preference.furnished.humanize %></p>
+    <p><strong>Dishwasher:</strong> <%= @host.living_preference.dishwasher.humanize %></p>
+    <p><strong>Washing Machine:</strong> <%= @host.living_preference.washingmaschine.humanize %></p>
+    <p><strong>Balcony:</strong> <%= @host.living_preference.balcony.humanize %></p>
+    <p><strong>Kitchen:</strong> <%= @host.living_preference.kitchen.humanize %></p>
+    <p><strong>Bathtub:</strong> <%= @host.living_preference.bathtub.humanize %></p>
+
     <%= image_tag host.profile_picture_url if host.profile_picture_url.present? %>
 
     <h3>Apartment Pictures:</h3>
-    <% host.apartment_picture_urls.each do |url| %>
-      <%= image_tag url, class: 'apartment-image' %>
-    <% end %>
+    <div id="carousel-<%= host.id %>" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <% host.apartment_picture_urls.each_with_index do |url, index| %>
+          <li data-target="#carousel-<%= host.id %>" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% host.apartment_picture_urls.each_with_index do |url, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <%= image_tag url, class: 'd-block w-100' %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carousel-<%= host.id %>" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-<%= host.id %>" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 
     <!-- Mapbox Karte -->
     <div id='map-<%= host.id %>' style='width: 100%; height: 300px;'></div>
