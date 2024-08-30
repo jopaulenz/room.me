@@ -1,6 +1,10 @@
 class HostsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @hosts = Host.includes(:living_preference).all
+  end
+
   def new
     @host = Host.new
   end
@@ -20,10 +24,10 @@ class HostsController < ApplicationController
     @host = Host.find(params[:id])
     if  @host.update!(host_params)
       redirect_to params[:step] == "3" ? tutorial_path : host_edit3_path(@host)
-     else
+    else
       render params[:step] == "2" ? :edit2 : :edit3
-     end
     end
+  end
 
     def edit3
       @host = Host.find(params[:id])
@@ -50,7 +54,7 @@ class HostsController < ApplicationController
 
   def host_params
     params.require(:host).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number,
-    :city, :district, :rent, :entry_date, :duration, :registration, :room_size, :furnished)
+    :city, :district, :rent, :entry_date, :duration, :registration, :room_size, :furnished, :street, :postcode, :country)
   end
 
 end
