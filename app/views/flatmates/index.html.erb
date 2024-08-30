@@ -11,6 +11,17 @@
     <p><strong>Interests:</strong> <%= flatmate.living_preference.interest %></p>
     <p><strong>Cleanliness:</strong> <%= flatmate.living_preference.cleanliness.humanize %></p>
     <p><strong>Smoking Preference:</strong> <%= flatmate.living_preference.smoking.humanize %></p>
+    <p><strong>City:</strong> <%= @host.city %></p>
+    <p><strong>Address:</strong> <%= @host.full_street_address %></p>
+    <p><strong>Partying:</strong> <%= @host.living_preference.partying.humanize %></p>
+    <p><strong>Age Preference:</strong> <%= @host.living_preference.age.humanize %></p>
+    <p><strong>Furnished:</strong> <%= @host.living_preference.furnished.humanize %></p>
+    <p><strong>Dishwasher:</strong> <%= @host.living_preference.dishwasher.humanize %></p>
+    <p><strong>Washing Machine:</strong> <%= @host.living_preference.washingmaschine.humanize %></p>
+    <p><strong>Balcony:</strong> <%= @host.living_preference.balcony.humanize %></p>
+    <p><strong>Kitchen:</strong> <%= @host.living_preference.kitchen.humanize %></p>
+    <p><strong>Bathtub:</strong> <%= @host.living_preference.bathtub.humanize %></p>
+
 
     <%= image_tag flatmate.profile_picture_url if flatmate.profile_picture_url.present? %>
 
