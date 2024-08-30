@@ -22,7 +22,7 @@ class FlatmatesController < ApplicationController
   end
 
   def update
-    @flatmate = Flatmate.find(params[:id]
+    @flatmate = Flatmate.find(params[:id])
     if @flatmate.update!(flatmate_params)
       redirect_to params[:step] == "3" ? tutorial_path : flatmate_edit3_path(@flatmate)
     else
@@ -79,6 +79,7 @@ class FlatmatesController < ApplicationController
 
   def flatmate_params
     params.require(:flatmate).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number,
-    :city, :district, :rent_min, :rent_max, :entry_date, :duration, :registration, :room_size_min, :room_size_max, :furnished)
+    :city, :district, :rent_min, :rent_max, :entry_date, :duration, :registration, :room_size_min, :room_size_max, :furnished, :photo)
   end
 end
+P

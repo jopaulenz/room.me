@@ -2,6 +2,7 @@ class Host < ApplicationRecord
   belongs_to :user
   has_one :living_preference, as: :preferable, dependent: :destroy
   has_many :matches, dependent: :destroy
+  has_many_attached :photos
 
   validates :profile_picture_url, presence: true
   validates :apartment_picture_urls, presence: true, length: { maximum: 3 }

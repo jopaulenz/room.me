@@ -333,3 +333,4 @@ puts "Creating Matches..."
 Match.find_or_create_by!(flatmate: frida_flatmate, host: josephine_host)
 
 puts "#{User.count} users (#{Host.count} hosts, #{Flatmate.count} flatmates), #{LivingPreference.count} living preferences, #{Like.count} likes, and #{Match.count} matches created."
+e
