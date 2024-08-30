@@ -10,4 +10,15 @@ class Host < ApplicationRecord
   serialize :apartment_picture_urls, Array
 
   validates :city, presence: true
+
+  geocoded_by :full_street_address
+  after_validation :geocode, if: :full_street_address_changed?
+
+  def full_street_address
+    "#{street}, #{city}, #{postcode}, #{country}"
+  end
+
+  def full_street_address_changed?
+    street_changed? || city_changed? || postcode_changed? || country_changed?
+  end
 end
