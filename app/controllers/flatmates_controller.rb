@@ -22,7 +22,7 @@ class FlatmatesController < ApplicationController
   end
 
   def update
-    @flatmate = Flatmate.find(params[:id])
+    @flatmate = Flatmate.find(params[:id]
     if @flatmate.update!(flatmate_params)
       redirect_to params[:step] == "3" ? tutorial_path : flatmate_edit3_path(@flatmate)
     else
