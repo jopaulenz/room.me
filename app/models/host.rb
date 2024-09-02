@@ -3,6 +3,7 @@ class Host < ApplicationRecord
   has_one :living_preference, as: :preferable, dependent: :destroy
   has_many :matches, dependent: :destroy
   has_many_attached :photos
+  has_one_attached :profile_photo
 
   # validates :profile_picture_url, presence: true
 
