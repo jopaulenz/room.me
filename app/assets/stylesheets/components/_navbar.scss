@@ -1,10 +1,5 @@
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.nav-bar {
-  align-items: flex-end;
+.navbar {
+  width: 100%;
   background: linear-gradient(
     to top,
     #FFCE4F,
@@ -14,26 +9,15 @@
   );
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   color: #023145;
-  padding: 24px 24px 0 24px ;
-  width: 100vw;
-  // position: relative;
-}
-#headyou {
-  text-align: center;
-  color: #023145;
-  font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 24px;
 }
 
 
-.page_container {
-  display: grid;
-  min-height: 100vh;
-  grid-template-rows: 1fr auto;
-  margin-top: 40px;
-  margin-left: 16px;
-  margin-right: 16px;
+.container {
+  width: 100%;
+
 }
 
  .home {

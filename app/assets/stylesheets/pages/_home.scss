@@ -1,19 +1,20 @@
-// Specific CSS for your home-page
 body {
   background-color: #FFCE4F;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ensure the body takes up the full viewport height */
-  margin: 0;
+
 }
+  body {
+    background-color: #FFCE4F !important;
+  }
 .header {
   text-align: center;
-  margin-bottom: 50px;
   opacity: 0;
   animation: fadeIn 1s ease 2s forwards;
-  margin-top: -100px; /* Move 100px up */
+  padding-top: 200px;
+  padding-bottom: 60px;
 }
 .header h1 {
   font-family: "Fredoka", sans-serif;
@@ -25,7 +26,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  padding: 24px;
+}
+.content-container {
 }
 .ball {
   height: 80px;
@@ -49,10 +52,11 @@ body {
   color: #023145;
   opacity: 0;
   animation: fadeIn 0.5s ease 2s forwards;
-
 }
 p {
   text-align: center;
+  font-size: 24px;
+  font-weight: 100;
 }
 @keyframes growBall {
   0% {

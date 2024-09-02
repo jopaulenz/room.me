@@ -60,7 +60,7 @@ class HostsController < ApplicationController
   def host_params_step2
     params.require(:host).permit(:city, :district, :rent, :entry_date)
   end
-
+  
   def host_params_step3
     params.require(:host).permit(:duration, :registration, :room_size_min, :room_size_max, :furnished)
   end
