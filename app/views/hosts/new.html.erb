@@ -43,6 +43,16 @@
       <%= form.telephone_field :phone_number, class: "form-control", placeholder: "Enter your phone number" %>
     </div>
 
+  <div class="form-group">
+    <%= form.label :photos %>
+    <%= form.file_field :photos, class: "form-control", multiple: true, accept: 'image/*' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "CONTINUE", class: "continue" %>
+  </div>
+
+
     <!-- Use mt-auto to push the button to the bottom -->
     <div class="form-group mt-auto">
       <%= form.submit "CONTINUE", class: "continue w-100" %>

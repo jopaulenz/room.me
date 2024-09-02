@@ -13,19 +13,16 @@
 
   <div class="f-group">
     <%= f.label :registration, "Registration Requirement" %><br>
-    <%= f.radio_button :registration, "I need it", id: "need_registration" %>
-    <%= f.label :registration, "I need it", for: "need_registration" %><br>
-    <%= f.radio_button :registration, "I don't need it", id: "no_registration" %>
-    <%= f.label :registration, "I don't need it", for: "no_registration" %>
+    <%= f.radio_button :registration, "I need a Flatmate as soon as possible.", id: "need_registration" %>
+    <%= f.label :registration, "I need a Flatmate as soon as possible.", for: "need_registration" %><br>
+    <%= f.radio_button :registration, "I am looking for a Flatmate within the next couple of months", id: "no_registration" %>
+    <%= f.label :registration, "I am looking for a Flatmate within the next couple of months", for: "no_registration" %>
   </div>
+
   <div>
-    <%= f.label :room_size_min, "Room size (m²) - Min" %>
-    <%= f.number_field :room_size_min, min: 0 %>
-
-    <%= f.label :room_size_max, "Room size (m²) - Max" %>
-    <%= f.number_field :room_size_max, min: 0 %>
+    <%= f.label :room_size, "Room size (m²)" %>
+    <%= f.number_field :room_size, min: 0, class: "form-control", placeholder: "Enter the room size" %>
   </div>
-
 
   <div>
     <%= f.label :furnished, "Furnished?" %>
