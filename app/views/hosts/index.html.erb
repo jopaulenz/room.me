@@ -18,7 +18,8 @@
     <p><strong>Kitchen:</strong> <%= host.living_preference.kitchen.humanize %></p>
     <p><strong>Bathtub:</strong> <%= host.living_preference.bathtub.humanize %></p>
 
-    <%= image_tag(host.profile_photo, class: 'img-fluid rounded mb-3', alt: 'Profile Picture') if host.profile_photo.attached? %>
+   <%= cl_image_tag(host.profile_photo.key, class: 'img-fluid rounded mb-3', alt: 'Profile Picture') if host.profile_photo.attached? %>
+
     <h3>Apartment Pictures:</h3>
     <div id="carousel-<%= host.id %>" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -60,11 +61,17 @@
         .addTo(map<%= host.id %>);
     </script>
 
+<<<<<<< HEAD
     <div class="d-flex justify-content-between mt-3">
       <%= link_to 'View Profile', host_path(host), class: 'btn btn-primary btn-lg' %>
       <%= link_to 'Like', host_likes_path(host), method: :post, class: 'btn btn-success btn-lg' %>
       <%= link_to 'Dislike', host_dislikes_path(host), method: :post, class: 'btn btn-danger btn-lg' %>
     </div>
+=======
+    <%= link_to 'View Profile', host_path(host), class: 'btn btn-primary' %>
+    <%= link_to 'Like', host_likes_path(host), method: :post, class: 'btn btn-success', data: { turbo_method: :post} %>
+    <%= link_to 'Dislike', host_dislikes_path(host), method: :post, class: 'btn btn-danger', data: { turbo_method: :post} %>
+>>>>>>> 41e860b482034bd44962b6563cc913d1e1d3fbfa
   </div>
 <% end %>
 

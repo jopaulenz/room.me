@@ -81,6 +81,6 @@ class FlatmatesController < ApplicationController
 
   def flatmate_params
     params.require(:flatmate).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number,
-    :city, :district, :rent_min, :rent_max, :entry_date, :duration, :registration, :room_size_min, :room_size_max, :furnished, :photo)
+    :city, :district, :rent_min, :rent_max, :entry_date, :duration, :registration, :room_size_min, :room_size_max, :furnished, :profile_photo)
   end
 end

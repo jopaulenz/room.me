@@ -1,30 +1,71 @@
-<%# How do you want to live? Step 2 %>
-<h1>What do you offer?</h1>
+<div class="whitebg">
+  <%# How do you want to live? Step 2 %>
+  <h1 class="headyou">What do you offer?</h1>
 
-<%= form_with(model: @host, url: host_path(@host), method: :patch, local: true) do |form| %>
-<%= hidden_field_tag 'step', '2'%>
-  <div class="form-group">
-    <%= form.label :city %>
-    <%= form.text_field :city, class: "form-control", placeholder: "Enter the city" %>
-  </div>
+  <%= form_with(model: @host, url: host_path(@host), method: :patch, local: true) do |form| %>
+    <%= hidden_field_tag 'step', '2'%>
 
-  <div class="form-group">
-    <%= form.label :district %>
-    <%= form.text_field :district, class: "form-control", placeholder: "Enter the district" %>
-  </div>
+    <!-- City Selection with Radio Buttons -->
+    <div class="form-group">
+      <%= form.label :city, "City", class: "custom-label" %><br>
+      <div class="form-group flex">
+        <div>
+          <%= form.radio_button :city, "Berlin", id: "city_berlin" %>
+          <%= form.label :city, "Berlin", for: "city_berlin", class: "tag" %>
+        </div>
+        <div>
+          <%= form.radio_button :city, "Buxtehude", id: "city_buxtehude" %>
+          <%= form.label :city, "Buxtehude", for: "city_buxtehude", class: "tag" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :rent, " Rent" %>
-    <%= form.number_field :rent, class: "form-control", placeholder: "Enter the rent" %>
-  </div>
+    <!-- District Selection with Radio Buttons -->
+    <div class="form-group">
+      <%= form.label :district, "District", class: "custom-label" %><br>
+      <div class="form-group flex">
+        <div>
+          <%= form.radio_button :district, "Kreuzberg", id: "district_kreuzberg" %>
+          <%= form.label :district, "Kreuzberg", for: "district_kreuzberg", class: "tag" %>
+        </div>
+        <div>
+          <%= form.radio_button :district, "Mitte", id: "district_mitte" %>
+          <%= form.label :district, "Mitte", for: "district_mitte", class: "tag" %>
+        </div>
+        <div>
+          <%= form.radio_button :district, "Marzahn", id: "district_marzahn" %>
+          <%= form.label :district, "Marzahn", for: "district_marzahn", class: "tag" %>
+        </div>
+        <div>
+          <%= form.radio_button :district, "Friedrichshain", id: "district_friedrichshain" %>
+          <%= form.label :district, "Friedrichshain", for: "district_friedrichshain", class: "tag" %>
+        </div>
+        <div>
+          <%= form.radio_button :district, "Wedding", id: "district_wedding" %>
+          <%= form.label :district, "Wedding", for: "district_wedding", class: "tag" %>
+        </div>
+        <div>
+          <%= form.radio_button :district, "Neukölln", id: "district_neulölln" %>
+          <%= form.label :district, "Neukölln", for: "district_neulölln", class: "tag" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :entry_date, "Preferred Entry Date" %>
-    <%= form.date_field :entry_date, class: "form-control", placeholder: "Select the preferred entry date" %>
-  </div>
+    <!-- Rent Input -->
+    <div class="form-group">
+      <%= form.label :rent, "Rent", class: "custom-label" %>
+      <%= form.number_field :rent, class: "custom-input", placeholder: "Enter the rent" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.submit "CONTINUE", class: "btn btn-warning" %>
-  </div>
-<% end %>
-<%= console %>
+    <!-- Preferred Entry Date -->
+    <div class="form-group">
+      <%= form.label :entry_date, "Preferred Entry Date", class: "custom-label" %>
+      <%= form.date_field :entry_date, class: "custom-input", placeholder: "Select the preferred entry date" %>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <%= form.submit "CONTINUE", class: "continue" %>
+    </div>
+  <% end %>
+</div>
