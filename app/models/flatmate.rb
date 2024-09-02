@@ -4,3 +4,4 @@ class Flatmate < ApplicationRecord
   has_many :matches, dependent: :destroy
   has_one_attached :photo
 end
+

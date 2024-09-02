@@ -1,9 +1,18 @@
-<h1>Your Matches</h1>
-
+<h1>Your matches</h1>
 <ul>
   <% @matches.each do |match| %>
+  <% if current_user.host %>
+    <div class="profile-pic">
+      <%= cl_image_tag match.flatmate.photo.key %>
+    </div>
+  <% else %>
+    <div class="profile-pic">
+      <%= cl_image_tag match.host.photo.key %>
+    </div>
+  <% end %>
+
     <li>
-      Matched with <%= match.host == current_user ? match.flatmate.email : match.host.email %>
+      Matched with <%= match.host == current_user ? match.flatmate.first_name : match.host.first_name %>
     </li>
   <% end %>
 </ul>
