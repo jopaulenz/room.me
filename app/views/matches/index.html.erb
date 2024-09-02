@@ -3,11 +3,11 @@
   <% @matches.each do |match| %>
   <% if current_user.host %>
     <div class="profile-pic">
-      <%= cl_image_tag match.flatmate.photo.key %>
+      <%= cl_image_tag match.flatmate.profile_photo.key %>
     </div>
   <% else %>
     <div class="profile-pic">
-      <%= cl_image_tag match.host.photo.key %>
+      <%= cl_image_tag match.host.profile_photo.key %>
     </div>
   <% end %>
 
