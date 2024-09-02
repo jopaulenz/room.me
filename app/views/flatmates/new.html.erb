@@ -1,6 +1,6 @@
-<div class="whitebg">
+  <div class="whitebg">
   <%# This is you - step 1 %>
-  <h1 id="headyou">This is you</h1>
+  <h1 class="headyou">This is you</h1>
   <br>
 
   <%= form_with(model: @flatmate, local: true) do |form| %>
@@ -54,6 +54,11 @@
     <div class="form-group">
       <%= form.label :phone_number, "Phone Number", class: "custom-label" %>
       <%= form.telephone_field :phone_number, class: "custom-input", placeholder: "Enter your phone number" %>
+    </div>
+    
+    <div class="form-group">
+      <%= form.label :profile_photo %>
+      <%= form.file_field :profile_photo, class: "form-control", accept: 'image/*' %>
     </div>
 
     <div class="form-group">
