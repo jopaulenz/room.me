@@ -1,45 +1,47 @@
-<%# This is you - step 1 %>
-<h1 id="headyou">This is you</h1>
+ <div class="whitebg d-flex flex-column" style="min-height: 100vh;">
+  <%# This is you - step 1 %>
+  <h1 id="headyou">This is you</h1>
 
-<%= form_with(model: @host, local: true) do |form| %>
-
-  <div class="d-flex justify-content-between align-items-center">
+  <%= form_with(model: @host, local: true, class: "d-flex flex-column flex-grow-1") do |form| %>
     <div class="form-group">
-      <%= form.label :first_name %>
+      <%= form.label :first_name, class: "custom-label" %>
       <%= form.text_field :first_name, class: "form-control", placeholder: "Enter your first name" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :last_name %>
+      <%= form.label :last_name, class: "custom-label" %>
       <%= form.text_field :last_name, class: "form-control", placeholder: "Enter your last name" %>
     </div>
-  </div>
 
-  <div class="form-group">
-    <%= form.label :birthday %>
-    <%= form.date_field :date_of_birth, class: "form-control", placeholder: "Select your birthday" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :birthday, class: "custom-label" %>
+      <%= form.date_field :date_of_birth, class: "form-control", placeholder: "Select your birthday" %>
+    </div>
 
-  <!-- Gender field with label above the select -->
-  <div class="form-group">
-    <%= form.label :gender %>
-    <%= form.select :gender, options_for_select(['Male', 'Female', 'Non-binary', 'Other']), class: "form-control" %>
-  </div>
+    <!-- Gender field with label above the select -->
+    <div class="form-group row">
+      <div class="col-md-3">
+        <%= form.label :gender, class: "custom-label" %>
+      </div>
+      <div class="col-md-9">
+        <%= form.select :gender, options_for_select(['Male', 'Female', 'Non-binary', 'Other']), class: "form-control w-100" %>
+      </div>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :pronouns %>
-    <%= form.text_field :pronouns, class: "form-control", placeholder: "Enter your pronouns (e.g., he/him, she/her)" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :pronouns, class: "custom-label" %>
+      <%= form.text_field :pronouns, class: "form-control", placeholder: "Enter your pronouns (e.g., he/him, she/her)" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :email %>
-    <%= form.email_field :email_address, class: "form-control", placeholder: "Enter your email address" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :email, class: "custom-label" %>
+      <%= form.email_field :email_address, class: "form-control", placeholder: "Enter your email address" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :phone_number %>
-    <%= form.telephone_field :phone_number, class: "form-control", placeholder: "Enter your phone number" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :phone_number, class: "custom-label" %>
+      <%= form.telephone_field :phone_number, class: "form-control", placeholder: "Enter your phone number" %>
+    </div>
 
   <div class="form-group">
     <%= form.label :photos %>
@@ -50,4 +52,10 @@
     <%= form.submit "CONTINUE", class: "continue" %>
   </div>
 
-<% end %>
+
+    <!-- Use mt-auto to push the button to the bottom -->
+    <div class="form-group mt-auto">
+      <%= form.submit "CONTINUE", class: "continue w-100" %>
+    </div>
+  <% end %>
+</div>

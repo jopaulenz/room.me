@@ -1,36 +1,35 @@
-<%# How do you want to live? Step 2 %>
-<h1>How do you want to live?</h1>
+<div class="whitebg">
+  <%# How do you want to live? Step 2 %>
+  <h1 id="headyou">How do you want to live?</h1>
 
+  <%= form_with(model: @flatmate, url: flatmate_path(@flatmate), method: :patch, local: true) do |form| %>
+    <%= hidden_field_tag 'step', '2'%>
 
-<%= form_with(model: @flatmate, url: flatmate_path(@flatmate), method: :patch, local: true) do |form| %>
-<%= hidden_field_tag 'step', '2'%>
-  <div class="form-group">
-    <%= form.label :city %>
-    <%= form.text_field :city, class: "form-control", placeholder: "Enter the city" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :city, class: "custom-label" %>
+      <%= form.text_field :city, class: "custom-input", placeholder: "Enter the city" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :district %>
-    <%= form.text_field :district, class: "form-control", placeholder: "Enter the district" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :district, class: "custom-label" %>
+      <%= form.text_field :district, class: "custom-input", placeholder: "Enter the district" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :rent_min, "Minimum Rent" %>
-    <%= form.number_field :rent_range_min, class: "form-control", placeholder: "Enter the minimum rent" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :rent_min, "Rent", class: "custom-label" %><br>
+      <div class="form-group flex">
+        <%= form.number_field :rent_range_min, min: 0, placeholder: "min", class: "custom-input" %>
+        <%= form.number_field :rent_range_max, max: 0, placeholder: "max", class: "custom-input" %>
+      </div>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :rent_max, "Maximum Rent" %>
-    <%= form.number_field :rent_range_max, class: "form-control", placeholder: "Enter the maximum rent" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :entry_date, "Preferred Entry Date", class: "custom-label" %>
+      <%= form.date_field :entry_date, class: "custom-input", placeholder: "Select the preferred entry date" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :entry_date, "Preferred Entry Date" %>
-    <%= form.date_field :entry_date, class: "form-control", placeholder: "Select the preferred entry date" %>
-  </div>
-
-  
-  <div class="form-group">
-    <%= form.submit "CONTINUE", class: "btn btn-warning" %>
-  </div>
-<% end %>
+    <div class="form-group">
+      <%= form.submit "CONTINUE", class: "continue" %>
+    </div>
+  <% end %>
+</div>

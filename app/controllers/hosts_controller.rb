@@ -10,10 +10,13 @@ class HostsController < ApplicationController
   end
 
   def create
-    @host = Host.new(host_params)
+    @host = Host.new(host_params_step1)
     @host.user = current_user
-    @host.save!
-    redirect_to host_edit2_path(@host)
+    if @host.save
+      redirect_to host_edit2_path(@host)
+    else
+      render :new
+    end
   end
 
   def edit2
@@ -22,10 +25,21 @@ class HostsController < ApplicationController
 
   def update
     @host = Host.find(params[:id])
-    if @host.update!(host_params)
-      redirect_to params[:step] == "3" ? tutorial_path : host_edit3_path(@host)
+    case params[:step]
+    when "2"
+      if @host.update(host_params_step2)
+        redirect_to host_edit3_path(@host)
+      else
+        render :edit2
+      end
+    when "3"
+      if @host.update(host_params_step3)
+        redirect_to tutorial_path
+      else
+        render :edit3
+      end
     else
-      render params[:step] == "2" ? :edit2 : :edit3
+      redirect_to root_path, alert: "Invalid step"
     end
   end
 
@@ -37,23 +51,19 @@ class HostsController < ApplicationController
     @host = Host.find(params[:id])
   end
 
-  #   if @host.update(host_params)
-  #     redirect_to @host, notice: 'Your host profile was successfully updated.'
-  #   else
-  #     render :edit
-  #   end
-  # end
-
-  # def destroy
-  #   @host = Host.find(params[:id])
-  #   @host.destroy
-  #   redirect_to hosts_path, notice: 'Your host profile was successfully deleted.'
-  # end
-
   private
+  
+  # Add profile_photo to params in whichever step you need it.
 
-  def host_params
-    params.require(:host).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number,
-    :city, :district, :rent, :entry_date, :duration, :registration, :room_size, :furnished, :street, :postcode, :country, :profile_photo, photos: [])
+  def host_params_step1
+    params.require(:host).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number)
+  end
+
+  def host_params_step2
+    params.require(:host).permit(:city, :district, :rent, :entry_date)
+  end
+  
+  def host_params_step3
+    params.require(:host).permit(:duration, :registration, :room_size_min, :room_size_max, :furnished)
   end
 end
