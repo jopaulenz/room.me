@@ -5,6 +5,9 @@ class Host < ApplicationRecord
   has_many_attached :photos
   has_one_attached :profile_photo
 
+  has_many :received_likes, as: :liked, class_name: 'Like'
+  has_many :liking_flatmates, through: :received_likes, source: :liker, source_type: 'Flatmate'
+
   # Serialisierung der apartment_picture_urls als JSON
   serialize :apartment_picture_urls, JSON
 

@@ -9,13 +9,13 @@ Rails.application.routes.draw do
 
   # Host and Flatmate routes
   resources :hosts, only: [:new, :create, :update, :index, :show] do
-    resources :likes, only: [:create, :destroy], module: :hosts
-    resources :dislikes, only: [:create, :destroy], module: :hosts
+    resources :likes, only: [:create, :destroy]
+    resources :dislikes, only: [:create, :destroy]
   end
 
   resources :flatmates, only: [:new, :create, :update, :index, :show] do
-    resources :likes, only: [:create, :destroy], module: :flatmates
-    resources :dislikes, only: [:create, :destroy], module: :flatmates
+    resources :likes, only: [:create, :destroy]
+    resources :dislikes, only: [:create, :destroy]
   end
 
 
