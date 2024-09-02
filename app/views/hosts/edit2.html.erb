@@ -1,25 +1,26 @@
-<%# How do you want to live? Step 2 %>
+<div class="whitebg">
+  <%# How do you want to live? Step 2 %>
 <h1>What do you offer?</h1>
 
 <%= form_with(model: @host, url: host_path(@host), method: :patch, local: true) do |form| %>
 <%= hidden_field_tag 'step', '2'%>
   <div class="form-group">
-    <%= form.label :city %>
+    <%= form.label :city, class: "custom-label" %>
     <%= form.text_field :city, class: "form-control", placeholder: "Enter the city" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :district %>
+    <%= form.label :district, class: "custom-label" %>
     <%= form.text_field :district, class: "form-control", placeholder: "Enter the district" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :rent, " Rent" %>
+    <%= form.label :rent, " Rent", class: "custom-label" %>
     <%= form.number_field :rent, class: "form-control", placeholder: "Enter the rent" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :entry_date, "Preferred Entry Date" %>
+    <%= form.label :entry_date, "Preferred Entry Date", class: "custom-label" %>
     <%= form.date_field :entry_date, class: "form-control", placeholder: "Select the preferred entry date" %>
   </div>
 
@@ -28,3 +29,4 @@
   </div>
 <% end %>
 <%= console %>
+ </div>
