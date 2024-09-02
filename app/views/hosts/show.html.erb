@@ -58,5 +58,5 @@
     .addTo(map);
 </script>
 
-<%= link_to 'Like', host_likes_path(@host), method: :post, class: 'btn btn-success' %>
-<%= link_to 'Dislike', host_dislikes_path(@host), method: :post, class: 'btn btn-danger' %>
+<%= link_to 'Like', host_likes_path(@host), method: :post, class: 'btn btn-success', data: { turbo_method: :post} %>
+<%= link_to 'Dislike', host_dislikes_path(@host), method: :post, class: 'btn btn-danger', data: { turbo_method: :post} %>

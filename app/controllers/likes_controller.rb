@@ -3,8 +3,8 @@ class LikesController < ApplicationController
 
   def create
     # Erstellt ein Like für den aktuellen User
-    @like = Like.new(liker: current_user, liked: @likable)
-
+    @likable = Flatmate.find(params[:flatmate_id])
+    @like = Like.new(liker: current_user.host, liked: @likable)
     if @like.save
       # Überprüfen, ob es ein Match gibt
       if match_exists?(@like)

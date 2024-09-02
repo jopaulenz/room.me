@@ -1,24 +1,23 @@
 <h1><%= @flatmate.user.email %>'s Profile</h1>
 
-<p><strong>City:</strong> <%= @host.city %></p>
-<p><strong>Address:</strong> <%= @host.full_street_address %></p>
-<p><strong>About the Flatmate:</strong> <%= @host.living_preference.aboutme %></p>
-<p><strong>Interests:</strong> <%= @host.living_preference.interest %></p>
-<p><strong>Cleanliness:</strong> <%= @host.living_preference.cleanliness.humanize %></p>
-<p><strong>Smoking:</strong> <%= @host.living_preference.smoking.humanize %></p>
-<p><strong>Partying:</strong> <%= @host.living_preference.partying.humanize %></p>
-<p><strong>Age Preference:</strong> <%= @host.living_preference.age.humanize %></p>
-<p><strong>Furnished:</strong> <%= @host.living_preference.furnished.humanize %></p>
-<p><strong>Dishwasher:</strong> <%= @host.living_preference.dishwasher.humanize %></p>
-<p><strong>Washing Machine:</strong> <%= @host.living_preference.washingmaschine.humanize %></p>
-<p><strong>Balcony:</strong> <%= @host.living_preference.balcony.humanize %></p>
-<p><strong>Kitchen:</strong> <%= @host.living_preference.kitchen.humanize %></p>
-<p><strong>Bathtub:</strong> <%= @host.living_preference.bathtub.humanize %></p>
+<p><strong>City:</strong> <%= @flatmate.city %></p>
+<p><strong>About the Flatmate:</strong> <%= @flatmate.living_preference.aboutme %></p>
+<p><strong>Interests:</strong> <%= @flatmate.living_preference.interest %></p>
+<p><strong>Cleanliness:</strong> <%= @flatmate.living_preference.cleanliness.humanize %></p>
+<p><strong>Smoking:</strong> <%= @flatmate.living_preference.smoking.humanize %></p>
+<p><strong>Partying:</strong> <%= @flatmate.living_preference.partying.humanize %></p>
+<p><strong>Age Preference:</strong> <%= @flatmate.living_preference.age.humanize %></p>
+<p><strong>Furnished:</strong> <%= @flatmate.living_preference.furnished.humanize %></p>
+<p><strong>Dishwasher:</strong> <%= @flatmate.living_preference.dishwasher.humanize %></p>
+<p><strong>Washing Machine:</strong> <%= @flatmate.living_preference.washingmaschine.humanize %></p>
+<p><strong>Balcony:</strong> <%= @flatmate.living_preference.balcony.humanize %></p>
+<p><strong>Kitchen:</strong> <%= @flatmate.living_preference.kitchen.humanize %></p>
+<p><strong>Bathtub:</strong> <%= @flatmate.living_preference.bathtub.humanize %></p>
 
 
 <%= image_tag @flatmate.profile_picture_url if @flatmate.profile_picture_url.present? %>
 
 <div class="actions">
-  <%= link_to 'Like', flatmate_likes_path(@flatmate), method: :post, class: 'btn btn-success' %>
-  <%= link_to 'Dislike', flatmate_dislikes_path(@flatmate), method: :post, class: 'btn btn-danger' %>
+  <%= link_to 'Like', flatmate_likes_path(@flatmate), method: :post, class: 'btn btn-success', data: { turbo_method: :post} %>
+  <%= link_to 'Dislike', flatmate_dislikes_path(@flatmate), method: :post, class: 'btn btn-danger', data: { turbo_method: :post} %>
 </div>
