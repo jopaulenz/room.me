@@ -4,4 +4,56 @@
   width: 100%;
   padding: 16px;
   border: none;
+  color: #023145;
+  font-size: 18px;
 }
+
+.custom-label {
+  color: #1D232A;
+  font-size: 20px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.tag {
+  padding: 8px 12px;
+  border-radius: 30px;
+  border: 1px solid #FFCE4F;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="radio"]:checked + .tag {
+  background-color: #FFCE4F;
+  color: #023145;
+  border-color: #FFCE4F;
+}
+
+.custom-label {
+  color: #1D232A;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.custom-input {
+  border: 1px solid #CCCCCC;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.form-group.flex {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+// .card {
+//   padding: 10px;
+//   margin-bottom: 16px;
+// }
