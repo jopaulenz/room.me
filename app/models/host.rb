@@ -3,17 +3,20 @@ class Host < ApplicationRecord
   has_one :living_preference, as: :preferable, dependent: :destroy
   has_many :matches, dependent: :destroy
 
-  validates :profile_picture_url, presence: true
-  validates :apartment_picture_urls, presence: true
-  validate :apartment_picture_urls_length
+  # Serialisierung der apartment_picture_urls als JSON
+  serialize :apartment_picture_urls, JSON
 
-  # Ensure that apartment_picture_urls is an array
-  serialize :apartment_picture_urls, Array
+  # Validierung nur durchführen, wenn die entsprechenden Felder ausgefüllt sind
+  validates :profile_picture_url, presence: true, if: -> { profile_picture_url.present? }
+  validates :apartment_picture_urls, presence: true, if: -> { apartment_picture_urls.present? }
+  validate :apartment_picture_urls_length, if: -> { apartment_picture_urls.present? }
 
-  validates :city, presence: true
+  validates :city, presence: true, if: -> { city.present? }
 
   geocoded_by :full_street_address
   after_validation :geocode, if: :full_street_address_changed?
+
+  before_validation :initialize_apartment_picture_urls
 
   def full_street_address
     "#{street}, #{city}, #{postcode}, #{country}"
@@ -24,6 +27,10 @@ class Host < ApplicationRecord
   end
 
   private
+
+  def initialize_apartment_picture_urls
+    self.apartment_picture_urls ||= []
+  end
 
   def apartment_picture_urls_length
     if apartment_picture_urls.length > 3
