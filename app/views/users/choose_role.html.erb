@@ -1,16 +1,18 @@
-<h1>What can we do for you?</h1>
+  <div class="whitebg">
+<h1 class="headyou" >What can we do for you?</h1>
 
 <%= simple_form_for current_user, url: role_path, method: :patch, html: { class: 'form-horizontal', id: 'role-form' } do |f| %>
   <div class="form-group role-selection">
     <div class="role-checkbox form-check">
       <%= f.radio_button :role, 'flatmate', class: 'role-checkbox-input' %>
-      <%= f.label :role, 'Looking for a room', value: 'flatmate', class: 'role-checkbox-label' %>
+      <%= f.label :role, 'Looking for a room', value: 'flatmate', class: "role" %>
     </div>
     <div class="role-checkbox form-check">
       <%= f.radio_button :role, 'host', class: 'role-checkbox-input' %>
-      <%= f.label :role, 'Offering a room', value: 'host', class: 'role-checkbox-label' %>
+      <%= f.label :role, 'Offering a room', value: 'host', class: "role" %>
     </div>
   </div>
 
-  <%= f.button :submit, 'Continue', class: 'btn btn-primary continue-button' %>
+  <%= f.button :submit, 'Continue', class: 'continue' %>
 <% end %>
+</div>
