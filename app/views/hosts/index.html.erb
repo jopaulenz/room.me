@@ -18,19 +18,19 @@
     <p><strong>Kitchen:</strong> <%= host.living_preference.kitchen.humanize %></p>
     <p><strong>Bathtub:</strong> <%= host.living_preference.bathtub.humanize %></p>
 
-    <%= image_tag host.profile_picture_url if host.profile_picture_url.present? %>
+   <%= cl_image_tag(host.profile_photo.key, class: 'img-fluid rounded mb-3', alt: 'Profile Picture') if host.profile_photo.attached? %>
 
     <h3>Apartment Pictures:</h3>
     <div id="carousel-<%= host.id %>" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <% host.apartment_picture_urls&.each_with_index do |url, index| %>
+        <% host.photos.each_with_index do |photo, index| %>
           <li data-target="#carousel-<%= host.id %>" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
         <% end %>
       </ol>
       <div class="carousel-inner">
-        <% host.apartment_picture_urls&.each_with_index do |url, index| %>
+        <% host.photos.each_with_index do |photo, index| %>
           <div class="carousel-item <%= 'active' if index == 0 %>">
-            <%= image_tag url, class: 'd-block w-100' %>
+            <%= cl_image_tag(photo.key, class: 'd-block w-100 rounded', alt: 'Apartment Picture') %>
           </div>
         <% end %>
       </div>
