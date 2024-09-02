@@ -39,6 +39,7 @@ input[type="radio"]:checked + .tag {
   margin-bottom: 8px;
 }
 
+
 .custom-input {
   border: 1px solid #CCCCCC;
   border-radius: 10px;
@@ -46,6 +47,7 @@ input[type="radio"]:checked + .tag {
   padding: 10px;
   box-sizing: border-box;
   display: block;
+  font-weight: 100;
 }
 
 .form-group.flex {
@@ -57,3 +59,7 @@ input[type="radio"]:checked + .tag {
 //   padding: 10px;
 //   margin-bottom: 16px;
 // }
+.role-button {
+  background-color: #FFCE4F;
+  padding:  ;
+}
