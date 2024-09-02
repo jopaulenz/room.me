@@ -20,12 +20,12 @@
 <h2>Apartment Pictures</h2>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <% @host.apartment_picture_urls.each_with_index do |url, index| %>
+    <% @host.apartment_picture_urls&.each_with_index do |url, index| %>
       <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
     <% end %>
   </ol>
   <div class="carousel-inner">
-    <% @host.apartment_picture_urls.each_with_index do |url, index| %>
+    <% @host.apartment_picture_urls&.each_with_index do |url, index| %>
       <div class="carousel-item <%= 'active' if index == 0 %>">
         <%= image_tag url, class: 'd-block w-100' %>
       </div>
