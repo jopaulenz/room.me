@@ -1,35 +1,64 @@
-<%# How do you want to live? Step 3 %>
-<h1>What do you offer?</h1>
+
+<div class="whitebg">
+  <%# How do you want to live? Step 3 %>
+<h1 class="headyou">What do you offer?</h1>
 
 <%= form_with(model: @host, url: host_path(@host), method: :patch, local: true) do |f| %>
-<%= hidden_field_tag 'step', '3'%>
-   <div class="form-group">
-    <%= f.label :duration, "Duration of Stay" %><br>
-    <%= f.radio_button :duration, "longterm", id: "longterm" %>
-    <%= f.label :duration, "Long-term", for: "longterm" %><br>
-    <%= f.radio_button :duration, "shortterm", id: "shortterm" %>
-    <%= f.label :duration, "Short-term", for: "shortterm" %>
+  <%= hidden_field_tag 'step', '3'%>
+
+  <div class="form-group">
+    <%= f.label :duration, "Duration", class: "custom-label" %><br>
+    <div class="form-group flex">
+      <div>
+        <%= f.radio_button :duration, "longterm", id: "longterm" %>
+        <%= f.label :duration, "Long-term", for: "longterm", class: "tag" %>
+      </div>
+      <div>
+        <%= f.radio_button :duration, "shortterm", id: "shortterm" %>
+        <%= f.label :duration, "Short-term", for: "shortterm", class: "tag" %>
+      </div>
+    </div>
   </div>
 
-  <div class="f-group">
-    <%= f.label :registration, "Registration Requirement" %><br>
-    <%= f.radio_button :registration, "I need a Flatmate as soon as possible.", id: "need_registration" %>
-    <%= f.label :registration, "I need a Flatmate as soon as possible.", for: "need_registration" %><br>
-    <%= f.radio_button :registration, "I am looking for a Flatmate within the next couple of months", id: "no_registration" %>
-    <%= f.label :registration, "I am looking for a Flatmate within the next couple of months", for: "no_registration" %>
+<div class="form-group">
+  <%= f.label :registration, "Registration", class: "custom-label" %><br>
+  <div class="form-group flex">
+    <div>
+      <%= f.radio_button :registration, "Yes", id: "registration_yes" %>
+      <%= f.label :registration, "Yes", for: "registration_yes", class: "tag" %>
+    </div>
+    <div>
+      <%= f.radio_button :registration, "No", id: "registration_no" %>
+      <%= f.label :registration, "No", for: "registration_no", class: "tag" %>
+    </div>
   </div>
+</div>
 
-  <div>
-    <%= f.label :room_size, "Room size (m²)" %>
-    <%= f.number_field :room_size, min: 0, class: "form-control", placeholder: "Enter the room size" %>
-  </div>
-
-  <div>
-    <%= f.label :furnished, "Furnished?" %>
-    <%= f.select :furnished, ['Unfurnished', 'Furnished', 'Doesn\'t matter'], { prompt: "Select an option" } %>
+  <div class="form-group">
+    <%= f.label :room_size, "Room size (m²)", class: "custom-label" %>
+    <%= f.number_field :room_size, min: 0, class: "custom-input", placeholder: "Enter the room size" %>
   </div>
 
   <div class="form-group">
-    <%= f.submit "CONTINUE", class: "btn btn-warning" %>
-</div>
+      <%= f.label :furnished, "Furnished", class: "custom-label"%><br>
+      <div class="form-group flex">
+        <div>
+          <%= f.radio_button :furnished, 'Unfurnished', id: 'furnished_unfurnished' %>
+          <%= f.label :furnished, 'Unfurnished', for: "furnished_unfurnished", class: 'tag' %>
+        </div>
+        <div>
+          <%= f.radio_button :furnished, 'Furnished', id: 'furnished_furnished' %>
+          <%= f.label :furnished, 'Furnished', class: 'tag', for: "furnished_furnished" %>
+        </div>
+        <div>
+          <%= f.radio_button :furnished, 'Doesn\'t matter', id: 'furnished_doesnt_matter' %>
+          <%= f.label :furnished, 'Doesn\'t matter', class: 'tag', for: "furnished_doesnt_matter" %>
+        </div>
+      </div>
+    </div>
+
+  <div class="form-group">
+    <%= f.submit "CONTINUE", class: "continue" %>
+  </div>
 <% end %>
+</div>
