@@ -39,7 +39,6 @@
     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-<<<<<<< HEAD
     </a>
   </div>
 
@@ -65,8 +64,6 @@
     <%= link_to 'Dislike', host_dislikes_path(@host), method: :post, class: 'btn btn-danger btn-lg' %>
   </div>
 </div>
-=======
->>>>>>> 41e860b482034bd44962b6563cc913d1e1d3fbfa
 
 <style>
   /* Ensuring the carousel images fit nicely on a mobile screen */
@@ -85,14 +82,11 @@
       font-size: 1rem;
     }
 
-<<<<<<< HEAD
     .btn-lg {
       width: 45%;
       font-size: 1rem;
     }
   }
 </style>
-=======
 <%= link_to 'Like', host_likes_path(@host), method: :post, class: 'btn btn-success', data: { turbo_method: :post} %>
 <%= link_to 'Dislike', host_dislikes_path(@host), method: :post, class: 'btn btn-danger', data: { turbo_method: :post} %>
->>>>>>> 41e860b482034bd44962b6563cc913d1e1d3fbfa
