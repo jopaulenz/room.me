@@ -9,15 +9,16 @@
     to top,
     #FFCE4F,
     #FFCE4F 50%,
-    rgba(0,0,0,0) 50%,
-    rgba(0,0,0,0) 100%
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
   );
   display: flex;
   justify-content: space-between;
   color: #023145;
   padding: 24px 24px 0 24px ;
   width: 100vw;
-  // position: relative;
+  position: fixed;
+  bottom: 0;
 }
 .headyou {
   text-align: center;
@@ -33,10 +34,6 @@
   display: grid;
   min-height: 100vh;
   grid-template-rows: 1fr auto;
-  margin-top: 40px;
-  margin-left: 16px;
-  margin-right: 16px;
-
 }
 
  .home {
