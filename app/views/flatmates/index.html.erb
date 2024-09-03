@@ -1,5 +1,10 @@
 <h1>Flatmates Interested in Your Property</h1>
 
-<% @flatmates.each do |flatmate| %>
-  <%= render partial: 'flatmate_info', locals: { flatmate: flatmate } %>
+<% @suggested_flatmates.each do |suggestion| %>
+  <div class="flatmate-profile">
+    <h2><%= suggestion.user.email %> - <%= suggestion.city %></h2>
+    <p><strong>Matching Score:</strong></p>
+
+    <%= render partial: 'flatmate_info', locals: { flatmate: suggestion } %>
+  </div>
 <% end %>
