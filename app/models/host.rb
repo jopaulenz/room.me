@@ -11,7 +11,7 @@ class Host < ApplicationRecord
   # Serialisierung der apartment_picture_urls als JSON
   serialize :apartment_picture_urls, JSON
 
-  geocoded_by :full_street_address
+  geocoded_by :district
   after_validation :geocode, if: :full_street_address_changed?
 
   before_validation :initialize_apartment_picture_urls

@@ -48,20 +48,6 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZWJldHVyayIsImEiOiJjbHo5bXN4eTMwY3g0MnFwamFpMHg2OWJ3In0.Ydo4NwfJpB2HimOC98ckCg';
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [<%= @host.longitude %>, <%= @host.latitude %>],
-      zoom: 12
-    });
-
-    new mapboxgl.Marker()
-      .setLngLat([<%= @host.longitude %>, <%= @host.latitude %>])
-      .addTo(map);
-  </script>
-
   <div class="d-flex justify-content-between mt-3">
     <%= link_to 'Like', host_likes_path(@host), method: :post, class: 'btn btn-success btn-lg' %>
     <%= link_to 'Dislike', host_dislikes_path(@host), method: :post, class: 'btn btn-danger btn-lg' %>

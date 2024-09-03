@@ -49,10 +49,14 @@ class HostsController < ApplicationController
 
   def show
     @host = Host.find(params[:id])
+    @markers = [{
+      lat: @host.latitude,
+      lng: @host.longitude
+    }]
   end
 
   private
-  
+
   # Add profile_photo to params in whichever step you need it.
 
   def host_params_step1
@@ -62,7 +66,7 @@ class HostsController < ApplicationController
   def host_params_step2
     params.require(:host).permit(:city, :district, :rent, :entry_date)
   end
-  
+
   def host_params_step3
     params.require(:host).permit(:duration, :registration, :room_size_min, :room_size_max, :furnished)
   end
