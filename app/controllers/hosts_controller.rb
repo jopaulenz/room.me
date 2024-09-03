@@ -4,7 +4,7 @@ class HostsController < ApplicationController
   def index
     if current_user.flatmate?
       if current_user.flatmate.suggested_hosts.any?
-        @suggested_hosts = current_user.flatmate.suggested_hosts.presence
+        @suggested_hosts = current_user.flatmate.suggested_hosts
       else
         @suggested_hosts = Host.order("RANDOM()").limit(10)
       end
