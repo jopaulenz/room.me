@@ -6,3 +6,5 @@
   <%= link_to 'Like', flatmate_likes_path(@flatmate), method: :post, class: 'btn btn-success', data: { turbo_method: :post} %>
   <%= link_to 'Dislike', flatmate_dislikes_path(@flatmate), method: :post, class: 'btn btn-danger', data: { turbo_method: :post} %>
 </div>
+
+<%= render "shared/like-button"%>
