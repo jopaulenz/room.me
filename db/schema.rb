@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_30_140630) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_03_103416) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -120,19 +120,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_30_140630) do
   end
 
   create_table "living_preferences", force: :cascade do |t|
-    t.string "preferable_type", null: false
-    t.bigint "preferable_id", null: false
-    t.integer "cleanliness", null: false
-    t.integer "gender", null: false
-    t.integer "smoking", null: false
-    t.integer "partying", null: false
-    t.integer "age", null: false
-    t.integer "furnished", null: false
-    t.integer "dishwasher", null: false
-    t.integer "washingmaschine", null: false
-    t.integer "balcony", null: false
-    t.integer "kitchen", null: false
-    t.integer "bathtub", null: false
+    t.string "preferable_type"
+    t.bigint "preferable_id"
+    t.integer "cleanliness"
+    t.integer "gender"
+    t.integer "smoking"
+    t.integer "partying"
+    t.integer "age"
+    t.integer "furnished"
+    t.integer "dishwasher"
+    t.integer "washingmaschine"
+    t.integer "balcony"
+    t.integer "kitchen"
+    t.integer "bathtub"
     t.string "aboutme"
     t.string "interest"
     t.datetime "created_at", null: false
