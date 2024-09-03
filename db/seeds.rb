@@ -23,7 +23,6 @@ josephine_host.profile_photo.attach(
   filename: "josephine_profile.jpg",
   content_type: "image/jpg"
 )
-
 josephine_host.photos.attach([
   { io: URI.open("https://plus.unsplash.com/premium_photo-1661878091792-2d5511d508e9?q=80&w=2796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"), filename: "apartment1.jpg", content_type: "image/jpg" },
   { io: URI.open("https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmxhdCUyMGludGVyaW9yJTIwbmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D"), filename: "apartment2.jpg", content_type: "image/jpg" },

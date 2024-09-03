@@ -1,4 +1,18 @@
 .continue {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 350px; /* Optional: limit the max-width of the button */
+  background-color: #FFCE4F;
+  border-radius: 10px;
+  padding: 16px;
+  border: none;
+  color: #023145;
+  font-size: 18px;
+  margin-top: 40px;
+  margin-bottom: 100px;/* Add spacing between role buttons and continue button */
+  align-self: center; /* Center the button horizontally */
+}
+form .continue {
   background-color: #FFCE4F;
   border-radius: 10px;
   width: 100%;
@@ -6,6 +20,13 @@
   border: none;
   color: #023145;
   font-size: 18px;
+}
+.form-horizontal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Allow this to grow and take available space */
 }
 
 .custom-label {
@@ -23,10 +44,29 @@ input[type='radio'] {
   border: 1px solid #FFCE4F;
   display: inline-block;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+}
+.role {
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: 2px solid #FFCE4F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  width: 100%; /* Allow the button to take up the full width */
+  height: 140px; /* Maintain consistent height */
+  text-align: center;
+  box-sizing: border-box;
 }
 
 input[type="radio"]:checked + .tag {
+  background-color: #FFCE4F;
+  color: #023145;
+  border-color: #FFCE4F;
+}
+input[type="radio"]:checked + .role {
   background-color: #FFCE4F;
   color: #023145;
   border-color: #FFCE4F;
@@ -57,3 +97,39 @@ input[type="radio"]:checked + .tag {
 //   padding: 10px;
 //   margin-bottom: 16px;
 // }
+.role-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Allow this to grow and take available space */
+  margin-bottom: auto; /* Push the role selection up, away from the continue button */
+}
+
+
+.role-checkbox {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Ensure role buttons take the full width of the container */
+}
+.form-horizontal {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the form content vertically */
+  align-items: center;
+  margin: 0 auto;
+}
+.form-check {
+  padding-left: 0 !important; /* Remove padding applied by Bootstrap */
+  position: static !important; /* Override position if necessary */
+  display: flex !important; /* Ensure it uses flexbox */
+}
+.like-button {
+  background-color: #F3EFE6;
+  border-radius: 50%;
+  opacity: 80%;
+
+}

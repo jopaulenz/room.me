@@ -5,41 +5,74 @@
   <% if @step == 1 %>
     <!-- STEP 1: Felder für Cleanliness, Gender, Smoking -->
     <%= form.label :cleanliness, "Cleanliness" %>
-    <%= form.collection_radio_buttons :cleanliness, LivingPreference.cleanlinesses.keys, :to_s, :humanize %>
+    <% LivingPreference.cleanlinesses.keys.each do |key| %>
+      <%= form.radio_button :cleanliness, key, id: "cleanliness_#{key}" %>
+      <%= label_tag "cleanliness_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
     <%= form.label :gender, "Gender" %>
-    <%= form.collection_radio_buttons :gender, LivingPreference.genders.keys, :to_s, :humanize %>
+    <% LivingPreference.genders.keys.each do |key| %>
+      <%= form.radio_button :gender, key, id: "gender_#{key}" %>
+      <%= label_tag "gender_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
     <%= form.label :smoking, "Smoking" %>
-    <%= form.collection_radio_buttons :smoking, LivingPreference.smokings.keys, :to_s, :humanize %>
+    <% LivingPreference.smokings.keys.each do |key| %>
+      <%= form.radio_button :smoking, key, id: "smoking_#{key}" %>
+      <%= label_tag "smoking_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
   <% elsif @step == 2 %>
     <!-- STEP 2: Felder für Partying, Age, Furnished -->
     <%= form.label :partying, "Partying" %>
-    <%= form.collection_radio_buttons :partying, LivingPreference.partyings.keys, :to_s, :humanize %>
+    <% LivingPreference.partyings.keys.each do |key| %>
+      <%= form.radio_button :partying, key, id: "partying_#{key}" %>
+      <%= label_tag "partying_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
     <%= form.label :age, "Age Preference" %>
-    <%= form.collection_radio_buttons :age, LivingPreference.ages.keys, :to_s, :humanize %>
+    <% LivingPreference.ages.keys.each do |key| %>
+      <%= form.radio_button :age, key, id: "age_#{key}" %>
+      <%= label_tag "age_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
     <%= form.label :furnished, "Furnished" %>
-    <%= form.collection_radio_buttons :furnished, LivingPreference.furnisheds.keys, :to_s, :humanize %>
+    <% LivingPreference.furnisheds.keys.each do |key| %>
+      <%= form.radio_button :furnished, key, id: "furnished_#{key}" %>
+      <%= label_tag "furnished_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
     <%= form.label :dishwasher, "Dishwasher" %>
-    <%= form.collection_radio_buttons :dishwasher, LivingPreference.dishwashers.keys, :to_s, :humanize %>
+    <% LivingPreference.dishwashers.keys.each do |key| %>
+      <%= form.radio_button :dishwasher, key, id: "dishwasher_#{key}" %>
+      <%= label_tag "dishwasher_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
   <% elsif @step == 3 %>
     <!-- STEP 3: Restliche Felder und Textfelder -->
     <%= form.label :washingmaschine, "Washing Machine" %>
-    <%= form.collection_radio_buttons :washingmaschine, LivingPreference.washingmaschinen.keys, :to_s, :humanize %>
+    <% LivingPreference.washingmaschines.keys.each do |key| %>
+      <%= form.radio_button :washingmaschine, key, id: "washingmaschine_#{key}" %>
+      <%= label_tag "washingmaschine_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
     <%= form.label :balcony, "Balcony" %>
-    <%= form.collection_radio_buttons :balcony, LivingPreference.balconys.keys, :to_s, :humanize %>
+    <% LivingPreference.balconies.keys.each do |key| %>
+      <%= form.radio_button :balcony, key, id: "balcony_#{key}" %>
+      <%= label_tag "balcony_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
     <%= form.label :kitchen, "Kitchen" %>
-    <%= form.collection_radio_buttons :kitchen, LivingPreference.kitchens.keys, :to_s, :humanize %>
+    <% LivingPreference.kitchens.keys.each do |key| %>
+      <%= form.radio_button :kitchen, key, id: "kitchen_#{key}" %>
+      <%= label_tag "kitchen_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
     <%= form.label :bathtub, "Bathtub" %>
-    <%= form.collection_radio_buttons :bathtub, LivingPreference.bathtubs.keys, :to_s, :humanize %>
+    <% LivingPreference.bathtubs.keys.each do |key| %>
+      <%= form.radio_button :bathtub, key, id: "bathtub_#{key}" %>
+      <%= label_tag "bathtub_#{key}", key.humanize, class: 'role' %>
+    <% end %>
 
   <% elsif @step == 4 %>
     <!-- STEP 4: Textfelder -->

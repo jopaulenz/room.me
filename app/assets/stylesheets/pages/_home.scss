@@ -1,9 +1,11 @@
 body {
-  background-color: #FFCE4F;
+  background-color: #FFCE4F  !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100vh;
   align-items: center;
+  position: relative;
 }
 
 .header {
@@ -33,10 +35,14 @@ body {
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  justify-content: space-between; /* Ensure space is distributed between children */
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes up the full height of the viewport */
 }
+
 
 .whitebg form {
   flex-grow: 1;
