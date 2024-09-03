@@ -3,6 +3,15 @@ class MatchesController < ApplicationController
     @matches = Match.where(flatmate: current_user.flatmate).or(Match.where(host: current_user.host))
   end
 
+  def show
+  end
+
+  def chat
+    @match = Match.find(params[:match_id])
+    @flatmate = @match.flatmate
+    @host = @match.host
+  end
+
   def chats
     @matches = Match.where(flatmate: current_user.flatmate).or(Match.where(host: current_user.host))
   end

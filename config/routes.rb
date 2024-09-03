@@ -37,7 +37,10 @@ Rails.application.routes.draw do
   resources :living_preferences, only: [:new, :create, :edit, :update]
 
   # Matches index
-  resources :matches, only: [:index, :show]
+  resources :matches, only: [:index, :show] do
+    get 'chat', to: 'matches#chat', as: :chat
+  end
 
   get 'chats', to: 'matches#chats', as: :chats
+  get 'chat', to: 'matches#chat', as: :chat
 end
