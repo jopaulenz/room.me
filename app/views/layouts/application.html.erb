@@ -30,9 +30,11 @@
       </div>
 
       <!-- Navbar -->
-      <div class="navbar-container">
-        <%= render "shared/navbar_home"%>
-      </div>
+      <% if controller_name != "pages" && action_name != "home" %>
+        <div class="navbar-container">
+          <%= render "shared/navbar_home"%>
+        </div>
+      <% end %>
 
       <!-- Flash Messages -->
       <%= render "shared/flashes" %>

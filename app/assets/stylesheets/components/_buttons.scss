@@ -8,7 +8,8 @@
   border: none;
   color: #023145;
   font-size: 18px;
-  margin-top: 40px; /* Add spacing between role buttons and continue button */
+  margin-top: 40px;
+  margin-bottom: 100px;/* Add spacing between role buttons and continue button */
   align-self: center; /* Center the button horizontally */
 }
 form .continue {
@@ -125,4 +126,10 @@ input[type="radio"]:checked + .role {
   padding-left: 0 !important; /* Remove padding applied by Bootstrap */
   position: static !important; /* Override position if necessary */
   display: flex !important; /* Ensure it uses flexbox */
+}
+.like-button {
+  background-color: #F3EFE6;
+  border-radius: 50%;
+  opacity: 80%;
+
 }
