@@ -1,9 +1,39 @@
-<h1>Your Matches</h1>
-
-<ul>
+<h1>Matches</h1>
+<div class="matches-container p-3" >
   <% @matches.each do |match| %>
-    <li>
-      Matched with <%= match.host == current_user ? match.flatmate.email : match.host.email %>
-    </li>
+    <% if current_user.host %>
+      <%= link_to flatmate_path(match.flatmate), class: "match-bar-link" do %>
+        <div class="match-bar">
+          <div class="profile-pic">
+            <%= cl_image_tag match.flatmate.profile_photo.key, alt: match.flatmate.first_name, class: "avatar" if match.flatmate.profile_photo.attached? %>
+          </div>
+          <div class="match-details">
+            <div class="match-name">
+              <%= match.flatmate.first_name %>
+              <% = match.flatmate.district %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% else  %>
+      <%= link_to host_path(match.host), class: "match-bar-link" do %>
+        <div class="match-bar">
+          <div class="profile-pic">
+            <%= cl_image_tag match.host.photos.first.key, alt: match.host.first_name, class: "avatar" %>
+          </div>
+          <div class="match-details">
+            <div class="match-name">
+              <%= match.host.first_name %>
+              <%# = match.host.age %>
+            </div>
+            <div class='match-infos'>
+              <%= match.host.rent%>
+              <%= match.host.district%>
+              <%= match.host.room_size%>
+            </div>
+          </div>
+        </div>
+    <% end %>
+    <% end %>
   <% end %>
-</ul>
+</div>

@@ -1,0 +1,20 @@
+<h1>Your Ongoing Chats</h1>
+<div class="matches-container">
+  <% @matches.each do |match| %>
+    <%= link_to match_path(match), class: "match-bar-link" do %>
+      <div class="match-bar">
+        <div class="profile-pic">
+          <%# = cl_image_tag match.matched_user(current_user).profile_photo.key, alt: match.matched_user(current_user).first_name, class: "avatar" %>
+        </div>
+        <div class="match-details">
+          <div class="match-name">
+            <%= match.matched_user(current_user).first_name %>
+          </div>
+          <div class="last-message">
+            <%= truncate(match.last_message_content, length: 50) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
