@@ -6,3 +6,4 @@ class Flatmate < ApplicationRecord
   has_many :given_likes, as: :liker, class_name: 'Like'
   has_many :liked_hosts, through: :given_likes, source: :liked, source_type: 'Host'
 end
+
