@@ -18,7 +18,7 @@
     <p><strong>Kitchen:</strong> <%= host.living_preference.kitchen.humanize %></p>
     <p><strong>Bathtub:</strong> <%= host.living_preference.bathtub.humanize %></p>
 
-   <%= cl_image_tag(host.profile_photo.key, class: 'img-fluid rounded mb-3', alt: 'Profile Picture') if host.profile_photo.attached? %>
+  <%= cl_image_tag(host.profile_photo.key, class: 'img-fluid rounded mb-3', alt: 'Profile Picture') if host.profile_photo.attached? %>
 
     <h3>Apartment Pictures:</h3>
     <div id="carousel-<%= host.id %>" class="carousel slide" data-ride="carousel">
