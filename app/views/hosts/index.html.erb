@@ -1,37 +1,9 @@
 <h1>Available Hosts</h1>
 
-<% @hosts.each do |host| %>
-    <%= render partial: 'host_info', locals: { host: host } %>
+<% @suggested_hosts.each do |suggestion| %>
+  <div class="host-profile mb-5">
+    <h2><%= suggestion.user.email %> - <%= suggestion.city %></h2>
+    <p><strong>Matching Score:</strong></p>
+
+  <%# add render of partial in Josefine' s code %>
 <% end %>
-
-<style>
-  /* Ensuring the carousel images fit nicely on a mobile screen */
-  @media (max-width: 430px) {
-    .carousel-inner img {
-      height: auto;
-      max-height: 600px; /* Slightly shorter than the screen height of iPhone 14 Pro Max */
-    }
-
-    h1 {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-
-    .btn-lg {
-      width: 45%;
-      font-size: 1rem;
-    }
-
-    .host-profile {
-      margin-bottom: 20px;
-    }
-  }
-</style>
