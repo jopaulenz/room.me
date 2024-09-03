@@ -1,5 +1,6 @@
-<h1>Flatmates Interested in Your Property</h1>
-
+<div>
+  <h1  class="headyou">Flatmates Interested in Your Property</h1>
 <% @flatmates.each do |flatmate| %>
   <%= render partial: 'flatmate_info', locals: { flatmate: flatmate } %>
 <% end %>
+</div>

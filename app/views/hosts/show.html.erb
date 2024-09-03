@@ -1,4 +1,4 @@
-<h1><%= @host.user.email %>'s Profile</h1>
+<h1 class="headyou" ><%= @host.user.email %>'s Profile</h1>
 
 <div class="container">
   <p><strong>City:</strong> <%= @host.city %></p>
@@ -43,7 +43,10 @@
   </div>
 
   <!-- Mapbox Karte -->
-  <div id='map' style='width: 100%; height: 300px; margin-top: 20px;'></div>
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZWJldHVyayIsImEiOiJjbHo5bXN4eTMwY3g0MnFwamFpMHg2OWJ3In0.Ydo4NwfJpB2HimOC98ckCg';

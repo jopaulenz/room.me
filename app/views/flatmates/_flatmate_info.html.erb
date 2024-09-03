@@ -1,24 +1,26 @@
 <div class="flatmate-profile">
-  <h2><%= flatmate.user.email %> - <%= flatmate.city %></h2>
-
+  <h2><%= flatmate.first_name %> - <%= flatmate.city %></h2>
+  <div class="card">
+  <%= image_tag flatmate.profile_picture_url if flatmate.profile_picture_url.present? %>
+   </div>
   <% if flatmate.living_preference.present? %>
-    <p><strong>About the Flatmate:</strong> <%= flatmate.living_preference.aboutme %></p>
-    <p><strong>Interests:</strong> <%= flatmate.living_preference.interest %></p>
-    <p><strong>Cleanliness:</strong> <%= flatmate.living_preference.cleanliness.humanize %></p>
-    <p><strong>Smoking Preference:</strong> <%= flatmate.living_preference.smoking.humanize %></p>
-    <p><strong>Partying:</strong> <%= flatmate.living_preference.partying.humanize %></p>
-    <p><strong>Age Preference:</strong> <%= flatmate.living_preference.age.humanize %></p>
-    <p><strong>Furnished:</strong> <%= flatmate.living_preference.furnished.humanize %></p>
+    <div class="card"><p><strong>About the Flatmate:</strong> <%= flatmate.living_preference.aboutme %></p></div>
+    <div class="card"><p><strong>Interests:</strong> <%= flatmate.living_preference.interest %></p></div>
+    <div class="card"><p><strong>Cleanliness:</strong> <%= flatmate.living_preference.cleanliness.humanize %></p>
+      <p><strong>Smoking Preference:</strong> <%= flatmate.living_preference.smoking.humanize %></p>
+      <p><strong>Partying:</strong> <%= flatmate.living_preference.partying.humanize %></p>
+      <p><strong>Age Preference:</strong> <%= flatmate.living_preference.age.humanize %></p>
+    </div>
+    <div class="card"><p><strong>Furnished:</strong> <%= flatmate.living_preference.furnished.humanize %></p>
     <p><strong>Dishwasher:</strong> <%= flatmate.living_preference.dishwasher.humanize %></p>
     <p><strong>Washing Machine:</strong> <%= flatmate.living_preference.washingmaschine.humanize %></p>
     <p><strong>Balcony:</strong> <%= flatmate.living_preference.balcony.humanize %></p>
     <p><strong>Kitchen:</strong> <%= flatmate.living_preference.kitchen.humanize %></p>
     <p><strong>Bathtub:</strong> <%= flatmate.living_preference.bathtub.humanize %></p>
+     </div>
   <% else %>
     <p>This flatmate has not set their living preferences yet.</p>
   <% end %>
-
-  <%= image_tag flatmate.profile_picture_url if flatmate.profile_picture_url.present? %>
 
   <div class="actions">
     <%= link_to 'View Profile', flatmate_path(flatmate), class: 'btn btn-primary' %>

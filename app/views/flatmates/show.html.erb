@@ -1,10 +1,6 @@
-<h1><%= @flatmate.user.email %>'s Profile</h1>
+<h1><%= @flatmate.first_name %>'s Profile</h1>
 
 <%= render partial: 'flatmate_info', locals: { flatmate: @flatmate } %>
 
-<div class="actions">
-  <%= link_to 'Like', flatmate_likes_path(@flatmate), method: :post, class: 'btn btn-success', data: { turbo_method: :post} %>
-  <%= link_to 'Dislike', flatmate_dislikes_path(@flatmate), method: :post, class: 'btn btn-danger', data: { turbo_method: :post} %>
-</div>
 
 <%= render "shared/like-button"%>

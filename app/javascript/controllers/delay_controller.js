@@ -7,8 +7,8 @@ export default class extends Controller {
   }
   connect() {
     const userRole = this.roleValue;
-    if (window.location.pathname === "/home") {
-      this.#redirectToPage("/choose_role", 3000);
+    if (window.location.pathname === "/") {
+      this.#redirectToPage("/choose_role", 4000);
     //   redirectToPage("/choose_role", 5000);
     // } else if (window.location.pathname === "/tutorial") {
     //   if (userRole === "host") {
@@ -18,9 +18,9 @@ export default class extends Controller {
     //   }
     } else if (window.location.pathname === "/success") {
       if (userRole === "host") {
-        this.#redirectToPage("flatmates/:id", 3000);
+        this.#redirectToPage("flatmates/:id", 4000);
       } else if (userRole === "flatmate") {
-        this.#redirectToPage("/hosts/:id", 3000);
+        this.#redirectToPage("/hosts/:id", 4000);
       }
     }
   }
