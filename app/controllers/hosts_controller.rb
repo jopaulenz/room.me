@@ -64,11 +64,6 @@ class HostsController < ApplicationController
   end
 
   private
-<<<<<<< HEAD
-
-  # Add profile_photo to params in whichever step you need it.
-=======
->>>>>>> master
 
   def host_params_step1
     params.require(:host).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number)
