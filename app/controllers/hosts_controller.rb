@@ -2,7 +2,15 @@ class HostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @hosts = Host.includes(:living_preference).all
+    if current_user.flatmate?
+      if current_user.flatmate.suggested_hosts.any?
+        @suggested_hosts = current_user.flatmate.suggested_hosts.presence
+      else
+        @suggested_hosts = Host.order("RANDOM()").limit(10)
+      end
+    else
+      redirect_to root_path, alert: "Only flatmates can see this page."
+    end
   end
 
   def new
@@ -52,8 +60,6 @@ class HostsController < ApplicationController
   end
 
   private
-  
-  # Add profile_photo to params in whichever step you need it.
 
   def host_params_step1
     params.require(:host).permit(:first_name, :last_name, :date_of_birth, :gender, :pronouns, :email_address, :phone_number)
@@ -62,7 +68,7 @@ class HostsController < ApplicationController
   def host_params_step2
     params.require(:host).permit(:city, :district, :rent, :entry_date)
   end
-  
+
   def host_params_step3
     params.require(:host).permit(:duration, :registration, :room_size_min, :room_size_max, :furnished)
   end
