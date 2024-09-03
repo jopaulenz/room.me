@@ -12,4 +12,3 @@ class Match < ApplicationRecord
     messages.last&.message || "No messages yet"
   end
 end
-
