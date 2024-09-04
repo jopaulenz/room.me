@@ -15,13 +15,19 @@ class Host < ApplicationRecord
 
   before_validation :initialize_apartment_picture_urls
 
-  def suggested_flatmates
-    return [] unless living_preference
+  def age
+    now = Time.now.utc.to_date
+    now.year - date_of_birth.year - ((now.month > date_of_birth.month || (now.month == date_of_birth.month && now.day >= date_of_birth.day)) ? 0 : 1)
+  end
 
-    Flatmate.includes(:living_preference).map do |flatmate|
-      score = living_preference.matching_score_with(flatmate.living_preference)
-      { flatmate: flatmate, score: score }
-    end.sort_by { |suggestion| -suggestion[:score] }
+  def suggested_flatmates
+    if living_preference
+      Flatmate.includes(:living_preference).sort_by do |flatmate|
+        -living_preference.matching_score_with(flatmate.living_preference)
+      end
+    else
+      Flatmate.order("RANDOM()").limit(10)
+    end
   end
 
   def full_street_address

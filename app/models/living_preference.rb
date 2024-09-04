@@ -5,13 +5,13 @@ class LivingPreference < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
   enum smoking: { non_smoker: 0, smoker: 1, social_smoker: 2 }
   enum partying: { never: 0, sometimes: 1, often: 2 }
-  enum age: { undefined: 0, young: 1, middle: 2, old: 3 }
+  enum age: { undefined: 0, "18-27": 1, "28-35": 2, "36-50": 3, "50+": 4 }
   enum furnished: { unfurnished: 0, furnished: 1 }
-  enum dishwasher: { no_dishwasher: 0, has_dishwasher: 1 }
-  enum washingmaschine: { no_washingmaschine: 0, has_washingmaschine: 1 }
-  enum balcony: { no_balcony: 0, has_balcony: 1 }
-  enum kitchen: { no_kitchen: 0, has_kitchen: 1 }
-  enum bathtub: { no_bathtub: 0, has_bathtub: 1 }
+  enum dishwasher: { no_dishwasher: 0, dishwasher: 1 }
+  enum washingmaschine: { no_washingmaschine: 0, washingmaschine: 1 }
+  enum balcony: { no_balcony: 0, balcony: 1 }
+  enum kitchen: { no_kitchen: 0, kitchen: 1 }
+  enum bathtub: { no_bathtub: 0, bathtub: 1 }
 
   def matching_score_with(other_preference)
     score = 0

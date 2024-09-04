@@ -1,11 +1,11 @@
 <h1>Flatmates Interested in Your Property</h1>
 
-<% @suggested_flatmates.each do |suggestion| %>
+<% if @suggested_flatmates.present? %>
+  <% suggestion = @suggested_flatmates.first %>
   <div class="flatmate-profile">
     <h2><%= suggestion.user.email %> - <%= suggestion.city %></h2>
-    <p><strong>Matching Score:</strong></p>
-
     <%= render partial: 'flatmate_info', locals: { flatmate: suggestion } %>
   </div>
+<% else %>
+  <p>No more flatmates to suggest at this time.</p>
 <% end %>
-</div>

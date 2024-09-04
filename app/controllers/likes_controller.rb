@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   before_action :set_likable
 
   def create
-    # Erstellt ein Like für den aktuellen User
+    # Erstellt ein Like für den aktuellen User Big if statement here if I am a host then this and that.
     @likable = Flatmate.find(params[:flatmate_id])
     @like = Like.new(liker: current_user.host, liked: @likable)
     if @like.save
