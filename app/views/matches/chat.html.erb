@@ -2,16 +2,21 @@
   Your chat with <%= @match.matched_user(current_user).first_name %>
 </h1>
 <div class="container chat">
+  <%= turbo_stream_from "match_#{@match.id}_messages" %>
   <div id="messages" class="messages">
-    <% @match.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-
-          <strong><%= message.flatmate.first_name %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
+    <% @messages.each do |message| %>
+      <%= render "messages/message", message: message, user: current_user %>
     <% end %>
   </div>
+  <%= simple_form_for [@match, @message],
+    html: {class: "d-flex",
+           data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }} do |f| %>
+    <% other_user = @match.matched_user(current_user) %>
+    <%= f.input :message,
+      label: false,
+      placeholder: "Message #{other_user.first_name}",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "btn btn-yellow mb-3" %>
+  <% end %>
 </div>
