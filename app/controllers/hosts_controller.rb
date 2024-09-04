@@ -4,7 +4,7 @@ class HostsController < ApplicationController
   def index
     if current_user.flatmate?
       if current_user.flatmate.suggested_hosts.any?
-        @suggested_hosts = current_user.flatmate.suggested_hosts.presence
+        @suggested_hosts = current_user.flatmate.suggested_hosts
       else
         @suggested_hosts = Host.order("RANDOM()").limit(10)
       end
@@ -57,6 +57,10 @@ class HostsController < ApplicationController
 
   def show
     @host = Host.find(params[:id])
+    @markers = [{
+      lat: @host.latitude,
+      lng: @host.longitude
+    }]
   end
 
   private

@@ -2,9 +2,8 @@
 
 <% @suggested_hosts.each do |suggestion| %>
   <div class="host-profile mb-5">
-    <h2><%= suggestion.user.email %> - <%= suggestion.city %></h2>
+    <h2><%= suggestion.first[1].user.email %> - <%= suggestion.first[1].city %></h2>
     <p><strong>Matching Score:</strong></p>
 
   <%# add render of partial in Josefine' s code %>
-
 <% end %>

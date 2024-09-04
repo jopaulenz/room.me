@@ -92,10 +92,11 @@ input[type="radio"]:checked + .role {
   gap: 10px;
   flex-wrap: wrap;
 }
-// .card {
-//   padding: 10px;
-//   margin-bottom: 16px;
-// }
+.card {
+  padding: 10px;
+  margin: 16px;
+  border-radius: 20px;
+}
 .role-selection {
   display: flex;
   flex-direction: column;

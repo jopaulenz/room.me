@@ -1,4 +1,4 @@
-<h1><%= @host.user.email %>'s Profile</h1>
+<h1 class="headyou" ><%= @host.user.email %>'s Profile</h1>
 
 <div class="container">
   <p><strong>City:</strong> <%= @host.city %></p>
@@ -43,21 +43,10 @@
   </div>
 
   <!-- Mapbox Karte -->
-  <div id='map' style='width: 100%; height: 300px; margin-top: 20px;'></div>
-
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZWJldHVyayIsImEiOiJjbHo5bXN4eTMwY3g0MnFwamFpMHg2OWJ3In0.Ydo4NwfJpB2HimOC98ckCg';
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [<%= @host.longitude %>, <%= @host.latitude %>],
-      zoom: 12
-    });
-
-    new mapboxgl.Marker()
-      .setLngLat([<%= @host.longitude %>, <%= @host.latitude %>])
-      .addTo(map);
-  </script>
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   <div class="d-flex justify-content-between mt-3">
     <%= link_to 'Like', host_likes_path(@host), method: :post, class: 'btn btn-success btn-lg' %>
