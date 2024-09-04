@@ -3,18 +3,19 @@ require 'open-uri'
 
 # Destroying all existing records
 puts "Destroying all existing records..."
-User.destroy_all
 Host.destroy_all
 Flatmate.destroy_all
+User.destroy_all
 Like.destroy_all
 Match.destroy_all
 
 puts "Creating Phase-10 Seeds 🌱"
 
-def random_date(from: 18.years.ago, to: 50.years.ago)
+def random_date
+  from = 50.years.ago.to_date
+  to = 18.years.ago.to_date
   rand(from..to)
 end
-
 def random_phone
   "+49#{rand(1000000000..9999999999)}"
 end
@@ -397,13 +398,13 @@ LivingPreference.create!(
   gender: :female,
   smoking: :non_smoker,
   partying: :never,
-  age: :middle,
+  age:  "18-27",
   furnished: :furnished,
-  dishwasher: :has_dishwasher,
-  washingmaschine: :has_washingmaschine,
-  balcony: :has_balcony,
-  kitchen: :has_kitchen,
-  bathtub: :has_bathtub,
+  dishwasher: :dishwasher,
+  washingmaschine: :washingmaschine,
+  balcony: :balcony,
+  kitchen: :kitchen,
+  bathtub: :bathtub,
   aboutme: "I love to keep my home tidy and enjoy quiet evenings.",
   interest: "I enjoy reading, cooking, and hiking."
 )
@@ -414,7 +415,7 @@ LivingPreference.create!(
   gender: :male,
   smoking: :smoker,
   partying: :sometimes,
-  age: :young,
+  age:  "18-27",
   furnished: :unfurnished,
   dishwasher: :no_dishwasher,
   washingmaschine: :no_washingmaschine,
@@ -431,13 +432,13 @@ LivingPreference.create!(
   gender: :male,
   smoking: :social_smoker,
   partying: :often,
-  age: :young,
+  age: "18-27",
   furnished: :furnished,
-  dishwasher: :has_dishwasher,
+  dishwasher: :dishwasher,
   washingmaschine: :no_washingmaschine,
-  balcony: :has_balcony,
-  kitchen: :has_kitchen,
-  bathtub: :has_bathtub,
+  balcony: :balcony,
+  kitchen: :kitchen,
+  bathtub: :bathtub,
   aboutme: "I am laid back and don't mind a bit of mess.",
   interest: "I love music, concerts, and hanging out with friends."
 )
@@ -448,13 +449,13 @@ LivingPreference.create!(
   gender: :male,
   smoking: :non_smoker,
   partying: :sometimes,
-  age: :middle,
+  age: "28-35",
   furnished: :furnished,
-  dishwasher: :has_dishwasher,
-  washingmaschine: :has_washingmaschine,
+  dishwasher: :dishwasher,
+  washingmaschine: :washingmaschine,
   balcony: :no_balcony,
-  kitchen: :has_kitchen,
-  bathtub: :has_bathtub,
+  kitchen: :kitchen,
+  bathtub: :bathtub,
   aboutme: "I like to keep things organized and enjoy a balance of work and play.",
   interest: "My hobbies include coding, hiking, and playing guitar."
 )
@@ -465,11 +466,11 @@ LivingPreference.create!(
   gender: :female,
   smoking: :social_smoker,
   partying: :sometimes,
-  age: :young,
+  age: "28-35",
   furnished: :furnished,
   dishwasher: :no_dishwasher,
   washingmaschine: :no_washingmaschine,
-  balcony: :has_balcony,
+  balcony: :balcony,
   kitchen: :no_kitchen,
   bathtub: :no_bathtub,
   aboutme: "I am a student and I enjoy socializing and going out.",
@@ -482,13 +483,13 @@ LivingPreference.create!(
   gender: :male,
   smoking: :non_smoker,
   partying: :never,
-  age: :middle,
+  age: "28-35",
   furnished: :furnished,
-  dishwasher: :has_dishwasher,
-  washingmaschine: :has_washingmaschine,
-  balcony: :has_balcony,
-  kitchen: :has_kitchen,
-  bathtub: :has_bathtub,
+  dishwasher: :dishwasher,
+  washingmaschine: :washingmaschine,
+  balcony: :balcony,
+  kitchen: :kitchen,
+  bathtub: :bathtub,
   aboutme: "I value cleanliness and enjoy a quiet, peaceful environment.",
   interest: "I enjoy reading, writing, and nature walks."
 )
@@ -499,7 +500,7 @@ LivingPreference.create!(
   gender: :male,
   smoking: :smoker,
   partying: :often,
-  age: :young,
+  age: "28-35",
   furnished: :unfurnished,
   dishwasher: :no_dishwasher,
   washingmaschine: :no_washingmaschine,
@@ -516,13 +517,13 @@ LivingPreference.create!(
   gender: :male,
   smoking: :social_smoker,
   partying: :sometimes,
-  age: :middle,
+  age: "28-35",
   furnished: :furnished,
-  dishwasher: :has_dishwasher,
-  washingmaschine: :has_washingmaschine,
-  balcony: :has_balcony,
-  kitchen: :has_kitchen,
-  bathtub: :has_bathtub,
+  dishwasher: :dishwasher,
+  washingmaschine: :washingmaschine,
+  balcony: :balcony,
+  kitchen: :kitchen,
+  bathtub: :bathtub,
   aboutme: "I'm easy-going but like to keep things somewhat organized.",
   interest: "I enjoy sports, movies, and spending time with friends."
 )
@@ -533,12 +534,12 @@ LivingPreference.create!(
   gender: :female,
   smoking: :non_smoker,
   partying: :never,
-  age: :middle,
+  age: "28-35",
   furnished: :furnished,
-  dishwasher: :has_dishwasher,
-  washingmaschine: :has_washingmaschine,
+  dishwasher: :dishwasher,
+  washingmaschine: :washingmaschine,
   balcony: :no_balcony,
-  kitchen: :has_kitchen,
+  kitchen: :kitchen,
   bathtub: :no_bathtub,
   aboutme: "I like to maintain a clean and quiet living space.",
   interest: "I enjoy reading, yoga, and meditation."
@@ -550,11 +551,11 @@ LivingPreference.create!(
   gender: :female,
   smoking: :social_smoker,
   partying: :sometimes,
-  age: :young,
+  age: "28-35",
   furnished: :unfurnished,
   dishwasher: :no_dishwasher,
   washingmaschine: :no_washingmaschine,
-  balcony: :has_balcony,
+  balcony: :balcony,
   kitchen: :no_kitchen,
   bathtub: :no_bathtub,
   aboutme: "I enjoy a good balance of socializing and personal time.",
@@ -567,7 +568,7 @@ LivingPreference.create!(
   gender: :male,
   smoking: :smoker,
   partying: :often,
-  age: :young,
+  age: "18-27",
   furnished: :unfurnished,
   dishwasher: :no_dishwasher,
   washingmaschine: :no_washingmaschine,
@@ -584,13 +585,13 @@ LivingPreference.create!(
   gender: :male,
   smoking: :non_smoker,
   partying: :never,
-  age: :middle,
+  age: "28-35",
   furnished: :furnished,
-  dishwasher: :has_dishwasher,
-  washingmaschine: :has_washingmaschine,
-  balcony: :has_balcony,
-  kitchen: :has_kitchen,
-  bathtub: :has_bathtub,
+  dishwasher: :dishwasher,
+  washingmaschine: :washingmaschine,
+  balcony: :balcony,
+  kitchen: :kitchen,
+  bathtub: :bathtub,
   aboutme: "I like to keep things tidy and enjoy a calm atmosphere.",
   interest: "I enjoy cooking, reading, and playing the piano."
 )

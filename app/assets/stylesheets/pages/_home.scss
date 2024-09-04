@@ -32,23 +32,36 @@ body {
   text-align: left;
   color: #023145;
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue";
   font-weight: bold;
 }
 .h-profile {
   text-align: left;
   color: #1b1d1e;
   font-size: 20px;
-  font-family: Helvetica, sans-serif;
-  font-weight: lighter;
+  font-family: "Helvetica Neue";
+  font-weight:300
+}
+.boldy {
+  color: #023145;
+  font-weight:bold;
+  text-align: right;
+  color: #023145;
+  font-family: "Helvetica Neue";
+  font-size: 20px;
+}
+.smally {
+  font-weight: light;
+  font-size: 16px;
+
 }
 .pille {
   background-color: #FFEAA0;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: light;
   padding: 5px 10px;
-  display: inline-block; 
+  display: inline-block;
 }
 .container {
   display: flex;

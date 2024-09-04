@@ -97,10 +97,20 @@ input[type="radio"]:checked + .role {
   margin: 16px;
   border-radius: 10px ;
   background-color: #f6f6f6;
+  border: none !important;
 }
 .profile >.card {
   border-radius: 10px;
 
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+}
+.details-row-two {
+  display: flex;
+  justify-content: space-between;
 }
 .role-selection {
   display: flex;

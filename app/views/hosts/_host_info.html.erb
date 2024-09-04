@@ -9,7 +9,13 @@
   <div class="card">
        <h4 class="headprofile"><%= host.first_name %></h4>
        <div class="h-profile">
-        <%= host.living_preference.interest %>
+       <%= host.living_preference.interest %>
+       <% if host.living_preference.present? %>
+      <%= host.living_preference.aboutme %>
+       <p class="pille">
+       <%= host.age %></p>
+       <p class="pille">
+       <%= host.pronouns%></p>
         </div>
   </div>
 
@@ -38,16 +44,10 @@
         </a>
       </div>
     </div>
-  <% if host.living_preference.present? %>
-    <div class="card">
-      <p class="headprofile">About the Host<div class="h-profile">
-      <%= host.living_preference.aboutme %></p>
-      </div>
-    </div>
 
 
 
-<div class="card">
+<div class="card d-block">
   <h4 class="headprofile">Living Preferences</h4>
 
   <p class="pille">Cleanliness:
@@ -64,28 +64,41 @@
 </div>
 
 <div class="card">
+  <div class="details-row">
+    <p class="details"><span class="boldy"><%= host.rent %></span><br><span class="smally">Rent</span></p>
+    <p class="details"><span class="boldy"><%= host.duration %></span><span class="smally"><br>Months</span></p>
+    <p class="details"><span class="boldy"><%= host.room_size %>m2 </span><span class="smally"><br>Roomsize</span></p>
+  </div>
+  <div class="details-row-two">
+  <p class="details"><span class="boldy"><%= host.district %></span><br><span class="smally">District</span></p>
+  <p class="details"><span class="boldy"><%= host.entry_date %><br></span><span class="smally">Available</span></p>
+  </div>
+</div>
+
+<div class="card d-block">
   <h4 class="headprofile">Flat Features</h4>
-  <p class="pille">Furnished:
+  <p class="pille">
   <%= host.living_preference.furnished.humanize %></p>
 
-  <p class="pille">Dishwasher:
+  <p class="pille">
   <%= host.living_preference.dishwasher.humanize %></p>
 
-  <p class="pille">Washing Machine:
+  <p class="pille">
   <%= host.living_preference.washingmaschine.humanize %></p>
 
-  <p class="pille">Balcony:
+  <p class="pille">
   <%= host.living_preference.balcony.humanize %></p>
 
-  <p class="pille">Kitchen:
+  <p class="pille">
   <%= host.living_preference.kitchen.humanize %></p>
 
-  <p class="pille">Bathtub:
+  <p class="pille">
   <%= host.living_preference.bathtub.humanize %></p>
 </div>
 
     <!-- Mapbox Karte -->
     <div class="card">
+      <h4 class="headprofile">Location</h4>
       <div id='map-<%= host.id %>' style='width: 100%; height: 300px; margin-top: 20px;'></div>
 
       <script>
