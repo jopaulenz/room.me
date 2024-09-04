@@ -46,7 +46,7 @@
 
   <div class="actions">
     <%= link_to 'View Profile', flatmate_path(flatmate), class: 'btn btn-primary' %>
-    <%= link_to 'LIKE', flatmate_likes_path(flatmate), class: "btn btn-success", data: { turbo_method: :post} %>
-    <%= link_to 'DISLIKE', flatmate_dislikes_path(flatmate), class: "btn btn-danger", data: { turbo_method: :post} %>
+    <%= link_to 'LIKE', flatmate_likes_path(flatmate), method: :post, class: "btn btn-success", data: { turbo_method: :post } %>
+    <%= link_to 'DISLIKE', flatmate_dislikes_path(flatmate), method: :post, class: "btn btn-danger", data: { turbo_method: :post } %>
   </div>
 </div>

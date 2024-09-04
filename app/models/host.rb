@@ -16,12 +16,13 @@ class Host < ApplicationRecord
   before_validation :initialize_apartment_picture_urls
 
   def suggested_flatmates
-    return [] unless living_preference
-
-    Flatmate.includes(:living_preference).map do |flatmate|
-      score = living_preference.matching_score_with(flatmate.living_preference)
-      { flatmate: flatmate, score: score }
-    end.sort_by { |suggestion| -suggestion[:score] }
+    if living_preference
+      Flatmate.includes(:living_preference).sort_by do |flatmate|
+        -living_preference.matching_score_with(flatmate.living_preference)
+      end
+    else
+      Flatmate.order("RANDOM()").limit(10)
+    end
   end
 
   def full_street_address
