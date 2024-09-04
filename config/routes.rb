@@ -42,4 +42,8 @@ Rails.application.routes.draw do
   end
   get 'chats', to: 'matches#chats'  # List all chats
   get 'chats/:id', to: 'matches#chat', as: :chat  # Show a specific chat
+
+  get 'user_dashboard', to: 'users#dashboard', as: :user_dashboard
+  get 'edit_profile', to: 'users#edit_profile', as: :edit_profile
+  patch 'update_user_data', to: 'users#update_profile', as: 'update_user_data' # two ideas here
 end

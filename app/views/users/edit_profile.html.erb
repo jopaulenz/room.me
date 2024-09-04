@@ -1,0 +1,163 @@
+<h1>Edit Your Profile Information</h1>
+
+<%= form_with(model: @profile, url: update_user_data_path, method: :patch, local: true) do |form| %>
+
+  <%# General profile data %>
+  <div class="form-group">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, value: @profile.first_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, value: @profile.last_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email_address %>
+    <%= form.email_field :email_address, value: @profile.email_address, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :phone_number %>
+    <%= form.telephone_field :phone_number, value: @profile.phone_number, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :date_of_birth %>
+    <%= form.date_field :date_of_birth, value: @profile.date_of_birth, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :gender %>
+    <%= form.select :gender, options_for_select(['Male', 'Female', 'Non-binary', 'Other'], @profile.gender), class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :pronouns %>
+    <%= form.text_field :pronouns, value: @profile.pronouns, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :city, "City", class: "custom-label" %><br>
+    <div class="form-group flex">
+      <%= form.radio_button :city, "Berlin", id: "city_berlin" %>
+      <%= form.label :city, "Berlin", for: "city_berlin", class: "tag" %>
+      <%= form.radio_button :city, "Buxtehude", id: "city_buxtehude" %>
+      <%= form.label :city, "Buxtehude", for: "city_buxtehude", class: "tag" %>
+    </div>
+  </div>
+
+ <div class="form-group">
+    <%= form.label :district, "District", class: "custom-label" %><br>
+    <div class="form-group flex">
+      <div>
+        <%= form.radio_button :district, "Kreuzberg", id: "district_kreuzberg" %>
+        <%= form.label :district, "Kreuzberg", for: "district_kreuzberg", class: "tag" %>
+      </div>
+      <div>
+        <%= form.radio_button :district, "Mitte", id: "district_mitte" %>
+        <%= form.label :district, "Mitte", for: "district_mitte", class: "tag" %>
+      </div>
+      <div>
+        <%= form.radio_button :district, "Marzahn", id: "district_marzahn" %>
+        <%= form.label :district, "Marzahn", for: "district_marzahn", class: "tag" %>
+      </div>
+      <div>
+        <%= form.radio_button :district, "Friedrichshain", id: "district_friedrichshain" %>
+        <%= form.label :district, "Friedrichshain", for: "district_friedrichshain", class: "tag" %>
+      </div>
+      <div>
+        <%= form.radio_button :district, "Wedding", id: "district_wedding" %>
+        <%= form.label :district, "Wedding", for: "district_wedding", class: "tag" %>
+      </div>
+      <div>
+        <%= form.radio_button :district, "Neukölln", id: "district_neulölln" %>
+        <%= form.label :district, "Neukölln", for: "district_neulölln", class: "tag" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :entry_date, "Preferred Entry Date", class: "custom-label" %>
+    <%= form.date_field :entry_date, class: "custom-input", placeholder: "Select the preferred entry date" %>
+  </div>
+
+   <div class="form-group">
+    <%= form.label :duration, "Duration", class: "custom-label" %><br>
+    <div class="form-group flex">
+      <div>
+        <%= form.radio_button :duration, "longterm", id: "longterm" %>
+        <%= form.label :duration, "Long-term", for: "longterm", class: "tag" %>
+      </div>
+      <div>
+        <%= form.radio_button :duration, "shortterm", id: "shortterm" %>
+        <%= form.label :duration, "Short-term", for: "shortterm", class: "tag" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :registration, "Registration", class: "custom-label" %><br>
+    <div class="form-group flex">
+      <div>
+        <%= form.radio_button :registration, "Yes", id: "registration_yes" %>
+        <%= form.label :registration, "Yes", for: "registration_yes", class: "tag" %>
+      </div>
+      <div>
+        <%= form.radio_button :registration, "No", id: "registration_no" %>
+        <%= form.label :registration, "No", for: "registration_no", class: "tag" %>
+      </div>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <%= form.label :furnished, "Furnished", class: "custom-label"%><br>
+      <div class="form-group flex">
+        <div>
+          <%= form.radio_button :furnished, 'Unfurnished', id: 'furnished_unfurnished' %>
+          <%= form.label :furnished, 'Unfurnished', for: "furnished_unfurnished", class: 'tag' %>
+        </div>
+        <div>
+          <%= form.radio_button :furnished, 'Furnished', id: 'furnished_furnished' %>
+          <%= form.label :furnished, 'Furnished', class: 'tag', for: "furnished_furnished" %>
+        </div>
+        <div>
+          <%= form.radio_button :furnished, 'Doesn\'t matter', id: 'furnished_doesnt_matter' %>
+          <%= form.label :furnished, 'Doesn\'t matter', class: 'tag', for: "furnished_doesnt_matter" %>
+        </div>
+      </div>
+    </div>
+
+  <%# Specific profile data %>
+  <% if @is_host %>
+
+    <div class="form-group">
+      <%= form.label :rent, "Rent", class: "custom-label" %>
+      <%= form.number_field :rent, class: "custom-input", placeholder: "Enter the rent" %>
+    </div>
+
+   <div class="form-group">
+    <%= form.label :room_size, "Room size (m²)", class: "custom-label" %>
+    <%= form.number_field :room_size, min: 0, class: "custom-input", placeholder: "Enter the room size" %>
+  </div>
+
+
+  <% elsif @is_flatmate %>
+   <div class="form-group">
+      <%= form.label :rent_min, "Rent", class: "custom-label" %><br>
+      <div class="form-group flex">
+        <%= form.number_field :rent_range_min, min: 0, placeholder: "min", class: "custom-input" %>
+        <%= form.number_field :rent_range_max, max: 0, placeholder: "max", class: "custom-input" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :room_size_min, "Room Size", class: "custom-label"%><br>
+      <div class="form-group flex">
+        <%= form.number_field :room_size_min, min: 0, placeholder: "min", class: "custom-input" %>
+        <%= form.number_field :room_size_max, max: 0, placeholder: "max", class: "custom-input" %>
+      </div>
+    </div>
+  <% end %>
+  <%= form.submit "Save Changes", class: "btn btn-primary" %>
+<% end %>
