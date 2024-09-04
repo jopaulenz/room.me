@@ -1,4 +1,8 @@
-<div id="message-<%= message.id %>" class="message-content <%= message.user == current_user ? 'message-current-user' : 'message-other-user' %>">
+<div
+  id="message-<%= message.id %>"
+  class="message-content <%= message.user == user ? 'message-current-user' : 'message-other-user' %>"
+  data-controller="message"
+  data-message-user-id-value="<%= message.user.id %>">
   <small>
     <strong><%= message.first_name %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
