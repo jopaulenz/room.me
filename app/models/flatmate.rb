@@ -7,12 +7,12 @@ class Flatmate < ApplicationRecord
   has_many :liked_hosts, through: :given_likes, source: :liked, source_type: 'Host'
 
   def suggested_hosts
-    return [] unless living_preference
-
-    Host.includes(:living_preference).map do |host|
-      score = living_preference.matching_score_with(host.living_preference)
-      { host: host, score: score }
-    end.sort_by { |suggestion| -suggestion[:score] }
+    if living_preference
+      Host.includes(:living_preference).sort_by do |host|
+        -living_preference.matching_score_with(host.living_preference)
+      end
+    else
+      Host.order("RANDOM()").limit(10)
+    end
   end
 end
-

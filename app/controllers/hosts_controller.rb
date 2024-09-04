@@ -3,14 +3,22 @@ class HostsController < ApplicationController
 
   def index
     if current_user.flatmate?
-      if current_user.flatmate.suggested_hosts.any?
-        @suggested_hosts = current_user.flatmate.suggested_hosts
-      else
-        @suggested_hosts = Host.order("RANDOM()").limit(10)
-      end
+      @suggested_hosts = current_user.flatmate.suggested_hosts
     else
       redirect_to root_path, alert: "Only flatmates can see this page."
     end
+  end
+
+  def like
+    @flatmate = Flatmate.find(params[:id])
+    current_user.host.received_likes.create!(liked: @flatmate)
+    redirect_to flatmates_path # Zeige den nächsten Flatmate nach Like
+  end
+
+  def dislike
+    @flatmate = Flatmate.find(params[:id])
+    # Logik für Dislike, wenn nötig (optional)
+    redirect_to flatmates_path # Zeige den nächsten Flatmate nach Dislike
   end
 
   def new
