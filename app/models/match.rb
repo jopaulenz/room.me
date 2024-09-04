@@ -5,7 +5,7 @@ class Match < ApplicationRecord
   validates :flatmate_id, uniqueness: { scope: :host_id }
 
   def matched_user(current_user)
-    flatmate == current_user ? host : flatmate
+    flatmate == current_user.flatmate ? host : flatmate
   end
 
   def last_message_content
