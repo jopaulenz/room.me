@@ -1,20 +1,27 @@
-<h1>Your Ongoing Chats</h1>
-<div class="matches-container">
-  <% @matches.each do |match| %>
-    <%= link_to chat_path(match), class: "match-bar-link" do %>
-      <div class="match-bar">
-        <div class="profile-pic">
-          <%= cl_image_tag match.matched_user(current_user).profile_photo.key, alt: match.matched_user(current_user).first_name, class: "avatar" %>
-        </div>
-        <div class="match-details">
-          <div class="match-name">
-            <%= match.matched_user(current_user).first_name %>
+<div class="whitebg d-block pt-5 p-0">
+  <div class='title'>
+    <h2 class='rm'>ROOM.ME</h2>
+  </div>
+  <div class="matches-header">
+    <h2 class="matches-title">Messages</h2>
+  </div>
+  <div class="matches-container p-3">
+    <% @matches.each do |match| %>
+      <%= link_to chat_path(match), class: "profile-link" do %> <!-- Link um die gesamte Karte -->
+        <div class="match-bar d-flex align-items-center">
+          <div class="profile-pic flatmate-pic">
+            <%= cl_image_tag match.matched_user(current_user).profile_photo.key, alt: match.matched_user(current_user).first_name, class: "avatar" %>
           </div>
-          <div class="last-message">
-            <%= truncate(match.last_message_content, length: 50) %>
+          <div class="match-details ml-3">
+            <div class="match-name">
+              <%= match.matched_user(current_user).first_name %>
+            </div>
+            <div class="last-message">
+              <%= truncate(match.last_message_content, length: 50) %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
