@@ -93,9 +93,14 @@ input[type="radio"]:checked + .role {
   flex-wrap: wrap;
 }
 .card {
-  padding: 10px;
+  padding: 18px;
   margin: 16px;
-  border-radius: 20px;
+  border-radius: 10px ;
+  background-color: #f6f6f6;
+}
+.profile >.card {
+  border-radius: 10px;
+
 }
 .role-selection {
   display: flex;

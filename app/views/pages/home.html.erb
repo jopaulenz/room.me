@@ -1,6 +1,12 @@
-<div class="header" data-controller="delay">
-    <h1>ROOM.ME</h1>
+<% if user_signed_in? %>
+  <div class="header" data-controller="delay">
+      <h1>ROOM.ME</h1>
   </div>
+  <% else %>
+    <div class="header">
+      <h1>ROOM.ME</h1>
+    </div>
+  <% end %>
   <br>
   <div class="container">
     <div class="ball">
@@ -15,4 +21,10 @@
     <div class="slogan">
     <p>MATCH.MOVE.LIVE</p>
   </div>
+  <br>
+  <% if !user_signed_in? %>
+    <div class="bg-white p-4 text-center rounded">
+      <%= link_to "Log in", new_user_session_path, class: "continue" %>
+    </div>
+  <% end %>
 </div>

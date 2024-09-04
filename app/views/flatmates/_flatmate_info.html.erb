@@ -1,5 +1,5 @@
-<div class="flatmate-profile">
-  <h1 class="headyou"><%= flatmate.first_name %></h1>
+<h2 class= rm>ROOM.ME</h2>
+<div class="profile">
   <div class="card">
     <%= cl_image_tag flatmate.profile_photo.key if flatmate.profile_photo.attached? %>
   </div>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="card">
-      <p><strong>Interests:</strong>
+      <h1 class="headyou"><%= flatmate.first_name %></h1>
       <br><%= flatmate.living_preference.interest %></p>
     </div>
 
