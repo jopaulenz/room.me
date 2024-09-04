@@ -15,6 +15,10 @@ GEM
       nio4r (~> 2.0)
       websocket-driver (>= 0.6.1)
       zeitwerk (~> 2.6)
+    actioncable-enhanced-postgresql-adapter (1.0.1)
+      actioncable (>= 6.0)
+      connection_pool (>= 2.2.5)
+      pg (~> 1.5)
     actionmailbox (7.1.4)
       actionpack (= 7.1.4)
       activejob (= 7.1.4)
@@ -143,7 +147,6 @@ GEM
       net-http
     ffi (1.17.0)
     ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86_64-darwin)
     font-awesome-sass (6.5.2)
       sassc (~> 2.0)
     geocoder (1.8.3)
@@ -193,8 +196,6 @@ GEM
       net-protocol
     nio4r (2.7.3)
     nokogiri (1.16.7-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.7-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
@@ -309,10 +310,11 @@ GEM
 
 PLATFORMS
   arm64-darwin
-  x86_64-darwin-23
+  arm64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
+  actioncable-enhanced-postgresql-adapter (~> 1.0)
   autoprefixer-rails
   bootsnap
   bootstrap (~> 5.2)

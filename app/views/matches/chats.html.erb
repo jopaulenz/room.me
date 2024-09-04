@@ -1,7 +1,7 @@
 <h1>Your Ongoing Chats</h1>
 <div class="matches-container">
   <% @matches.each do |match| %>
-    <%= link_to match_path(match), class: "match-bar-link" do %>
+    <%= link_to chat_path(match), class: "match-bar-link" do %>
       <div class="match-bar">
         <div class="profile-pic">
           <%= cl_image_tag match.matched_user(current_user).profile_photo.key, alt: match.matched_user(current_user).first_name, class: "avatar" %>

@@ -22,7 +22,7 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
   </head>
 
-  <body>
+  <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
     <div class="page_container">
       <!-- Main Content -->
       <div class="content-container">
