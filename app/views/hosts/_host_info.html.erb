@@ -7,16 +7,18 @@
   </div>
 
   <div class="card">
-       <h4 class="headprofile"><%= host.first_name %></h4>
        <div class="h-profile">
+        <div class="d-flex align-items-center">
+       <h4 class="headprofile"><%= host.first_name %></h4>
+         <span class="info">
+       <%= host.age %></span>
+       <span class="info">
+       <%= host.pronouns%></span>
+       </div>
        <%= host.living_preference.interest %>
        <% if host.living_preference.present? %>
       <%= host.living_preference.aboutme %>
-       <p class="pille">
-       <%= host.age %></p>
-       <p class="pille">
-       <%= host.pronouns%></p>
-        </div>
+  </div>
   </div>
 
   <div class="card">
