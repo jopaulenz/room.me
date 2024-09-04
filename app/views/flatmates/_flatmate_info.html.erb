@@ -1,7 +1,7 @@
 <div class="flatmate-profile">
   <h1 class="headyou"><%= flatmate.first_name %></h1>
   <div class="card">
-    <%= image_tag flatmate.profile_picture_url if flatmate.profile_picture_url.present? %>
+    <%= cl_image_tag flatmate.profile_photo.key if flatmate.profile_photo.attached? %>
   </div>
 
   <% if flatmate.living_preference.present? %>
