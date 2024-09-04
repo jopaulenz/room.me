@@ -38,9 +38,8 @@ Rails.application.routes.draw do
 
   # Matches index
   resources :matches, only: [:index, :show] do
-    get 'chat', to: 'matches#chat', as: :chat
+    resources :messages, only: :create
   end
-
-  get 'chats', to: 'matches#chats', as: :chats
-  get 'chat', to: 'matches#chat', as: :chat
+  get 'chats', to: 'matches#chats'  # List all chats
+  get 'chats/:id', to: 'matches#chat', as: :chat  # Show a specific chat
 end

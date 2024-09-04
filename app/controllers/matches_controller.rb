@@ -7,7 +7,9 @@ class MatchesController < ApplicationController
   end
 
   def chat
-    @match = Match.find(params[:match_id])
+    @match = Match.find(params[:id])
+    @message = Message.new
+    @messages = @match.messages.includes(:user).order(created_at: :asc)
     @flatmate = @match.flatmate
     @host = @match.host
   end
