@@ -1,0 +1,17 @@
+<h1>
+  Your chat with <%= @match.matched_user(current_user).first_name %>
+</h1>
+<div class="container chat">
+  <div id="messages" class="messages">
+    <% @match.messages.each do |message| %>
+      <div id="message-<%= message.id %>">
+        <small>
+
+          <strong><%= message.flatmate.first_name %></strong>
+          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        </small>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

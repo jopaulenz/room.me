@@ -1,39 +1,42 @@
 <h1>Matches</h1>
-<div class="matches-container p-3" >
+<div class="matches-container p-3">
   <% @matches.each do |match| %>
     <% if current_user.host %>
       <%= link_to flatmate_path(match.flatmate), class: "match-bar-link" do %>
-        <div class="match-bar">
+        <div class="match-bar d-flex align-items-center">
           <div class="profile-pic">
             <%= cl_image_tag match.flatmate.profile_photo.key, alt: match.flatmate.first_name, class: "avatar" if match.flatmate.profile_photo.attached? %>
           </div>
-          <div class="match-details">
+          <div class="match-details ml-3">
             <div class="match-name">
               <%= match.flatmate.first_name %>
-              <% = match.flatmate.district %>
+            </div>
+            <div class="match-infos">
+              <%= match.flatmate.district %> |
+              <%= "#{match.flatmate.rent_range_min} - #{match.flatmate.rent_range_max}" %>
             </div>
           </div>
         </div>
       <% end %>
-      <% else  %>
+    <% else %>
       <%= link_to host_path(match.host), class: "match-bar-link" do %>
-        <div class="match-bar">
+        <div class="match-bar d-flex align-items-center">
           <div class="profile-pic">
             <%= cl_image_tag match.host.photos.first.key, alt: match.host.first_name, class: "avatar" %>
           </div>
-          <div class="match-details">
+          <div class="match-details ml-3">
             <div class="match-name">
               <%= match.host.first_name %>
-              <%# = match.host.age %>
             </div>
-            <div class='match-infos'>
-              <%= match.host.rent%>
-              <%= match.host.district%>
-              <%= match.host.room_size%>
+            <div class="match-infos">
+              <%= match.host.district %> |
+              <%= match.host.rent %> €
+              <%= match.host.room_size %> qm
             </div>
           </div>
         </div>
-    <% end %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
+
