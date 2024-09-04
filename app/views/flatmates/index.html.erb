@@ -3,7 +3,7 @@
 <% if @suggested_flatmates.present? %>
   <% suggestion = @suggested_flatmates.first %>
   <div class="flatmate-profile">
-    <h2><%= suggestion.user.email %> - <%= suggestion.city %></h2>
+    <h4><%= suggestion.first_name %></h4>
     <%= render partial: 'flatmate_info', locals: { flatmate: suggestion } %>
   </div>
 <% else %>
