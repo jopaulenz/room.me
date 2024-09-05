@@ -99,6 +99,7 @@ input[type="radio"]:checked + .role {
   border-radius: 10px ;
   background-color: #f6f6f6;
   border: none !important;
+  position: relative;
 }
 .pref_card {
   padding: 8px 16px;
@@ -158,8 +159,8 @@ input[type="radio"]:checked + .role {
   border-radius: 50%;
   background-color: #f6f6f6;
   opacity: 70%;
-  width: 100px; /* Initially 1/5th of the original 185px */
-  height: 100px;
+  width: 60px; /* Initially 1/5th of the original 185px */
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,9 +171,8 @@ input[type="radio"]:checked + .role {
 
 /* Position dislike on the left and like on the right */
 .dislike {
-  left: -40px;
-  top: 30px;
-  opacity: 80%;
+  left: 16px;
+  top: 32px;
 }
 
 .btn-auth {
@@ -188,8 +188,11 @@ input[type="radio"]:checked + .role {
 }
 
 .like {
-  right: -70px;
-  top: -30px;
+  right: 16px;
+  top: 32px;
+}
+.liking,  .disliking {
+  opacity: 1;
 }
 
 /* Scale up on click */
@@ -201,4 +204,8 @@ input[type="radio"]:checked + .role {
 svg {
   display: block;
   transition: all 0.3s ease; /* Ensure the icon scales smoothly too */
+}
+
+#inv {
+  opacity: 1;
 }
