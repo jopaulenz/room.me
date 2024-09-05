@@ -39,7 +39,7 @@ class LivingPreferencesController < ApplicationController
         next_step = @step + 1
         redirect_to edit_living_preference_path(@living_preference, step: next_step), notice: 'Living preferences were successfully updated.'
       else
-        redirect_to root_path, notice: 'Living preferences were successfully completed.'
+        redirect_to success_path
       end
     else
       render :edit
