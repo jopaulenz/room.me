@@ -1,5 +1,4 @@
 .navbar {
-  width: 100%;
   background: linear-gradient(
     to top,
     #FFCE4F,
@@ -12,11 +11,9 @@
   align-items: flex-end;
   color: #023145;
   padding: 0 24px;
+  width: 100vw;
 }
 
-.container {
-  width: 100%;
-}
 
  .home {
   margin-left: -62px;
@@ -37,5 +34,5 @@ padding: 7px 7px;
 font-size: 16px;
 position: absolute;
 right: -8px;
-/* display: none; */
+display: none; 
 }

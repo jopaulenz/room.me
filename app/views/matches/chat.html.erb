@@ -1,8 +1,29 @@
 <div class='title'><h2 class='rm'>ROOM.ME</h2></div>
 
-<h1>
-  <%= @match.matched_user(current_user).first_name %>
-</h1>
+<div class="chat-bar d-flex align-items-center">
+          <%= link_to flatmate_path(@match.matched_user(current_user)), class: "profile-link" do %>
+            <div class="profile-pic flatmate-pic">
+              <%= cl_image_tag @match.matched_user(current_user).profile_photo.key, alt: @match.matched_user(current_user).first_name, class: "avatar" if @match.matched_user(current_user).profile_photo.attached? %>
+            </div>
+          <% end %>
+          <div class="match-details ml-3">
+            <div class="match-name">
+              <%= @match.matched_user(current_user).first_name %>
+            </div>
+            <div class="match-infos">
+              <% if current_user.host %>
+                <%= @match.matched_user(current_user).district %> |
+                <%= "#{@match.matched_user(current_user).rent_range_min}€ - #{@match.matched_user(current_user).rent_range_max}€" %>
+              <% else %>
+                <div class="match-infos">
+                  <%= @match.host.district %> |
+                  <%= @match.host.rent %> €
+                  <%= @match.host.room_size %> qm
+            </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
 <div class="container chat">
   <%= turbo_stream_from "match_#{@match.id}_messages" %>
   <div id="messages" class="messages">

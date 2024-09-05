@@ -24,25 +24,25 @@
   .message-content {
     padding: 1rem;
     border-radius: 15px;
-    max-width: 60%;
+    max-width: 75%;
     margin-bottom: 1rem;
     word-wrap: break-word;
   }
 
   .message-current-user {
-    background-color: rgba(250, 226, 47, 0.596); /* Light red for current user */
+    background-color: #FFDC82;
     align-self: flex-end;
     text-align: right;
   }
 
   .message-other-user {
-    background-color: rgba(25, 142, 245, 0.404); /* Light blue for other user */
+    background-color: #E8E5E5;
     align-self: flex-start;
     text-align: left;
   }
 
   #new_message {
-    border-top: 1px solid #e0e0e0; /* Light grey for border */
+    border-top: 1px solid #e0e0e0;
     padding: 1rem;
     display: flex;
     justify-content: space-between;

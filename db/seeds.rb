@@ -36,7 +36,7 @@ josephine_host = Host.find_or_create_by!(user: josephine) do |host|
   host.phone_number = random_phone
   host.district = "Mitte"
   host.rent = 1200
-  host.duration = 12
+  host.duration = 1
   host.entry_date = Date.today + 1.month
   host.registration = 1
   host.room_size = 20
@@ -60,7 +60,7 @@ mustapha_host = Host.find_or_create_by!(user: mustapha) do |host|
   host.phone_number = random_phone
   host.district = "Kreuzberg"
   host.rent = 1000
-  host.duration = 6
+  host.duration = 1
   host.entry_date = Date.today + 2.months
   host.registration = 0
   host.room_size = 18
@@ -83,7 +83,7 @@ sascha_host = Host.find_or_create_by!(user: sascha) do |host|
   host.phone_number = random_phone
   host.district = "Neukölln"
   host.rent = 800
-  host.duration = 9
+  host.duration = 0
   host.entry_date = Date.today + 1.month
   host.registration = 1
   host.room_size = 16
@@ -106,7 +106,7 @@ justus_host = Host.find_or_create_by!(user: justus) do |host|
   host.phone_number = random_phone
   host.district = "Charlottenburg"
   host.rent = 1500
-  host.duration = 12
+  host.duration = 1
   host.entry_date = Date.today + 3.months
   host.registration = 1
   host.room_size = 22
@@ -131,7 +131,7 @@ gavin_flatmate = Flatmate.find_or_create_by!(user: gavin) do |flatmate|
   flatmate.district = "Friedrichshain"
   flatmate.rent_range_min = 500
   flatmate.rent_range_max = 800
-  flatmate.duration = 12
+  flatmate.duration = 1
   flatmate.entry_date = Date.today + 2.months
   flatmate.registration = 1
   flatmate.room_size_min = 15
@@ -154,7 +154,7 @@ frida_flatmate = Flatmate.find_or_create_by!(user: frida) do |flatmate|
   flatmate.district = "Prenzlauer Berg"
   flatmate.rent_range_min = 600
   flatmate.rent_range_max = 900
-  flatmate.duration = 12
+  flatmate.duration = 1
   flatmate.entry_date = Date.today + 3.months
   flatmate.registration = 1
   flatmate.room_size_min = 18
@@ -177,7 +177,7 @@ lounis_flatmate = Flatmate.find_or_create_by!(user: lounis) do |flatmate|
   flatmate.district = "Wedding"
   flatmate.rent_range_min = 400
   flatmate.rent_range_max = 700
-  flatmate.duration = 9
+  flatmate.duration = 0
   flatmate.entry_date = Date.today + 1.month
   flatmate.registration = 0
   flatmate.room_size_min = 14
@@ -200,7 +200,7 @@ florian_flatmate = Flatmate.find_or_create_by!(user: florian) do |flatmate|
   flatmate.district = "Charlottenburg"
   flatmate.rent_range_min = 600
   flatmate.rent_range_max = 1000
-  flatmate.duration = 12
+  flatmate.duration = 1
   flatmate.entry_date = Date.today + 2.months
   flatmate.registration = 1
   flatmate.room_size_min = 18
@@ -223,7 +223,7 @@ sree_flatmate = Flatmate.find_or_create_by!(user: sree) do |flatmate|
   flatmate.district = "Schöneberg"
   flatmate.rent_range_min = 500
   flatmate.rent_range_max = 800
-  flatmate.duration = 12
+  flatmate.duration = 1
   flatmate.entry_date = Date.today + 1.month
   flatmate.registration = 1
   flatmate.room_size_min = 16
@@ -246,7 +246,7 @@ julia_flatmate = Flatmate.find_or_create_by!(user: julia) do |flatmate|
   flatmate.district = "Pankow"
   flatmate.rent_range_min = 700
   flatmate.rent_range_max = 1100
-  flatmate.duration = 12
+  flatmate.duration = 1
   flatmate.entry_date = Date.today + 3.months
   flatmate.registration = 1
   flatmate.room_size_min = 20
@@ -269,7 +269,7 @@ navid_flatmate = Flatmate.find_or_create_by!(user: navid) do |flatmate|
   flatmate.district = "Tempelhof"
   flatmate.rent_range_min = 400
   flatmate.rent_range_max = 600
-  flatmate.duration = 6
+  flatmate.duration = 1
   flatmate.entry_date = Date.today + 1.month
   flatmate.registration = 0
   flatmate.room_size_min = 14
@@ -292,7 +292,7 @@ gustavo_flatmate = Flatmate.find_or_create_by!(user: gustavo) do |flatmate|
   flatmate.district = "Lichtenberg"
   flatmate.rent_range_min = 500
   flatmate.rent_range_max = 800
-  flatmate.duration = 9
+  flatmate.duration = 0
   flatmate.entry_date = Date.today + 2.months
   flatmate.registration = 1
   flatmate.room_size_min = 16
@@ -306,9 +306,10 @@ josephine_host.profile_photo.attach(
   content_type: "image/jpg"
 )
 josephine_host.photos.attach([
-  { io: URI.open("https://plus.unsplash.com/premium_photo-1661878091792-2d5511d508e9?q=80&w=2796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"), filename: "apartment1.jpg", content_type: "image/jpg" },
-  { io: URI.open("https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmxhdCUyMGludGVyaW9yJTIwbmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D"), filename: "apartment2.jpg", content_type: "image/jpg" },
-  { io: URI.open("https://images.unsplash.com/photo-1532952626554-d0cace1cd3fc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZsYXQlMjBpbnRlcmlvciUyMG5ldyUyMHlvcmt8ZW58MHx8MHx8fDA%3D"), filename: "apartment3.jpg", content_type: "image/jpg" }
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725455951/pic_4_1_i0za9n.png"), filename: "apartment1.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725455950/pic_1_ulwlg2.png"), filename: "apartment2.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725455948/pictures_2_bqpmru.png"), filename: "apartment3.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725455949/pic_3_ymos5y.png"), filename: "apartment4.jpg", content_type: "image/jpg" }
 ])
 
 mustapha_host.profile_photo.attach(
@@ -317,9 +318,11 @@ mustapha_host.profile_photo.attach(
   content_type: "image/jpg"
 )
 mustapha_host.photos.attach([
-  { io: URI.open("https://plus.unsplash.com/premium_photo-1722048810826-751afbcc98c0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGludGVyaW9yJTIwZGVzaWduJTIwc2FuJTIwZnJhbmNpc2NvfGVufDB8fDB8fHww"), filename: "apartment4.jpg", content_type: "image/jpg" },
-  { io: URI.open("https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGludGVyaW9yJTIwZGVzaWduJTIwc2FuJTIwZnJhbmNpc2NvfGVufDB8fDB8fHww"), filename: "apartment5.jpg", content_type: "image/jpg" },
-  { io: URI.open("https://plus.unsplash.com/premium_photo-1720647024032-01a5e9740c96?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGludGVyaW9yJTIwZGVzaWduJTIwc2FuJTIwZnJhbmNpc2NvfGVufDB8fDB8fHww"), filename: "apartment6.jpg", content_type: "image/jpg" }
+  { io: URI.open("https://plus.unsplash.com/premium_photo-1722048810826-751afbcc98c0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGludGVyaW9yJTIwZGVzaWduJTIwc2FuJTIwZnJhbmNpc2NvfGVufDB8fDB8fHww"), filename: "apartment5.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGludGVyaW9yJTIwZGVzaWduJTIwc2FuJTIwZnJhbmNpc2NvfGVufDB8fDB8fHww"), filename: "apartment6.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725454913/rafael-hoyos-weht-8PKGjZ2GzuQ-unsplash_gfmopr.jpg"), filename: "apartment7.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725454035/hannah-busing-U-k6XLlml1I-unsplash_alnm9w.jpg"), filename: "apartment8.jpg", content_type: "image/jpg" }
+
 ])
 
 sascha_host.profile_photo.attach(
@@ -328,9 +331,10 @@ sascha_host.profile_photo.attach(
   content_type: "image/jpg"
 )
 sascha_host.photos.attach([
-  { io: URI.open("https://plus.unsplash.com/premium_photo-1661962821424-25b171c8a8aa?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW50ZXJpb3IlMjBkZXNpZ24lMjBwYXJpc3xlbnwwfHwwfHx8MA%3D%3D"), filename: "apartment7.jpg", content_type: "image/jpg" },
-  { io: URI.open("https://images.unsplash.com/photo-1505409628601-edc9af17fda6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW50ZXJpb3IlMjBkZXNpZ24lMjBwYXJpc3xlbnwwfHwwfHx8MA%3D%3D"), filename: "apartment8.jpg", content_type: "image/jpg" },
-  { io: URI.open("https://images.unsplash.com/photo-1505409859467-3a796fd5798e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ24lMjBwYXJpc3xlbnwwfHwwfHx8MA%3D%3D"), filename: "apartment9.jpg", content_type: "image/jpg" }
+  { io: URI.open("https://plus.unsplash.com/premium_photo-1661962821424-25b171c8a8aa?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW50ZXJpb3IlMjBkZXNpZ24lMjBwYXJpc3xlbnwwfHwwfHx8MA%3D%3D"), filename: "apartment9.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://images.unsplash.com/photo-1505409628601-edc9af17fda6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW50ZXJpb3IlMjBkZXNpZ24lMjBwYXJpc3xlbnwwfHwwfHx8MA%3D%3D"), filename: "apartment10.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725454913/frames-for-your-heart-FqqiAvJejto-unsplash_1_sclqmw.jpg"), filename: "apartment11.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725454913/christian-mackie-yb9b2wbhxG4-unsplash_qaorgh.jpg"), filename: "apartment12.jpg", content_type: "image/jpg" }
 ])
 
 justus_host.profile_photo.attach(
@@ -339,9 +343,10 @@ justus_host.profile_photo.attach(
   content_type: "image/jpg"
 )
 justus_host.photos.attach([
-  { io: URI.open("https://images.unsplash.com/photo-1595846723416-99a641e1231a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGludGVyaW9yJTIwZGVzaWduJTIwTG9uZG9ufGVufDB8fDB8fHww"), filename: "apartment10.jpg", content_type: "image/jpg" },
-  { io: URI.open("https://images.unsplash.com/photo-1595846519845-68e298c2edd8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGludGVyaW9yJTIwZGVzaWduJTIwTG9uZG9ufGVufDB8fDB8fHww"), filename: "apartment11.jpg", content_type: "image/jpg" },
-  { io: URI.open("https://plus.unsplash.com/premium_photo-1670076515866-73822a3d610d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGludGVyaW9yJTIwZGVzaWduJTIwTG9uZG9ufGVufDB8fDB8fHww"), filename: "apartment12.jpg", content_type: "image/jpg" }
+  { io: URI.open("https://images.unsplash.com/photo-1595846723416-99a641e1231a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGludGVyaW9yJTIwZGVzaWduJTIwTG9uZG9ufGVufDB8fDB8fHww"), filename: "apartment13.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://images.unsplash.com/photo-1595846519845-68e298c2edd8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGludGVyaW9yJTIwZGVzaWduJTIwTG9uZG9ufGVufDB8fDB8fHww"), filename: "apartment14.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725454903/deborah-cortelazzi-gREquCUXQLI-unsplash_ptw7j9.jpg"), filename: "apartment15.jpg", content_type: "image/jpg" },
+  { io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725454909/lotus-design-n-print-g51F6-WYzyU-unsplash_cnjby9.jpg"), filename: "apartment16.jpg", content_type: "image/jpg" }
 ])
 
 gavin_flatmate.profile_photo.attach(

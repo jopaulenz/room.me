@@ -1,11 +1,10 @@
-<h1>Available Hosts</h1>
+<h2 class= rm>ROOM.ME</h2>
+<br>
+<p>Available Hosts</p>
 
 <% if @suggested_hosts.present? %>
   <% suggestion = @suggested_hosts.first %>
-  <div class="host-profile mb-5">
-    <h2><%= suggestion.user.email %> - <%= suggestion.city %></h2>
     <%= render partial: 'host_info', locals: { host: suggestion } %>
-  </div>
 <% else %>
   <p>No more hosts to suggest at this time.</p>
 <% end %>

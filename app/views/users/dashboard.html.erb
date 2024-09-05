@@ -1,0 +1,20 @@
+<div class="whitebg">
+<h1 class="headyou">Your Profile</h1>
+
+<div class="profile-section">
+  <div class="column">
+    <h4 class="headprofile">Personal Details</h4>
+    <%= link_to 'Edit Personal Data', edit_profile_path %>
+  </div>
+
+  <div class="column">
+    <h4 class="headprofile">Living Preferences</h4>
+    <% if @living_preference %>
+      <%= link_to 'Edit Preferences', edit_living_preference_path(@living_preference) %>
+    <% else %>
+      <%= link_to 'Create Preferences', new_living_preference_path %>
+    <% end %>
+  </div>
+</div>
+</div>
+<%= render 'shared/navbar_profile' %>
