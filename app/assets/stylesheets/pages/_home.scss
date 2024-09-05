@@ -12,7 +12,7 @@ body {
   text-align: center;
   opacity: 0;
   animation: fadeIn 1s ease 2s forwards;
-  padding-top: 200px;
+  padding-top: 100px;
   padding-bottom: 60px;
 }
 .rm {
@@ -24,6 +24,11 @@ body {
 
 }
 .header h1 {
+  font-family: "Fredoka", sans-serif;
+  color: #f6f6f6;
+  font-size: 60px;
+}
+.match h1 {
   font-family: "Fredoka", sans-serif;
   color: #f6f6f6;
   font-size: 60px;
