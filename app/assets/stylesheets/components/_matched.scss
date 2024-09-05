@@ -65,7 +65,7 @@ animation-fill-mode: forwards; /* Ensure the ball stays in the final position */
 
 /* Initially hide message elements */
 .message-container {
-  opacity: 0; /* Initially hidden */
+  // opacity: 0; /* Initially hidden */
   transition: opacity 1s ease-in-out;
   display: flex;
   justify-content: center;
