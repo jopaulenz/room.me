@@ -301,7 +301,7 @@ gustavo_flatmate = Flatmate.find_or_create_by!(user: gustavo) do |flatmate|
 end
 
 josephine_host.profile_photo.attach(
-  io: URI.open("https://image.stern.de/33321512/t/Jx/v2/w1440/r1.7778/-/papst-franziskus-im-mantel.jpg"),
+  io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725543118/Screenshot_2024-09-05_at_14.55.16_njnff8.png"),
   filename: "josephine_profile.jpg",
   content_type: "image/jpg"
 )
@@ -312,7 +312,7 @@ josephine_host.photos.attach([
 ])
 
 mustapha_host.profile_photo.attach(
-  io: URI.open("https://image.stern.de/33321512/t/Jx/v2/w1440/r1.7778/-/papst-franziskus-im-mantel.jpg"),
+  io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725543543/20230514_170817_rg5zxi.jpg"),
   filename: "mustapha_profile.jpg",
   content_type: "image/jpg"
 )
@@ -323,7 +323,7 @@ mustapha_host.photos.attach([
 ])
 
 sascha_host.profile_photo.attach(
-  io: URI.open("https://image.stern.de/33321512/t/Jx/v2/w1440/r1.7778/-/papst-franziskus-im-mantel.jpg"),
+  io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725543117/sascha_fbg8gc.jpg"),
   filename: "sascha_profile.jpg",
   content_type: "image/jpg"
 )
@@ -334,7 +334,7 @@ sascha_host.photos.attach([
 ])
 
 justus_host.profile_photo.attach(
-  io: URI.open("https://image.stern.de/33321512/t/Jx/v2/w1440/r1.7778/-/papst-franziskus-im-mantel.jpg"),
+  io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725543118/justus_hjcrxj.png"),
   filename: "justus_profile.jpg",
   content_type: "image/jpg"
 )
