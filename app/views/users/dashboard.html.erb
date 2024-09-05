@@ -1,20 +1,24 @@
-<div class="whitebg">
+<div class="white">
 <h1 class="headyou">Your Profile</h1>
 
 <div class="profile-section">
-  <div class="column">
-    <h4 class="headprofile">Personal Details</h4>
-    <%= link_to 'Edit Personal Data', edit_profile_path %>
+  <div class="column edit">
+    <%= link_to edit_profile_path, class: 'edit-button' do %>
+      <h4 class="headprofile">Personal Details</h4>
+    <% end %>
   </div>
 
-  <div class="column">
-    <h4 class="headprofile">Living Preferences</h4>
+  <div class="column edit">
     <% if @living_preference %>
-      <%= link_to 'Edit Preferences', edit_living_preference_path(@living_preference) %>
+      <%= link_to edit_living_preference_path(@living_preference), class: 'edit-button' do %>
+        <h4 class="headprofile">Living Preferences</h4>
+      <% end %>
     <% else %>
-      <%= link_to 'Create Preferences', new_living_preference_path %>
+      <%= link_to new_living_preference_path, class: 'edit-button' do %>
+        <h4 class="headprofile">Living Preferences</h4>
+      <% end %>
     <% end %>
   </div>
 </div>
 </div>
-<%= render 'shared/navbar_profile' %>
+</div>
