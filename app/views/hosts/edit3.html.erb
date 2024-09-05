@@ -40,6 +40,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :photos, "Apartment pictures", class: "custom-label" %>
+    <%= f.file_field :photos, multiple: true %>
+  </div>
+
+  <div class="form-group">
       <%= f.label :furnished, "Furnished", class: "custom-label"%><br>
       <div class="form-group flex">
         <div>
