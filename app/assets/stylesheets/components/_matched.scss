@@ -1,0 +1,98 @@
+.matched-container {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /* Add space between animation and message */
+}
+
+/* Common ball styles */
+.ball {
+  position: absolute;
+  width: 100px; /* Increased size */
+  height: 100px; /* Increased size */
+  border-radius: 50%;
+  background-color: #9ad1f6;
+}
+
+/* Keyframes for left ball */
+@keyframes move-left {
+0% {
+left: 0;
+}
+50% {
+left: calc(50% - 150px); /* Move left ball near center */
+}
+100% {
+left: calc(50% - 110px); /* Final position just left of center */
+}
+}
+
+/* Keyframes for right ball */
+@keyframes move-right {
+0% {
+right: 0;
+}
+50% {
+right: calc(50% - 150px); /* Move right ball near center */
+}
+100% {
+right: calc(50% - 110px); /* Final position just right of center */
+}
+}
+
+/* Left ball */
+.ball-left {
+background-color: #376cb0;
+left: 0;
+top: 50%;
+transform: translateY(-50%);
+animation: move-left 1.5s forwards ease-in-out; /* Reduced to 1.5s */
+animation-fill-mode: forwards; /* Ensure the ball stays in the final position */
+}
+
+/* Right ball */
+.ball-right {
+background-color: #61bdfa;
+right: 0;
+top: 50%;
+transform: translateY(-50%);
+animation: move-right 1.5s forwards ease-in-out; /* Reduced to 1.5s */
+animation-fill-mode: forwards; /* Ensure the ball stays in the final position */
+}
+
+/* Initially hide message elements */
+.message-container {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Show message after animation */
+.show-message .message-container {
+  opacity: 1; /* Fade in */
+}
+
+/* Chatline takes up full space within message-container */
+.chatline {
+  background-color: white;
+  color: grey;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  margin-left: -40px;
+  margin-right: -40px;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 600px;
+  margin-top: 16px;
+
+}
