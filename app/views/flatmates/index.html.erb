@@ -1,9 +1,10 @@
-<h2 class= rm>ROOM.ME</h2>
+<h2 class="rm">ROOM.ME</h2>
 <br>
 <% if @suggested_flatmates.present? %>
   <% suggestion = @suggested_flatmates.first %>
   <div class="flatmate-profile">
-    <h4><%= suggestion.first_name %></h4><p>is interested to be living with you</p>
+    <h4><%= suggestion.first_name %></h4>
+    <p>is interested in living with you</p>
     <%= render partial: 'flatmate_info', locals: { flatmate: suggestion } %>
   </div>
 <% else %>
