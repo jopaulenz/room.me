@@ -32,23 +32,25 @@
 
       <!-- Navbar -->
       <!-- feed -->
-      <% if controller_name == "flatmates" && action_name == "show" || controller_name == "hosts" && action_name == "show" %>
+      <% if (controller_name == "flatmates" && action_name == "show") || (controller_name == "hosts" && action_name == "show") %>
         <div class="navbar-container">
-          <%= render "shared/navbar_home"%>
+          <%= render "shared/navbar_home" %>
         </div>
-      <% elsif (controller_name == "matches" && action_name == "index" ) %>
-          <div class="navbar-container">
-          <%= render "shared/navbar_matches"%>
-        </div>
-        <% elsif (controller_name == "flatmates" && action_name == "edit" ) || ( controller_name == "hosts" && action_name == "edit" )%>
+      <% elsif controller_name == "matches" && action_name == "index" %>
         <div class="navbar-container">
-          <%= render "shared/navbar_profile"%>
+          <%= render "shared/navbar_matches" %>
         </div>
-        <% elsif controller_name == "messages" && action_name == "chat"  %>
+      <% elsif (controller_name == "living_preferences" && action_name == "edit") || (controller_name == "living_preferences" && action_name == "new") %>
         <div class="navbar-container">
-          <%= render "shared/navbar_messages"%>
+         <%= render "shared/navbar_profile" %>
+         </div>
+      <% elsif controller_name == "messages" && action_name == "chat" %>
+        <div class="navbar-container">
+         <%= render "shared/navbar_messages" %>
         </div>
       <% end %>
+
+
 
       <!-- Flash Messages -->
       <%= render "shared/flashes" %>
