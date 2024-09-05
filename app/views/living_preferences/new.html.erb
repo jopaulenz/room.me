@@ -5,7 +5,7 @@
 
   <% if @step == 1 %>
     <!-- STEP 1: Felder für Cleanliness, Gender, Smoking -->
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :cleanliness, "Cleanliness", class: "headprofile" %> <br>
       <% LivingPreference.cleanlinesses.keys.each do |key| %>
         <%= form.radio_button :cleanliness, key, id: "cleanliness_#{key}" %>
@@ -13,7 +13,7 @@
       <% end %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :gender, "Gender", class: "headprofile" %> <br>
       <% LivingPreference.genders.keys.each do |key| %>
         <%= form.radio_button :gender, key, id: "gender_#{key}" %>
@@ -21,7 +21,7 @@
       <% end %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :smoking, "Smoking", class: "headprofile" %> <br>
       <% LivingPreference.smokings.keys.each do |key| %>
         <%= form.radio_button :smoking, key, id: "smoking_#{key}" %>
@@ -31,7 +31,7 @@
 
   <% elsif @step == 2 %>
     <!-- STEP 2: Felder für Partying, Age, Furnished -->
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :partying, "Partying", class: "headprofile" %> <br>
       <% LivingPreference.partyings.keys.each do |key| %>
         <%= form.radio_button :partying, key, id: "partying_#{key}" %>
@@ -39,7 +39,7 @@
       <% end %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :age, "Age Preference", class: "headprofile" %> <br>
       <% LivingPreference.ages.keys.each do |key| %>
         <%= form.radio_button :age, key, id: "age_#{key}" %>
@@ -47,7 +47,7 @@
       <% end %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :furnished, "Furnished", class: "headprofile" %> <br>
       <% LivingPreference.furnisheds.keys.each do |key| %>
         <%= form.radio_button :furnished, key, id: "furnished_#{key}" %>
@@ -55,7 +55,7 @@
       <% end %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :dishwasher, "Dishwasher", class: "headprofile" %> <br>
       <% LivingPreference.dishwashers.keys.each do |key| %>
         <%= form.radio_button :dishwasher, key, id: "dishwasher_#{key}" %>
@@ -65,7 +65,7 @@
 
   <% elsif @step == 3 %>
     <!-- STEP 3: Restliche Felder und Textfelder -->
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :washingmaschine, "Washing Machine", class: "headprofile" %> <br>
       <% LivingPreference.washingmaschines.keys.each do |key| %>
         <%= form.radio_button :washingmaschine, key, id: "washingmaschine_#{key}" %>
@@ -73,7 +73,7 @@
       <% end %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :balcony, "Balcony", class: "headprofile" %> <br>
       <% LivingPreference.balconies.keys.each do |key| %>
         <%= form.radio_button :balcony, key, id: "balcony_#{key}" %>
@@ -81,7 +81,7 @@
       <% end %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :kitchen, "Kitchen", class: "headprofile" %> <br>
       <% LivingPreference.kitchens.keys.each do |key| %>
         <%= form.radio_button :kitchen, key, id: "kitchen_#{key}" %>
@@ -89,7 +89,7 @@
       <% end %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :bathtub, "Bathtub", class: "headprofile" %> <br>
       <% LivingPreference.bathtubs.keys.each do |key| %>
         <%= form.radio_button :bathtub, key, id: "bathtub_#{key}" %>
@@ -99,12 +99,12 @@
 
   <% elsif @step == 4 %>
     <!-- STEP 4: Textfelder -->
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :aboutme, "About Me", class: "headprofile" %> <br>
       <%= form.text_area :aboutme, placeholder: "Tell us a little about yourself" %>
     </div>
 
-    <div class="card d-block">
+    <div class="pref_card d-block">
       <%= form.label :interest, "Interests", class: "headprofile" %> <br>
       <%= form.text_area :interest, placeholder: "What are your interests?" %>
     </div>

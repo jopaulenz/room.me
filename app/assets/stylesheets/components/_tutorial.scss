@@ -1,0 +1,72 @@
+.tutcont {
+  background-color: #FFCE4F;
+      margin: 100px 40px;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+.cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+svg {
+  display: block;
+  transition: all 0.3s ease; /* Ensure the icon scales smoothly too */
+}
+
+.logo {
+  margin: 20px 0;
+}
+
+.t-dislike, .t-like {
+  border-radius: 50%;
+  background-color: #f6f6f6;
+  opacity: 70%;
+  width: 37px; /* Initially 1/5th of the original size */
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  position: relative;
+  transition: all 2s ease;
+}
+
+/* Add animation to grow buttons automatically */
+.t-dislike, .t-like {
+  animation: growButton 2s forwards ease-in-out;
+}
+
+@keyframes growButton {
+  0% {
+    width: 37px;
+    height: 37px;
+  }
+  100% {
+    width: 150px; /* Adjusted to smaller size */
+    height: 150px;
+  }
+}
+
+.t-dislike {
+  left: 30px;
+}
+
+.t-like {
+  right: 30px;
+}

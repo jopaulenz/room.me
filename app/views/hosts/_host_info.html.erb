@@ -1,5 +1,4 @@
 <!-- app/views/hosts/_host_profile.html.erb -->
-<h2 class= rm>ROOM.ME</h2>
 <div class="profile">
 
   <div class="card">
@@ -18,6 +17,8 @@
        <%= host.living_preference.interest %>
        <% if host.living_preference.present? %>
       <%= host.living_preference.aboutme %>
+      <% else %>
+    <p>This host has not set their living preferences yet.</p>
   </div>
   </div>
 
@@ -117,13 +118,11 @@
           .addTo(map<%= host.id %>);
       </script>
     </div>
-  <% else %>
-    <p>This host has not set their living preferences yet.</p>
   <% end %>
 
   <div class="actions">
     <%= link_to 'View Profile', host_path(host), class: 'btn btn-primary' %>
-    <%= link_to 'Like', host_likes_path(host), method: :post, class: 'btn btn-success', data: { turbo_method: :post} %>
-    <%= link_to 'Dislike', host_dislikes_path(host), method: :post, class: 'btn btn-danger', data: { turbo_method: :post} %>
+    <%= link_to 'Like', host_likes_path(host), method: :post, class: 'like', data: { turbo_method: :post} %>
+    <%= link_to 'Dislike', host_dislikes_path(host), method: :post, class: 'dislike', data: { turbo_method: :post} %>
   </div>
 </div>
