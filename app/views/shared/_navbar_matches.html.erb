@@ -14,6 +14,7 @@
         <span id="match-count" class="badge_match"></span>
       </div>
       <% end  %>
+      <%= link_to current_user.host ? flatmates_path : hosts_path do %>
         <svg class="home" width="149" height="149" viewBox="0 0 149 149" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d_5120_21114)">
           <circle cx="74.5" cy="74.5" r="46.5" fill="#FFCE4F"/>
@@ -33,6 +34,7 @@
           </filter>
           </defs>
         </svg>
+        <% end %>
         <%= link_to chats_path do %>
         <svg class="icon" width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 0.5C4.486 0.5 0 4.62735 0 9.7C0 13.0442 1.898 16.0434 5 17.6741V23.5L10.34 18.8943C15.697 18.7298 20 14.668 20 9.7C20 4.62735 15.514 0.5 10 0.5ZM10 16.6H9.667L7 18.9V16.1205L6.359 15.8364C3.67 14.6462 2 12.2944 2 9.7C2 5.89465 5.589 2.8 10 2.8C14.411 2.8 18 5.89465 18 9.7C18 13.5054 14.411 16.6 10 16.6Z" fill="#023145"/>
