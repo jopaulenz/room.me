@@ -1,5 +1,5 @@
   <div class="success" data-controller="delay" data-delay-role-value="<%= current_user.role %>">
-    <h4>Yay!
+    <h4 class='mb-5'>Yay!
       <br>
       You made it!
       <br>
@@ -7,15 +7,16 @@
       We are now looking for compatible flatmates for you.
     </h4>
     <div data-controller='timed-loader'>
-    <div class="loader" data-timed-loader-target='loader'></div>
-    <% if current_user.host? %>
-      <%= link_to 'See your future of living', flatmates_path, class: 'd-none', data: {
-        timed_loader_target: 'link'
-      } %>
-    <% else %>
-      <%= link_to 'See your future of living', hosts_path, class: 'd-none', data: {
-        timed_loader_target: 'link'
-      } %>
-    <% end %>
+      <div class="loader" data-timed-loader-target='loader'>
+      </div>
+      <% if current_user.host? %>
+        <%= link_to 'See your future of living', flatmates_path, class: 'd-none success_link', data: {
+          timed_loader_target: 'link'
+        } %>
+      <% else %>
+        <%= link_to 'See your future of living', hosts_path, class: 'd-none success_link', data: {
+          timed_loader_target: 'link'
+        } %>
+      <% end %>
     </div>
 </div>

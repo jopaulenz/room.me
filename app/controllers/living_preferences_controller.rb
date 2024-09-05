@@ -7,7 +7,6 @@ class LivingPreferencesController < ApplicationController
   end
 
   def create
-    raise
     @living_preference = LivingPreference.new(living_preference_params)
 
     @living_preference.preferable = current_user.flatmate || current_user.host   # Setze das `preferable` auf den aktuellen Benutzer oder ein anderes Objekt
