@@ -36,11 +36,15 @@
         <div class="navbar-container">
           <%= render "shared/navbar_home" %>
         </div>
+       <% elsif (controller_name == "flatmates" && action_name == "index") || (controller_name == "hosts" && action_name == "index") %>
+        <div class="navbar-container">
+          <%= render "shared/navbar_home" %>
+        </div>
       <% elsif controller_name == "matches" && action_name == "index" %>
         <div class="navbar-container">
           <%= render "shared/navbar_matches" %>
         </div>
-      <% elsif (controller_name == "living_preferences" && action_name == "edit") || (controller_name == "living_preferences" && action_name == "new") %>
+      <% elsif (controller_name == "users" && action_name == "dashboard") || (controller_name == "living_preferences" && action_name == "new") %>
         <div class="navbar-container">
          <%= render "shared/navbar_profile" %>
          </div>

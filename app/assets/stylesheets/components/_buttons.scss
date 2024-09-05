@@ -100,6 +100,13 @@ input[type="radio"]:checked + .role {
   background-color: #f6f6f6;
   border: none !important;
 }
+.pref_card {
+  padding: 8px 16px;
+  border-radius: 10px ;
+  background-color: #f6f6f6;
+  border: none !important;
+  margin-bottom: 12px;
+}
 .profile >.card {
   border-radius: 10px;
 
@@ -143,9 +150,24 @@ input[type="radio"]:checked + .role {
   position: static !important; /* Override position if necessary */
   display: flex !important; /* Ensure it uses flexbox */
 }
-.like-button {
-  background-color: #F3EFE6;
+.dislike, .like {
   border-radius: 50%;
+  background-color: #f6f6f6;
+  opacity: 70%;
+  width: 100px; /* Initially 1/5th of the original 185px */
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  transition: all 0.3s ease; /* Smooth transition for scaling */
+  position: absolute; /* For placing them on left and right */
+}
+
+/* Position dislike on the left and like on the right */
+.dislike {
+  left: -40px;
+  top: 30px;
   opacity: 80%;
 }
 
@@ -159,4 +181,20 @@ input[type="radio"]:checked + .role {
     margin-top: 40px;
     width: 120px;
     display: inline-block
+}
+
+.like {
+  right: -70px;
+  top: -30px;
+}
+
+/* Scale up on click */
+.dislike.clicked, .like.clicked {
+  width: 185px;
+  height: 185px;
+}
+
+svg {
+  display: block;
+  transition: all 0.3s ease; /* Ensure the icon scales smoothly too */
 }

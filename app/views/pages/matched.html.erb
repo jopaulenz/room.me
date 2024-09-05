@@ -1,0 +1,29 @@
+ <!-- Animation Container -->
+  <div class="matched-container">
+    <div class="ball ball-left"></div>
+    <div class="ball ball-right"></div>
+  </div>
+
+  <!-- Message and Chat Container (above animation, not overlapping) -->
+  <div class="message-container">
+    <h1 class="match">IT'S A MATCH</h1>
+    <div class="chatline">
+      <div>Send a nice message!</div>
+      <div>
+        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.6">
+            <path d="M12.7662 8.22474L10.2312 10.7597M18.0793 2.33613C18.1595 2.30846 18.2459 2.30391 18.3285 2.32299C18.4112 2.34207 18.4868 2.38402 18.5467 2.44404C18.6066 2.50406 18.6485 2.57973 18.6674 2.66241C18.6864 2.74508 18.6817 2.83142 18.6539 2.91156L13.6483 17.2169C13.6184 17.3024 13.5634 17.377 13.4906 17.4309C13.4177 17.4848 13.3304 17.5155 13.2398 17.5192C13.1493 17.5228 13.0598 17.4992 12.9828 17.4513C12.9059 17.4034 12.8451 17.3336 12.8084 17.2507L10.0884 11.1314C10.043 11.0295 9.96145 10.9479 9.85946 10.9025L3.74017 8.18165C3.65761 8.14479 3.58801 8.08402 3.54034 8.00719C3.49267 7.93036 3.46914 7.84101 3.47278 7.75067C3.47642 7.66033 3.50706 7.57315 3.56075 7.50041C3.61444 7.42766 3.68872 7.37269 3.77397 7.34259L18.0793 2.33613Z" stroke="black" stroke-width="1.26746" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // Add class to show message after animation completes
+window.onload = function() {
+  setTimeout(function() {
+    document.body.classList.add('show-message');
+  }, 1500); // Reduced delay to match the new animation duration
+};
+  </script>
