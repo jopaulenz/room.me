@@ -7,6 +7,7 @@ class LivingPreferencesController < ApplicationController
   end
 
   def create
+    raise
     @living_preference = LivingPreference.new(living_preference_params)
 
     @living_preference.preferable = current_user.flatmate || current_user.host   # Setze das `preferable` auf den aktuellen Benutzer oder ein anderes Objekt
@@ -39,7 +40,7 @@ class LivingPreferencesController < ApplicationController
         next_step = @step + 1
         redirect_to edit_living_preference_path(@living_preference, step: next_step), notice: 'Living preferences were successfully updated.'
       else
-        redirect_to root_path, notice: 'Living preferences were successfully completed.'
+        redirect_to success_path
       end
     else
       render :edit

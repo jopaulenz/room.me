@@ -5,7 +5,7 @@ class LivingPreference < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
   enum smoking: { non_smoker: 0, smoker: 1, social_smoker: 2 }
   enum partying: { never: 0, sometimes: 1, often: 2 }
-  enum age: { undefined: 0, "18-27": 1, "28-35": 2, "36-50": 3, "50+": 4 }
+  enum age: { 'Irrelevant': 0, "18-27": 1, "28-35": 2, "36-50": 3, "50+": 4 }
   enum furnished: { unfurnished: 0, furnished: 1 }
   enum dishwasher: { no_dishwasher: 0, dishwasher: 1 }
   enum washingmaschine: { no_washingmaschine: 0, washingmaschine: 1 }
