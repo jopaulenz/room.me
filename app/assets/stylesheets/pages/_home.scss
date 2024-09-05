@@ -1,11 +1,11 @@
 body {
   background-color: #FFCE4F  !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  align-items: center;
-  position: relative;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // height: 100vh;
+  // align-items: center;
+  // // position: relative;
 }
 
 .header {
@@ -89,10 +89,7 @@ body {
 
 .whitebg {
   background-color: #ffffff;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensure space is distributed between children */
