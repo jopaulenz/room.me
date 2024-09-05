@@ -3,13 +3,25 @@ class LikesController < ApplicationController
 
   def create
     # Erstellt ein Like für den aktuellen User Big if statement here if I am a host then this and that.
-    @likable = Flatmate.find(params[:flatmate_id])
-    @like = Like.new(liker: current_user.host, liked: @likable)
+
+    if current_user.host?
+      profile = current_user.host
+      @likable = Flatmate.find(params[:flatmate_id])
+    else
+      profile = current_user.flatmate
+      @likable = Host.find(params[:host_id])
+    end
+
+    @like = Like.new(liker: profile, liked: @likable)
+
     if @like.save
       # Überprüfen, ob es ein Match gibt
       if match_exists?(@like)
-        create_match(@like)
-        redirect_back fallback_location: root_path, notice: 'It’s a match!'
+        if create_match(@like)
+          redirect_to matched_path, notice: 'It’s a match!'
+        else
+          redirect_back fallback_location: root_path, notice: 'It’s a match!'
+        end
       else
         redirect_back fallback_location: root_path, notice: 'Like saved successfully.'
       end
@@ -50,6 +62,10 @@ class LikesController < ApplicationController
   end
 
   def create_match(like)
-    Match.create(flatmate: like.liker, host: like.liked)
+    if like.liker.user.host?
+      Match.create(host: like.liker, flatmate: like.liked)
+    else
+      Match.create(flatmate: like.liker, host: like.liked)
+    end
   end
 end
