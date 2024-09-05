@@ -82,6 +82,6 @@ class HostsController < ApplicationController
   end
 
   def host_params_step3
-    params.require(:host).permit(:duration, :registration, :room_size_min, :room_size_max, :furnished)
+    params.require(:host).permit(:duration, :registration, :room_size_min, :room_size_max, :furnished, :room_size, photos: [])
   end
 end
