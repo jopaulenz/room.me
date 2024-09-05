@@ -4,9 +4,7 @@
 
 <% if @suggested_hosts.present? %>
   <% suggestion = @suggested_hosts.first %>
-  <div class="host-profile mb-5">
     <%= render partial: 'host_info', locals: { host: suggestion } %>
-  </div>
 <% else %>
   <p>No more hosts to suggest at this time.</p>
 <% end %>

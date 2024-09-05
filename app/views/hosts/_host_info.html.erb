@@ -6,20 +6,23 @@
   </div>
 
   <div class="card">
-       <div class="h-profile">
-        <div class="d-flex align-items-center">
-       <h4 class="headprofile"><%= host.first_name %></h4>
-         <span class="info">
-       <%= host.age %></span>
-       <span class="info">
-       <%= host.pronouns%></span>
-       </div>
-       <%= host.living_preference.interest %>
-       <% if host.living_preference.present? %>
-      <%= host.living_preference.aboutme %>
+    <div class="h-profile">
+      <div class="d-flex align-items-center">
+        <h4 class="headprofile"><%= host.first_name %></h4>
+        <span class="info">
+          <%= host.age %>
+        </span>
+        <span class="info">
+          <%= host.pronouns%>
+        </span>
+      </div>
+      <%= host.living_preference.interest %>
+      <% if host.living_preference.present? %>
+        <%= host.living_preference.aboutme %>
       <% else %>
-    <p>This host has not set their living preferences yet.</p>
-  </div>
+        <p>This host has not set their living preferences yet.</p>
+      <% end %>
+    </div>
   </div>
 
   <div class="card">
@@ -118,7 +121,6 @@
           .addTo(map<%= host.id %>);
       </script>
     </div>
-  <% end %>
 
   <div class="actions">
     <%= link_to 'View Profile', host_path(host), class: 'btn btn-primary' %>
