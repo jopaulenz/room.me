@@ -27,12 +27,12 @@
       <!-- Main Content -->
       <div class="content-container">
         <%= yield %>
-        <%= link_to 'TEMPORARY profile link', user_dashboard_path %>
+        <%= link_to 'TEMPORARY profile link', user_dashboard_path, class: "btn btn-primary fixed-bottom text-center" %>
       </div>
 
       <!-- Navbar -->
       <!-- feed -->
-      <% if (controller_name == "flatmates" && action_name == "show") || (controller_name == "hosts" && action_name == "show") %>
+      <% if controller_name == "flatmates" && %w[index show].include?(action_name) || controller_name == "hosts" && %w[index show].include?(action_name) %>
         <div class="navbar-container">
           <%= render "shared/navbar_home" %>
         </div>
