@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-<div class="container chat">
+<div class="container-fluid chat">
   <%= turbo_stream_from "match_#{@match.id}_messages" %>
   <div id="messages" class="messages">
     <% @messages.each do |message| %>
@@ -42,4 +42,5 @@
     %>
     <%= f.submit "Send", class: "btn btn-yellow mb-3" %>
   <% end %>
+  <%= render "shared/back" %>
 </div>
