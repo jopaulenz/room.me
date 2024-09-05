@@ -91,8 +91,16 @@ body {
   background-color: #ffffff;
   padding: 40px;
   display: flex;
+  flex-direction: column;/* Ensure space is distributed between children */
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes up the full height of the viewport */
+  width: 100vw;
+}
+.white {
+  background-color: #ffffff;
+  padding: 40px;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensure space is distributed between children */
   align-items: center;
   min-height: 100vh; /* Ensure it takes up the full height of the viewport */
   width: 100vw;
@@ -112,6 +120,7 @@ body {
 .ball {
   height: 80px;
   width: 80px;
+  bottom: 360px;
   border-radius: 50%;
   background-color: #023145;
   display: flex;
@@ -127,10 +136,13 @@ body {
   animation: fadeIn 0.5s ease 2s forwards;
 }
 .slogan {
-  margin-top: 70px;
+  margin-top: 160px;
   color: #023145;
   opacity: 0;
   animation: fadeIn 0.5s ease 2s forwards;
+}
+.heightpic {
+  height: 300px;
 }
 p {
   text-align: center;

@@ -3,7 +3,7 @@
   <head>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <title>RoomMe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -30,12 +30,7 @@
       </div>
 
       <!-- Navbar -->
-      <!-- feed -->
-      <% if controller_name == "flatmates" && %w[index show].include?(action_name) || controller_name == "hosts" && %w[index show].include?(action_name) %>
-        <div class="navbar-container">
-          <%= render "shared/navbar_home" %>
-        </div>
-       <% elsif (controller_name == "flatmates" && action_name == "index") || (controller_name == "hosts" && action_name == "index") %>
+      <% if (controller_name == "flatmates" && %w[index show].include?(action_name)) || (controller_name == "hosts" && %w[index show].include?(action_name)) %>
         <div class="navbar-container">
           <%= render "shared/navbar_home" %>
         </div>
@@ -46,14 +41,12 @@
       <% elsif (controller_name == "users" && action_name == "dashboard") || (controller_name == "living_preferences" && action_name == "new") %>
         <div class="navbar-container">
          <%= render "shared/navbar_profile" %>
-         </div>
+        </div>
       <% elsif controller_name == "matches" && action_name == "chats" %>
         <div class="navbar-container">
          <%= render "shared/navbar_messages" %>
         </div>
       <% end %>
-
-
 
       <!-- Flash Messages -->
       <%= render "shared/flashes" %>

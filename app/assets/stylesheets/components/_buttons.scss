@@ -60,6 +60,22 @@ input[type='radio'] {
   text-align: center;
   box-sizing: border-box;
 }
+.edit {
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: 2px solid #FFCE4F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  width: 100%; /* Allow the button to take up the full width */
+  height: 140px; /* Maintain consistent height */
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+
 
 input[type="radio"]:checked + .tag {
   background-color: #FFCE4F;
@@ -99,7 +115,6 @@ input[type="radio"]:checked + .role {
   border-radius: 10px ;
   background-color: #f6f6f6;
   border: none !important;
-  position: relative;
 }
 .pref_card {
   padding: 8px 16px;

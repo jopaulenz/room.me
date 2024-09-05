@@ -60,7 +60,7 @@ mustapha_host = Host.find_or_create_by!(user: mustapha) do |host|
   host.phone_number = random_phone
   host.district = "Kreuzberg"
   host.rent = 1000
-  host.duration = 0
+  host.duration = 1
   host.entry_date = Date.today + 2.months
   host.registration = 0
   host.room_size = 18
@@ -131,7 +131,7 @@ gavin_flatmate = Flatmate.find_or_create_by!(user: gavin) do |flatmate|
   flatmate.district = "Friedrichshain"
   flatmate.rent_range_min = 500
   flatmate.rent_range_max = 800
-  flatmate.duration = 0
+  flatmate.duration = 1
   flatmate.entry_date = Date.today + 2.months
   flatmate.registration = 1
   flatmate.room_size_min = 15
@@ -223,7 +223,7 @@ sree_flatmate = Flatmate.find_or_create_by!(user: sree) do |flatmate|
   flatmate.district = "Schöneberg"
   flatmate.rent_range_min = 500
   flatmate.rent_range_max = 800
-  flatmate.duration = 0
+  flatmate.duration = 1
   flatmate.entry_date = Date.today + 1.month
   flatmate.registration = 1
   flatmate.room_size_min = 16
@@ -301,7 +301,7 @@ gustavo_flatmate = Flatmate.find_or_create_by!(user: gustavo) do |flatmate|
 end
 
 josephine_host.profile_photo.attach(
-  io: URI.open("https://image.stern.de/33321512/t/Jx/v2/w1440/r1.7778/-/papst-franziskus-im-mantel.jpg"),
+  io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725543118/Screenshot_2024-09-05_at_14.55.16_njnff8.png"),
   filename: "josephine_profile.jpg",
   content_type: "image/jpg"
 )
@@ -313,7 +313,7 @@ josephine_host.photos.attach([
 ])
 
 mustapha_host.profile_photo.attach(
-  io: URI.open("https://image.stern.de/33321512/t/Jx/v2/w1440/r1.7778/-/papst-franziskus-im-mantel.jpg"),
+  io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725543543/20230514_170817_rg5zxi.jpg"),
   filename: "mustapha_profile.jpg",
   content_type: "image/jpg"
 )
@@ -326,7 +326,7 @@ mustapha_host.photos.attach([
 ])
 
 sascha_host.profile_photo.attach(
-  io: URI.open("https://image.stern.de/33321512/t/Jx/v2/w1440/r1.7778/-/papst-franziskus-im-mantel.jpg"),
+  io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725543117/sascha_fbg8gc.jpg"),
   filename: "sascha_profile.jpg",
   content_type: "image/jpg"
 )
@@ -338,7 +338,7 @@ sascha_host.photos.attach([
 ])
 
 justus_host.profile_photo.attach(
-  io: URI.open("https://image.stern.de/33321512/t/Jx/v2/w1440/r1.7778/-/papst-franziskus-im-mantel.jpg"),
+  io: URI.open("https://res.cloudinary.com/daksiniyn/image/upload/v1725543118/justus_hjcrxj.png"),
   filename: "justus_profile.jpg",
   content_type: "image/jpg"
 )

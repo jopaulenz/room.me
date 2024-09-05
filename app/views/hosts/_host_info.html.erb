@@ -4,10 +4,8 @@
   <div class="card">
     <%= render "shared/like", host: host %>
     <%= render "shared/dislike", host: host %>
-    <%= cl_image_tag(host.profile_photo.key, class: 'img-fluid rounded mb-3', alt: 'Profile Picture') if host.profile_photo.attached? %>
+    <%= cl_image_tag(host.profile_photo.key, class: 'img-fluid rounded mb-3 heightpic', alt: 'Profile Picture') if host.profile_photo.attached? %>
   </div>
-
-
 
   <div class="card">
     <div class="h-profile">
@@ -130,7 +128,7 @@
 
   <div class="actions">
     <%= link_to 'View Profile', host_path(host), class: 'btn btn-primary' %>
-    <%= link_to 'Like', host_likes_path(host), method: :post, class: 'like', data: { turbo_method: :post} %>
-    <%= link_to 'Dislike', host_dislikes_path(host), method: :post, class: 'dislike', data: { turbo_method: :post} %>
+    <%# = link_to 'Like', host_likes_path(host), method: :post, class: 'like', data: { turbo_method: :post} %>
+    <%# = link_to 'Dislike', host_dislikes_path(host), method: :post, class: 'dislike', data: { turbo_method: :post} %>
   </div>
 </div>

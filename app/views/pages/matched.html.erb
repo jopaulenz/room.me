@@ -1,14 +1,22 @@
  <!-- Animation Container -->
   <div class="matched-container">
-    <div class="ball ball-left"></div>
-    <div class="ball ball-right"></div>
+    <div class="ball ball-left">
+      <%= image_tag "frida.jpeg", width: "100px", height: "100px", style: "border-radius: 50%;" %>
+    </div>
+    <div class="ball ball-right">
+      <%= image_tag "josi.jpeg", width: "100px", height: "100px", style: "border-radius: 50%;" %>
+
+    </div>
   </div>
 
   <!-- Message and Chat Container (above animation, not overlapping) -->
   <div class="message-container">
     <h1 class="match">IT'S A MATCH</h1>
     <div class="chatline">
+     <%= link_to chats_path, style: "color: grey; text-decoration: none;" do %>
       <div>Send a nice message!</div>
+     <% end %>
+
       <div>
         <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.6">
