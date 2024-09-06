@@ -145,7 +145,8 @@ body {
 }
 .heightpic {
   height: 300px;
-  background-size: cover;
+  object-fit: cover;
+  width: 100%; /* Ensures the image fits within its container */
   border-radius: 10px;
 }
 p {
