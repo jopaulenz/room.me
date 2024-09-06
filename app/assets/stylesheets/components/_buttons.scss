@@ -186,8 +186,8 @@ input[type="radio"]:checked + .role {
 
 /* Position dislike on the left and like on the right */
 .dislike {
-  left: 16px;
-  top: 32px;
+  left: 10px;
+  top: 60px;
 }
 
 .btn-auth {
@@ -203,8 +203,8 @@ input[type="radio"]:checked + .role {
 }
 
 .like {
-  right: 16px;
-  top: 32px;
+  right: 10px;
+  top: 60px;
 }
 .liking,  .disliking {
   opacity: 1;
@@ -228,4 +228,3 @@ svg {
   margin-top: -14px;
   margin-left: 8px;
 }
-
