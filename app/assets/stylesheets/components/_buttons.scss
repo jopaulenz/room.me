@@ -170,6 +170,11 @@ input[type="radio"]:checked + .role {
   position: static !important; /* Override position if necessary */
   display: flex !important; /* Ensure it uses flexbox */
 }
+
+.actions {
+  top: 200px;
+}
+
 .dislike, .like {
   border-radius: 50%;
   background-color: #f6f6f6;
