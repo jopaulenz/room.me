@@ -131,6 +131,11 @@ body {
   opacity: 0; /* Initially hidden */
   animation: growBall 0.5s ease 2s forwards, fadeIn 0.5s ease 2s forwards; /* Faster growBall and fadeIn */
 }
+.auth-links {
+  height: 220px;
+  padding: 10px;
+}
+
 .logo {
   height: 60px;
   width: 60px;
@@ -142,7 +147,12 @@ body {
   color: #023145;
   opacity: 0;
   animation: fadeIn 0.5s ease 2s forwards;
+  p {
+    font-weight: 600;
+  }
 }
+
+
 .heightpic {
   height: 300px;
   object-fit: cover;
