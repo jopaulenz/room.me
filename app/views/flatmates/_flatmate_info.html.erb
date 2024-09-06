@@ -11,17 +11,19 @@
         <span class="info"><%= flatmate.pronouns %></span>
       </div>
       <% if flatmate.living_preference.present? %>
-        <p class="text-start"><%= flatmate.living_preference.interest %></p>
-        <p class="text-start"><%= flatmate.living_preference.aboutme %></p>
+      <span>
+        <p class="text-start"><%= flatmate.living_preference.interest %>
+        <%= flatmate.living_preference.aboutme %></p>
+        </span>
     </div>
   </div>
 
   <div class="card d-block">
     <h4 class="headprofile">Living Preferences</h4>
-    <p class="pille">Cleanliness <%= flatmate.living_preference.cleanliness.humanize %></p>
-    <p class="pille">Smoking <%= flatmate.living_preference.smoking.humanize %></p>
-    <p class="pille">Partying <%= flatmate.living_preference.partying.humanize %></p>
-    <p class="pille">Age <%= flatmate.living_preference.age.humanize %></p>
+    <p class="pille">Cleanliness: <%= flatmate.living_preference.cleanliness.humanize %></p>
+    <p class="pille">Smoking: <%= flatmate.living_preference.smoking.humanize %></p>
+    <p class="pille">Partying: <%= flatmate.living_preference.partying.humanize %></p>
+    <p class="pille">Age: <%= flatmate.living_preference.age.humanize %></p>
   </div>
 
   <div class="card d-block">

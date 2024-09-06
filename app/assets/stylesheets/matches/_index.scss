@@ -44,8 +44,12 @@
 .chat-bar {
   display: flex;
   align-items: center;
-  margin: 2rem;
-  background-color: #FFCE4F;
+  margin: 1rem;
+  margin-top: 30px;
+  background-color: #f6f6f6;
+  padding: 24px 16px;
+  border-radius: 20px;
+  border: solid #003366 0.5px;
 
 }
 .matches-header {
@@ -79,7 +83,7 @@
 
 .match-infos {
   font-size: 0.9rem;
-  color: grey;
+  color: #003366;
   margin-top: 0.5rem;
 }
 
