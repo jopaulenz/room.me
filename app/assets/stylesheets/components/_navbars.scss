@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: flex-end;
   height: max-content;
-  z-index: 99;
 }
+
 .nav-bar {
+  z-index: 500;
   align-items: flex-end;
   background: linear-gradient(
     to top,

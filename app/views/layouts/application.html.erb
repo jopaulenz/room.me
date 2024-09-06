@@ -25,8 +25,9 @@
   <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
     <div class="page_container w-100">
        <!-- Flash Messages -->
-      <%= render "shared/flashes" %>
+      <%#= render "shared/flashes" %>
       <!-- Main Content -->
+      <%# = render "shared/flashes" %>
       <div class="content-container">
         <%= yield %>
       </div>
@@ -49,7 +50,6 @@
          <%= render "shared/navbar_messages" %>
         </div>
       <% end %>
-
     </div>
 
     <!-- JavaScript Files -->

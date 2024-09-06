@@ -9,7 +9,7 @@ User.destroy_all
 Like.destroy_all
 Match.destroy_all
 
-puts "Creating Phase-10 Seeds 🌱"
+puts "Creating Phase-476 Seeds 🌱"
 
 def random_date
   from = 50.years.ago.to_date
@@ -602,22 +602,22 @@ LivingPreference.create!(
 )
 
 # Create Likes
-puts "Creating Likes..."
-Like.find_or_create_by!(liker: josephine, liked: frida)
-Like.find_or_create_by!(liker: mustapha, liked: navid)
-Like.find_or_create_by!(liker: justus, liked: gustavo)
-Like.find_or_create_by!(liker: frida, liked: josephine)
-Like.find_or_create_by!(liker: gustavo, liked: sascha)
+# puts "Creating Likes..."
+# Like.find_or_create_by!(liker: josephine, liked: frida)
+Like.find_or_create_by!(liker: josephine, liked: navid)
+# Like.find_or_create_by!(liker: justus, liked: gustavo)
+# Like.find_or_create_by!(liker: frida, liked: josephine)
+# Like.find_or_create_by!(liker: gustavo, liked: sascha)
 
-# Create Matches
-puts "Creating Matches..."
-Match.find_or_create_by!(flatmate: frida_flatmate, host: josephine_host)
-Match.find_or_create_by!(flatmate: gavin_flatmate, host: sascha_host)
-Match.find_or_create_by!(flatmate: gustavo_flatmate, host: justus_host)
-Match.find_or_create_by!(flatmate: navid_flatmate, host: mustapha_host)
+# # Create Matches
+# puts "Creating Matches..."
+# Match.find_or_create_by!(flatmate: frida_flatmate, host: josephine_host)
+# Match.find_or_create_by!(flatmate: gavin_flatmate, host: sascha_host)
+# Match.find_or_create_by!(flatmate: gustavo_flatmate, host: justus_host)
 Match.find_or_create_by!(flatmate: navid_flatmate, host: josephine_host)
-Match.find_or_create_by!(flatmate: frida_flatmate, host: sascha_host)
-Match.find_or_create_by!(flatmate: gavin_flatmate, host: justus_host)
-Match.find_or_create_by!(flatmate: gustavo_flatmate, host: mustapha_host)
+# Match.find_or_create_by!(flatmate: navid_flatmate, host: josephine_host)
+# Match.find_or_create_by!(flatmate: frida_flatmate, host: sascha_host)
+# Match.find_or_create_by!(flatmate: gavin_flatmate, host: justus_host)
+# Match.find_or_create_by!(flatmate: gustavo_flatmate, host: mustapha_host)
 
 puts "#{User.count} users (#{Host.count} hosts, #{Flatmate.count} flatmates), #{LivingPreference.count} living preferences, #{Like.count} likes, and #{Match.count} matches created."
