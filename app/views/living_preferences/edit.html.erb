@@ -95,13 +95,13 @@
     <% elsif @step == 4 %>
 
       <!-- STEP 4: Textfelder -->
-      <div class="pref_card d-block">
-          <%= form.label :aboutme, "About Me", class: "headprofile" %>  <br>
-          <%= form.text_area :aboutme, placeholder: "Tell us a little about yourself" %>
+      <div class="pref_card d-block ">
+          <%= form.label :aboutme, "About Me", class: "headprofile p-2" %>  <br>
+          <%= form.text_area :aboutme, placeholder: "Tell us a little about yourself", class: "p-2" %>
       </div>
       <div class="pref_card d-block">
           <%= form.label :interest, "Interests", class: "headprofile" %>  <br>
-          <%= form.text_area :interest, placeholder: "What are your interests?" %>
+          <%= form.text_area :interest, placeholder: "What are your interests?", class: "p-2"  %>
       </div>
     <% end %>
       <div class="actions">
