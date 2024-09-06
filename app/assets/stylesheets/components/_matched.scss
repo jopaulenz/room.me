@@ -84,7 +84,7 @@
 
 /* Initially hide message elements */
 .message-container {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s ease-in-out;
   display: flex;
   justify-content: center;
