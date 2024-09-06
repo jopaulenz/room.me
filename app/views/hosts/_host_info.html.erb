@@ -1,9 +1,8 @@
 <!-- app/views/hosts/_host_profile.html.erb -->
 <div class="profile">
-
-  <div class="card">
     <%= render "shared/like", host: host %>
     <%= render "shared/dislike", host: host %>
+  <div class="card">
     <%= cl_image_tag(host.profile_photo.key, class: 'img-fluid rounded mb-3 heightpic', alt: 'Profile Picture') if host.profile_photo.attached? %>
   </div>
 
@@ -55,7 +54,17 @@
       </div>
     </div>
 
-
+<div class="card">
+  <div class="details-row">
+    <p class="details"><span class="boldy"><%= host.rent %>€</span><br><span class="smally">Rent</span></p>
+    <p class="details"><span class="boldy"><%= host.duration %></span><span class="smally"><br>Duration</span></p>
+    <p class="details"><span class="boldy"><%= host.room_size %>m2 </span><span class="smally"><br>Roomsize</span></p>
+  </div>
+  <div class="details-row-two">
+  <p class="details"><span class="boldy"><%= host.district %></span><br><span class="smally">District in Berlin</span></p>
+  <p class="details"><span class="boldy"><%= host.entry_date %><br></span><span class="smally">Available from on</span></p>
+  </div>
+</div>
 
 <div class="card d-block">
   <h4 class="headprofile">Living Preferences</h4>
@@ -73,17 +82,7 @@
   <%= host.living_preference.age.humanize %></p>
 </div>
 
-<div class="card">
-  <div class="details-row">
-    <p class="details"><span class="boldy"><%= host.rent %></span><br><span class="smally">Rent</span></p>
-    <p class="details"><span class="boldy"><%= host.duration %></span><span class="smally"><br>Months</span></p>
-    <p class="details"><span class="boldy"><%= host.room_size %>m2 </span><span class="smally"><br>Roomsize</span></p>
-  </div>
-  <div class="details-row-two">
-  <p class="details"><span class="boldy"><%= host.district %></span><br><span class="smally">District</span></p>
-  <p class="details"><span class="boldy"><%= host.entry_date %><br></span><span class="smally">Available</span></p>
-  </div>
-</div>
+
 
 <div class="card d-block">
   <h4 class="headprofile">Flat Features</h4>
