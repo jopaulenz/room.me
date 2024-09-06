@@ -6,6 +6,9 @@ class Flatmate < ApplicationRecord
   has_many :given_likes, as: :liker, class_name: 'Like'
   has_many :liked_hosts, through: :given_likes, source: :liked, source_type: 'Host'
 
+  has_many :given_dislikes, as: :disliker, class_name: 'Dislike'
+  has_many :disliked_hosts, through: :given_dislikes, source: :disliked, source_type: 'Host'
+
   enum duration: { longterm: 0, shortterm: 1 }
 
   def age

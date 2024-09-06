@@ -8,6 +8,9 @@ class Host < ApplicationRecord
   has_many :received_likes, as: :liked, class_name: 'Like'
   has_many :liking_flatmates, through: :received_likes, source: :liker, source_type: 'Flatmate'
 
+  has_many :received_dislikes, as: :disliked, class_name: 'Dislike'
+  has_many :disliking_flatmates, through: :received_dislikes, source: :disliker, source_type: 'Flatmate'
+
   serialize :apartment_picture_urls, JSON
 
   geocoded_by :district

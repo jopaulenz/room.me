@@ -187,6 +187,7 @@ input[type="radio"]:checked + .role {
   margin: 10px;
   transition: all 0.3s ease; /* Smooth transition for scaling */
   position: absolute; /* For placing them on left and right */
+  z-index: 1000;
 }
 
 /* Position dislike on the left and like on the right */

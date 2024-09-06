@@ -1,17 +1,22 @@
  <!-- Animation Container -->
   <div class="matched-container">
     <div class="ball ball-left">
-      <%= image_tag "frida.jpeg", width: "100px", height: "100px", style: "border-radius: 50%;" %>
+      <%= image_tag "frida.jpeg", width: "80px", height: "80px", style: "border-radius: 50%;" %>
     </div>
     <div class="ball ball-right">
-      <%= image_tag "josi.jpeg", width: "100px", height: "100px", style: "border-radius: 50%;" %>
+      <%= image_tag "josi.jpeg", width: "80px", height: "80px", style: "border-radius: 50%;" %>
 
     </div>
   </div>
 
   <!-- Message and Chat Container (above animation, not overlapping) -->
   <div class="message-container">
-    <h1 class="match">IT'S A MATCH</h1>
+    <div class="d-flex flex-column justify-content-around align-items-center mb-1">
+      <h1 class="match">IT'S A MATCH</h1>
+      <svg width="60" height="47" viewBox="0 0 60 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M29.6976 1L24.25 4.77027V1H21.4983V6.15146L19.2207 7.83128M29.6976 1L44.3543 11.0541M29.6976 1L40.7101 8.495V20.262H18.4573V8.36303L19.2207 7.83128M17.0232 46.2432C17.0232 44.6754 17.4788 42.1221 15.6567 39.9719C13.3791 37.2842 5.63523 33.2526 2.6744 26.7573C-0.684732 19.3882 1.53562 6.15146 4.72424 5.03158C8.00531 3.87923 5.86302 10.631 6.54632 15.5585M42.5322 46.2432C42.5322 44.6754 42.114 41.727 44.1265 39.7479C46.8596 37.0602 53.2369 33.4766 56.881 26.7573C60.7455 19.6318 58.1073 6.88299 55.0589 4.80761C52.0981 2.79182 52.7814 11.0789 53.0091 15.5585M27.9556 46.2432C27.9556 43.3316 28.6389 37.5082 27.5001 33.9245C25.5756 27.8682 22.0339 28.9971 14.9734 23.1737C12.872 21.4405 8.59615 17.3503 6.54632 18.6941C3.81322 20.486 9.19614 25.4258 9.96269 26.0854C11.7848 27.6532 13.6068 30.1169 14.9734 31.9088M31.5998 46.2432C31.372 42.8836 30.956 39.9387 31.5998 33.9245C32.0553 29.669 39.7991 26.7573 44.3543 23.6216C47.2689 21.6153 51.187 17.1263 53.0091 18.6941C55.4812 20.8213 50.9432 24.2796 49.1372 26.3093C47.5429 28.1012 46.6319 28.7731 44.582 31.9088M14.8243 11.0541L19.2207 7.83128" stroke="#023145" stroke-width="1.25676" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
     <div class="chatline">
      <%= link_to chats_path, style: "color: grey; text-decoration: none;" do %>
       <div>Send a nice message!</div>
@@ -31,6 +36,7 @@
   // Add class to show message after animation completes
 window.onload = function() {
   setTimeout(function() {
+    document.querySelector(".message-container").classList.add("show-message");
     document.body.classList.add('show-message');
   }, 1500); // Reduced delay to match the new animation duration
 };
